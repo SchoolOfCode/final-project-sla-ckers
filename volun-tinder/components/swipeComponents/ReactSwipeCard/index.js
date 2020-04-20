@@ -45,8 +45,8 @@ function ReactSwipeCard({ category, orgs }) {
       <h2>
         Here are some organisations looking for a volunteer passionate about{' '}
         {category.toLowerCase()} too. If you like how they sound, swipe right to
-        add them to your matches list. If they aren't for you, no problem. Swipe
-        left to send them on their way.
+        add them to your matches list. If they aren't for you, there are plenty
+        more fish in the sea. Swipe left to send them on their way.
       </h2>
 
       {/* Message that renders based on swipe direction: */}
