@@ -35,7 +35,7 @@ function ReactSwipeCard({ category, orgs }) {
     //We can have a version of this function for swiping right and add the charity to the list that we display at the end
     //can take in the direction (along with name) and then if direction === right, add to a state or reducer
     //This needs to happen at a level above this component I think...
-    console.log(name + ' left the screen!');
+    console.log(name + ' has been swiped!');
   }
 
   return (
