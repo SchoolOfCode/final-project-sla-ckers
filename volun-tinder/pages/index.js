@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizApp from '../components/QuizApp/index';
+import QuizApp from '../components/quizComponents/QuizApp/index';
 
 export default function Home() {
   return (
