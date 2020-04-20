@@ -9,7 +9,7 @@
 //TODO: Have a category prop to feed into header/description ✅  
 //TODO: Design card to pull out and display each category of info for each org individually for swiping 
 //TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.**
-//TODO: Need a way to progress to the match page (button or triggered on last swipe...?)
+//TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!)
 
 --------------------------------------------------------------------------*/
 
@@ -93,6 +93,9 @@ function ReactSwipeCard({ category, orgs }) {
           </TinderCard>
         ))}
       </div>
+      <button>
+        Your matches can't wait to hear from you! See how to get in touch.
+      </button>
     </div>
   );
 }
