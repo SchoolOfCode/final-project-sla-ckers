@@ -1,0 +1,11 @@
+.answerChoice {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+li.answerChoice:hover {
+  color: darkcyan;
+  font-weight: bold;
+}
