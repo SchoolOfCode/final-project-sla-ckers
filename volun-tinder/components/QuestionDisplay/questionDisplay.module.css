@@ -1,0 +1,7 @@
+.questionDisplay {
+  background-color: rgba(255, 127, 80, 0.5);
+  width: 60vw;
+  margin: 25vh auto;
+  padding: 20px;
+  border-radius: 20px;
+}
