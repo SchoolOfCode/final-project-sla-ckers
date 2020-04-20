@@ -45,7 +45,7 @@ import React, { useState, useReducer } from 'react';
 
 import QuestionDisplay from '../QuestionDisplay/index';
 
-import { questions, answers } from '../../libs/questionData';
+import { questions, answers } from '../../../libs/questionData';
 
 //initial state for array that stores answer categories
 const initialState = { quizResults: [] };
