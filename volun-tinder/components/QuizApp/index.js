@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import './App.css';
 
 import Quiz from '../Quiz/index';
 
-function App() {
+function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
   const [highestCat, setHighestCat] = useState('');
   //state to check if quiz is done:
@@ -46,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default QuizApp;
