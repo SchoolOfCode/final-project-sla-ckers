@@ -7,21 +7,16 @@
 //MAKE INTO USABLE COMPONENT WITH OUR PROPER TEST DATA:
 //TODO: Set up a prop to take in the sampleOrgProfs array of data for the relevant category (will be passed in where the component is called), and change const orgs to equal that array ✅ 
 //TODO: Have a category prop to feed into header/description ✅  
+//TODO: Incorporate images into cards!
 //TODO: Design card to pull out and display each category of info for each org individually for swiping 
 //TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.**
-//TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!)
+//TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed)
 
 --------------------------------------------------------------------------*/
 
 import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
-
-// const dummyOrgs = [
-//   { name: 'Pistols for Pandas', url: '../sampleImgs/sample-img-panda.jpg' },
-//   { name: 'Hedgehogs', url: '../sampleImgs/sample-img-swan.jpg' },
-//   { name: 'Swans', url: '../sampleImgs/sample-img-hedgie.jpg' },
-// ];
 
 function ReactSwipeCard({ category, orgs }) {
   const [lastDirection, setLastDirection] = useState();
@@ -93,6 +88,8 @@ function ReactSwipeCard({ category, orgs }) {
           </TinderCard>
         ))}
       </div>
+
+      {/* After swiping, takes you to your matches (need to think through rendering/when this shows) */}
       <button>
         Your matches can't wait to hear from you! See how to get in touch.
       </button>
