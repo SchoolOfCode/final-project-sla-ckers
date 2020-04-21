@@ -8,7 +8,8 @@
 //TODO: Set up a prop to take in the sampleOrgProfs array of data for the relevant category (will be passed in where the component is called), and change const orgs to equal that array ✅ 
 //TODO: Have a category prop to feed into header/description ✅  
 //TODO: Incorporate images into cards!
-//TODO: Design card to pull out and display each category of info for each org individually for swiping 
+//TODO: Design card to pull out and display each category of info for each org individually for swiping ✅ 
+//TODO: Refactor opportunities section re: Chris's note below
 //TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.**
 //TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed)
 
@@ -18,7 +19,7 @@ import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 
-function ReactSwipeCard({ category, orgs }) {
+function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
   const [lastDirection, setLastDirection] = useState();
 
   function swiped(direction, nameToDelete) {
@@ -26,11 +27,12 @@ function ReactSwipeCard({ category, orgs }) {
     setLastDirection(direction);
   }
 
-  function outOfFrame(name) {
+  function outOfFrame(org) {
     //We can have a version of this function for swiping right and add the charity to the list that we display at the end
     //can take in the direction (along with name) and then if direction === right, add to a state or reducer
     //This needs to happen at a level above this component I think...
-    console.log(name + ' has been swiped!');
+    swipeRight(org);
+    console.log('org has been swiped!');
   }
 
   return (
@@ -71,7 +73,8 @@ function ReactSwipeCard({ category, orgs }) {
             className={css.card}
             key={org.name}
             onSwipe={(dir) => swiped(dir, org.name)}
-            onCardLeftScreen={() => outOfFrame(org.name)}
+            onCardLeftScreen={() => outOfFrame(org)}
+            preventSwipe={['up', 'down']}
           >
             {/* TODO: Link to image property in data! */}
             <div style={{ backgroundImage: `${org.url}` }}>
@@ -98,7 +101,7 @@ function ReactSwipeCard({ category, orgs }) {
       </div>
 
       {/* After swiping, takes you to your matches (need to think through rendering/when this shows) */}
-      <button>
+      <button onClick={showMatchList}>
         Your matches can't wait to hear from you! See how to get in touch.
       </button>
     </div>

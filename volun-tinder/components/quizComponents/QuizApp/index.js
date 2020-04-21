@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import Quiz from "../Quiz/index";
+import Quiz from '../Quiz/index';
+import MatchApp from '../../swipeComponents/MatchApp/index';
 import QuizResults from "../QuizResults";
 import ReactSwipeCard from "../../swipeComponents/ReactSwipeCard";
 
@@ -27,7 +28,8 @@ function QuizApp() {
         <QuizResults highestCat={highestCat} handleClick={handleClick} />
       )}
 
-      {/* {showCards && ( <MatchApp category={highestCat} />)} */}
+      {showCards && ( <MatchApp category={highestCat} />)}
+
     </div>
   );
 }
