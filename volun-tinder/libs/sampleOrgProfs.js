@@ -2,7 +2,7 @@ export const sampleAnimalOrgs = [
   {
     orgName: "Pistols for Pandas",
     briefBio:
-      "A charity aiming to help pandas protect themselves from extinction",
+      "A charity aiming to help our beloved pandas protect themselves from extinction",
     opportunities: [
       {
         oppDescrip:
@@ -11,6 +11,10 @@ export const sampleAnimalOrgs = [
       },
     ],
     threeThingsVolsCantDoWithout: ["a way with words", "charm", "wit"],
+    contactName: "Paul Cowen",
+    contactDetails: "paul.cowen@pistolsforpandas.com",
+    img:
+      "https://www.muraldecal.com/en/img/as364-jpg/folder/products-listado-merchanthover/wall-stickers-banksy-panda-armed.jpg",
   },
   {
     orgName: "Hungry Hedgehogs",
@@ -28,6 +32,10 @@ export const sampleAnimalOrgs = [
       "a big heart",
       "a love of the great outdoors",
     ],
+    contactName: "Elizabeth Pickles",
+    contactDetails: "lizzie.pickles@gmail.com",
+    img:
+      "https://i.pinimg.com/originals/f0/5e/2d/f05e2dbe7fc2820fa6649dc527ceffbc.jpg",
   },
   {
     orgName: "Forever Swan",
@@ -45,6 +53,10 @@ export const sampleAnimalOrgs = [
       "proactive",
       "considerate",
     ],
+    contactName: "Lauren",
+    contactDetails: "lauren@foreverswan.com",
+    img:
+      "https://www.clipartkey.com/mpngs/m/64-645018_transparent-geese-png-swan-heart-clipart.png",
   },
 ];
 
@@ -65,6 +77,10 @@ export const sampleEnvironmentOrgs = [
       "good observation skills",
       "technical know how",
     ],
+    contactName: "Toby",
+    contactDetails: "toby.volunteer@gmail.com",
+    img:
+      "https://img1.thelist.com/img/gallery/when-you-chew-gum-every-day-this-is-what-happens-to-your-body/intro-1579289076.jpg",
   },
   {
     orgName: "Tree Huggers",
@@ -82,11 +98,15 @@ export const sampleEnvironmentOrgs = [
       "passion for nature",
       "outdoors lover",
     ],
+    contactName: "Ali Orchards",
+    contactDetails: "aliOrchards@treehuggers.com",
+    img:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDNVxRzOFybA6nZVK1us_mdoBd_IarF6pG_qgW0gmda-7wTexm&usqp=CAU",
   },
   {
     orgName: "Love Island Patrol",
     briefBio:
-      "We aim to keep the coastal community a paradise for all its lovers.",
+      "We aim to keep the coastal community a paradise for all its admirers.",
     opportunities: [
       {
         oppDescrip:
@@ -99,6 +119,9 @@ export const sampleEnvironmentOrgs = [
       "love of the outdoors",
       "good observation skills",
     ],
+    contactName: "Caroline Smith",
+    contactDetails: "caroline-smith@LIP.com",
+    img: "https://all4desktop.com/data_images/original/4239962-beautiful.jpg",
   },
 ];
 
@@ -119,6 +142,10 @@ export const sampleLocalGroups = [
       "love of the great outdoors",
       "be full of beans",
     ],
+    contactName: "Ralf Brown",
+    contactDetails: "ralf.brown@gmail.com",
+    img:
+      "https://www.goodtherapy.org/blog/blog/wp-content/uploads/2014/02/valentine-puppy-love-1024x919.jpg",
   },
   {
     orgName: "Build a bridge to their heart",
@@ -136,6 +163,9 @@ export const sampleLocalGroups = [
       "good conversationalist",
       "caring and thoughtful",
     ],
+    contactName: "Bob",
+    contactDetails: "bob@buildabridge.co.uk",
+    img: "https://live.staticflickr.com/6132/5992477992_efa05c19be_b.jpg",
   },
   {
     orgName: "Healing Hands",
@@ -153,6 +183,10 @@ export const sampleLocalGroups = [
       "problem solver",
       "creative thinking",
     ],
+    contactName: "Hailey Houghton",
+    contactDetails: "hailey@healinghands.co.uk",
+    img:
+      "https://pbs.twimg.com/profile_images/944405568147505152/Yi8ZwhoZ_400x400.jpg",
   },
 ];
 
@@ -173,6 +207,9 @@ export const sampleEvents = [
       "imagination",
       "confidence",
     ],
+    contactName: "Ben Romeo",
+    contactDetails: "b.romeo@onstagecupids.co.uk",
+    img: "https://northwestend.co.uk/images/Cupids_Revenge.jpg",
   },
   {
     orgName: "Serenading for Good",
@@ -190,9 +227,13 @@ export const sampleEvents = [
       "outgoing character",
       "good communication skills",
     ],
+    contactName: "Kylie Jason",
+    contactDetails: "kylie.jason@sfg.co.uk",
+    img:
+      "https://images.ctfassets.net/cnu0m8re1exe/48DOEUEwYlqhHIyNDspK8T/0e25f0848e6e6605e2a6e3f42c1ebd2a/singing-on-the-brain.jpg?w=650&h=433&fit=fill",
   },
   {
-    orgName: "Under the Stars Festival",
+    orgName: "Underneath the Stars Festival",
     briefBio: "Cosy camp out for star crossed lovers.",
     opportunities: [
       {
@@ -206,6 +247,10 @@ export const sampleEvents = [
       "organisation",
       "music lovers",
     ],
+    contactName: "Alexa",
+    contactDetails: "alexa@starsfest.com",
+    img:
+      "https://pbs.twimg.com/profile_images/1246057483073806336/-i7xg9EM.jpg",
   },
 ];
 
