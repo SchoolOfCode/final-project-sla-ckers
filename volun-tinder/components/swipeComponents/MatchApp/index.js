@@ -44,6 +44,10 @@ function matchReducer(matchState, action) {
 }
 
 export default function MatchApp({ category }) {
+  //state to handle cond rendering of match list after swiping:
+  const [swipesDone, setSwipesDone] = useState(false);
+
+  //reducer that stores the matches from swipe-rights:
   const [matchState, matchDispatch] = useReducer(
     matchReducer,
     initialMatchState
@@ -53,19 +57,30 @@ export default function MatchApp({ category }) {
     matchDispatch({ type: 'swipe-right', payload: org });
   }
 
+  function showMatchList() {
+    setSwipesDone(true);
+  }
+
   return (
     <div className="container">
-      <ReactSwipeCard
-        category={category}
-        orgs={sampleAnimalOrgs}
-        swipeRight={swipeRight}
-        key="0"
-      />
-      {/* <MatchList
-        category={category}
-        orgs={sampleAnimalOrgs}
-        matchList={matchState}
-      /> */}
+      {/* While swipesDone is false, show swipe interface: */}
+      {!swipesDone && (
+        <ReactSwipeCard
+          category={category}
+          orgs={sampleAnimalOrgs}
+          swipeRight={swipeRight}
+          showMatchList={showMatchList}
+          key="0"
+        />
+      )}
+      {/* Once swiping is finished and button is pressed, show match list: */}
+      {swipesDone && (
+        <MatchList
+          category={category}
+          orgs={sampleAnimalOrgs}
+          matchesList={matchState.matchResults}
+        />
+      )}
     </div>
   );
 }

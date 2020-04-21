@@ -19,7 +19,7 @@ import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 
-function ReactSwipeCard({ category, orgs, swipeRight }) {
+function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
   const [lastDirection, setLastDirection] = useState();
 
   function swiped(direction, nameToDelete) {
@@ -101,7 +101,7 @@ function ReactSwipeCard({ category, orgs, swipeRight }) {
       </div>
 
       {/* After swiping, takes you to your matches (need to think through rendering/when this shows) */}
-      <button>
+      <button onClick={showMatchList}>
         Your matches can't wait to hear from you! See how to get in touch.
       </button>
     </div>
