@@ -8,7 +8,7 @@ export default function LocalGroupsSwipe() {
   return (
     <div className="container">
       <ReactSwipeCard
-        category={'Local Community Groups'}
+        category="Local Community Groups"
         orgs={sampleLocalGroupsOrgs}
       />
     </div>

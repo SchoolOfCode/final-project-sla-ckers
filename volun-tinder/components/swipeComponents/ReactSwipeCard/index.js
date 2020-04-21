@@ -36,7 +36,11 @@ function ReactSwipeCard({ category, orgs }) {
   return (
     <div className={css.swipeInterface}>
       {/* Title and intro: */}
-      <h1>Organisations About {category} Who'd Love to Meet You</h1>
+      <h1>
+        Organisations About{' '}
+        {category.charAt(0).toUpperCase() + category.slice(1)} Who'd Love to
+        Meet You
+      </h1>
       <h2>
         Here are some organisations looking for a volunteer passionate about{' '}
         {category.toLowerCase()} too. If you like how they sound, swipe right to
@@ -45,6 +49,7 @@ function ReactSwipeCard({ category, orgs }) {
       </h2>
 
       {/* Message that renders based on swipe direction: */}
+      {/* TODO: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
       {lastDirection ? (
         lastDirection === 'right' ? (
           <h2 className={css.infoText}>
@@ -68,18 +73,21 @@ function ReactSwipeCard({ category, orgs }) {
             onSwipe={(dir) => swiped(dir, org.name)}
             onCardLeftScreen={() => outOfFrame(org.name)}
           >
-            <div style={{ backgroundImage: 'url(' + org.url + ')' }}>
+            {/* TODO: Link to image property in data! */}
+            <div style={{ backgroundImage: `${org.url}` }}>
               <h3>Hi, we're {org.orgName}!</h3>
               <p>{org.briefBio}</p>
               <p>
                 Is it us you're looking for? Swipe right if this sounds like
                 something you'd enjoy:
               </p>
+              {/* TODO: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
               <p>{org.opportunities[0].oppDescrip}</p>
 
               <p>Time requirement: {org.opportunities[0].timeReq}</p>
               <p>What we're looking for in a match:</p>
               <ul className={css.qualitiesList}>
+                {/* TODO: Consider shortening this property name! */}
                 {org.threeThingsVolsCantDoWithout.map((thing) => (
                   <li>{thing}</li>
                 ))}

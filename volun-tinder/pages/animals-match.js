@@ -7,7 +7,7 @@ import { sampleAnimalOrgs } from '../libs/sampleOrgProfs';
 export default function AnimalsSwipe() {
   return (
     <div className="container">
-      <ReactSwipeCard category={'Animals'} orgs={sampleAnimalOrgs} />
+      <ReactSwipeCard category="Animals" orgs={sampleAnimalOrgs} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function EnvironmentSwipe() {
   return (
     <div className="container">
       <ReactSwipeCard
-        category={'the Environment'}
+        category="Environmentalism"
         orgs={sampleEnvironmentOrgs}
       />
     </div>
