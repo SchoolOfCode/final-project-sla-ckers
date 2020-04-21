@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Quiz from "../Quiz/index";
 import QuizResults from "../QuizResults";
+import ReactSwipeCard from "../../swipeComponents/ReactSwipeCard";
 
 function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
@@ -26,9 +27,7 @@ function QuizApp() {
         <QuizResults highestCat={highestCat} handleClick={handleClick} />
       )}
 
-      {/* {!showCards &&(
-        <LizsAwesomeComponent />
-      )} */}
+      {/* {showCards && ( <MatchApp category={highestCat} />)} */}
     </div>
   );
 }
