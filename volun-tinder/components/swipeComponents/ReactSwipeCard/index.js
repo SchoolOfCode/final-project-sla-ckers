@@ -19,7 +19,7 @@ import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 
-function ReactSwipeCard({ category, orgs }) {
+function ReactSwipeCard({ category, orgs, swipeRight }) {
   const [lastDirection, setLastDirection] = useState();
 
   function swiped(direction, nameToDelete) {
@@ -27,11 +27,12 @@ function ReactSwipeCard({ category, orgs }) {
     setLastDirection(direction);
   }
 
-  function outOfFrame(name) {
+  function outOfFrame(org) {
     //We can have a version of this function for swiping right and add the charity to the list that we display at the end
     //can take in the direction (along with name) and then if direction === right, add to a state or reducer
     //This needs to happen at a level above this component I think...
-    console.log(name + ' has been swiped!');
+    swipeRight(org);
+    console.log('org has been swiped!');
   }
 
   return (
@@ -72,7 +73,8 @@ function ReactSwipeCard({ category, orgs }) {
             className={css.card}
             key={org.name}
             onSwipe={(dir) => swiped(dir, org.name)}
-            onCardLeftScreen={() => outOfFrame(org.name)}
+            onCardLeftScreen={() => outOfFrame(org)}
+            preventSwipe={['up', 'down']}
           >
             {/* TODO: Link to image property in data! */}
             <div style={{ backgroundImage: `${org.url}` }}>

@@ -17,18 +17,55 @@
 
 --------------------------------------------------------------------------------*/
 
-import React from 'react';
-import ReactSwipeCard from '../components/swipeComponents/ReactSwipeCard/index';
+import React, { useReducer, useState } from 'react';
+import ReactSwipeCard from '../ReactSwipeCard/index';
 import MatchList from '../MatchList/index';
 
 //import the array of animal orgs and then pass it down through the orgs prop to the swipe component below, depending on the category
-import { sampleAnimalOrgs } from '../libs/sampleOrgProfs';
+import { sampleAnimalOrgs } from '../../../libs/sampleOrgProfs';
 //FIXME: Testing for animals first! Will then adjust for the other categories' data after.
+
+//initial state for array that stores matches
+const initialMatchState = { matchResults: [] };
+
+function matchReducer(matchState, action) {
+  const { type, payload } = action;
+  switch (type) {
+    case 'swipe-right':
+      //on swipe right, adds the match at the end of the existing list
+      //FIXME: test string in for now to set up the reducer mechanism; once reducer is working, then refactor to include the org info obj
+      console.log('swipe-right action fired');
+      console.log(matchState);
+      return { matchResults: [...matchState.matchResults, payload] };
+    default:
+      //for anything else, just returns existing list w/o adding a match
+      return { matchResults: [matchState.matchResults] };
+  }
+}
+
 export default function MatchApp({ category }) {
+  const [matchState, matchDispatch] = useReducer(
+    matchReducer,
+    initialMatchState
+  );
+
+  function swipeRight(org) {
+    matchDispatch({ type: 'swipe-right', payload: org });
+  }
+
   return (
     <div className="container">
-      <ReactSwipeCard category={category} orgs={sampleAnimalOrgs} />
-      <MatchList category={category} orgs={sampleAnimalOrgs} />
+      <ReactSwipeCard
+        category={category}
+        orgs={sampleAnimalOrgs}
+        swipeRight={swipeRight}
+        key="0"
+      />
+      {/* <MatchList
+        category={category}
+        orgs={sampleAnimalOrgs}
+        matchList={matchState}
+      /> */}
     </div>
   );
 }
