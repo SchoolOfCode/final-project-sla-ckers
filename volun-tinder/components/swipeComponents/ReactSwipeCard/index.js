@@ -85,9 +85,13 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
                 something you'd enjoy:
               </p>
               {/* TODO: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
-              <p>{org.opportunities[0].oppDescrip}</p>
-
-              <p>Time requirement: {org.opportunities[0].timeReq}</p>
+              {org.opportunities.map((opp) => (
+                <p>
+                  {opp.oppDescrip} - {opp.timeReq}
+                </p>
+              ))}
+              {/* <p>{org.opportunities[0].oppDescrip}</p>
+              <p>Time requirement: {org.opportunities[0].timeReq}</p> */}
               <p>What we're looking for in a match:</p>
               <ul className={css.qualitiesList}>
                 {org.threeThings.map((thing) => (

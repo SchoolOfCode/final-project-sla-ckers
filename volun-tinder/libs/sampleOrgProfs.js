@@ -30,7 +30,7 @@ export const sampleAnimalOrgs = [
     opportunities: [
       {
         oppDescrip:
-          'Cook up some delicious delights for our endangered nocturnal garden vistiors',
+          'Cook up some delicious delights for our endangered nocturnal garden visitors',
         timeReq: '4 hrs a week',
       },
     ],
