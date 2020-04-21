@@ -8,6 +8,13 @@ function QuizApp() {
   const [highestCat, setHighestCat] = useState("");
   //state to check if quiz is done:
   const [quizOver, setQuizOver] = useState(false);
+  //state to hide quiz results and show swipy cards
+  const [showCards, setShowCards] = useState(false);
+
+  function handleClick() {
+    setShowCards(true);
+    console.log("I'm working!");
+  }
 
   return (
     <div className="App">
@@ -15,7 +22,13 @@ function QuizApp() {
         <Quiz setHighestCat={setHighestCat} setQuizOver={setQuizOver} />
       )}
 
-      {quizOver && <QuizResults highestCat={highestCat} />}
+      {quizOver && (
+        <QuizResults highestCat={highestCat} handleClick={handleClick} />
+      )}
+
+      {/* {!showCards &&(
+        <LizsAwesomeComponent />
+      )} */}
     </div>
   );
 }

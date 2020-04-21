@@ -6,10 +6,10 @@ import React from "react";
 //Once this is displayed the button will then take the user to the swipe cards in order to narrow down and find
 //an organisation to match to!
 
-//H1 needs to be able to take in the highest scoring category as a prop
-//button on click should render the swipe cards? (speak to Liz about linking this in)
+//H1 needs to be able to take in the highest scoring category as a prop - DONE
+//button on click should render the swipe cards?
 
-function QuizResults({ highestCat }) {
+function QuizResults({ highestCat, handleClick }) {
   console.log();
   return (
     <div>
@@ -17,7 +17,7 @@ function QuizResults({ highestCat }) {
         We have calculated your answers and we think your ideal category is...
       </h3>
       <h1>{highestCat}!</h1>
-      <button>Could any of these be the one?</button>
+      <button onClick={handleClick}>Could any of these be the one?</button>
     </div>
   );
 }
