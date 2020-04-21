@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Quiz from '../Quiz/index';
+import MatchApp from '../../swipeComponents/MatchApp/index';
 
 function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
@@ -41,6 +42,9 @@ function QuizApp() {
           will be replaced with the organisations that fit this category.
         </h1>
       )}
+
+      <p>testing MatchApp component here:</p>
+      <MatchApp category={highestCat} />
     </div>
   );
 }
