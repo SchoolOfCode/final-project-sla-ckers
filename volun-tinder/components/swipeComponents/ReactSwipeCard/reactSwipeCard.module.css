@@ -1,0 +1,25 @@
+.swipeInterface {
+  text-align: center;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.cardContainer {
+}
+
+.card {
+  border: 2px solid teal;
+  border-radius: 20px;
+  width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.qualitiesList {
+  width: 200px;
+  margin: 0 auto;
+  list-style-position: inside;
+  padding-top: 0;
+  padding-bottom: 10px;
+  padding-left: 0;
+}
