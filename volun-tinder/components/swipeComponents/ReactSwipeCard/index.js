@@ -76,7 +76,7 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
             onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
           >
-            {/* TODO: Link to image property in data! */}
+            {/* TODO: Link to image property in data! And change this from backgroundImage to adding an image to the card*/}
             <div style={{ backgroundImage: `${org.url}` }}>
               <h3>Hi, we're {org.orgName}!</h3>
               <p>{org.briefBio}</p>
@@ -85,13 +85,16 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
                 something you'd enjoy:
               </p>
               {/* TODO: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
-              <p>{org.opportunities[0].oppDescrip}</p>
-
-              <p>Time requirement: {org.opportunities[0].timeReq}</p>
+              {org.opportunities.map((opp) => (
+                <p>
+                  {opp.oppDescrip} - {opp.timeReq}
+                </p>
+              ))}
+              {/* <p>{org.opportunities[0].oppDescrip}</p>
+              <p>Time requirement: {org.opportunities[0].timeReq}</p> */}
               <p>What we're looking for in a match:</p>
               <ul className={css.qualitiesList}>
-                {/* TODO: Consider shortening this property name! */}
-                {org.threeThingsVolsCantDoWithout.map((thing) => (
+                {org.threeThings.map((thing) => (
                   <li>{thing}</li>
                 ))}
               </ul>

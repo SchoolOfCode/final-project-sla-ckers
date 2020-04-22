@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import Quiz from '../Quiz/index';
 import MatchApp from '../../swipeComponents/MatchApp/index';
-import QuizResults from "../QuizResults";
-import ReactSwipeCard from "../../swipeComponents/ReactSwipeCard";
+import QuizResults from '../QuizResults';
+import ReactSwipeCard from '../../swipeComponents/ReactSwipeCard';
 
 function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
-  const [highestCat, setHighestCat] = useState("");
+  const [highestCat, setHighestCat] = useState('');
   //state to check if quiz is done:
   const [quizOver, setQuizOver] = useState(false);
   //state to hide quiz results and show swipy cards
@@ -24,12 +24,11 @@ function QuizApp() {
         <Quiz setHighestCat={setHighestCat} setQuizOver={setQuizOver} />
       )}
 
-      {quizOver && (
+      {quizOver && !showCards && (
         <QuizResults highestCat={highestCat} handleClick={handleClick} />
       )}
 
-      {showCards && ( <MatchApp category={highestCat} />)}
-
+      {showCards && <MatchApp category={highestCat} />}
     </div>
   );
 }
