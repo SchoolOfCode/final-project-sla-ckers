@@ -79,6 +79,7 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
             {/* TODO: Link to image property in data! And change this from backgroundImage to adding an image to the card*/}
             <div style={{ backgroundImage: `${org.url}` }}>
               <h3>Hi, we're {org.orgName}!</h3>
+              <img alt={org.briefBio} src={org.img} className={css.orgImg} />
               <p>{org.briefBio}</p>
               <p>
                 Is it us you're looking for? Swipe right if this sounds like
