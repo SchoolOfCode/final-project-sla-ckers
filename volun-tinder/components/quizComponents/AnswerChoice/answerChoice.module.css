@@ -6,6 +6,6 @@
 }
 
 li.answerChoice:hover {
-  color: darkcyan;
+  color: var(--palette1);
   font-weight: bold;
 }
