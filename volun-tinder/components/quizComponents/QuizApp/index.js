@@ -15,7 +15,7 @@ function QuizApp() {
 
   function handleClick() {
     setShowCards(true);
-    console.log("I'm working!");
+    console.log('Button on results page working!');
   }
 
   return (

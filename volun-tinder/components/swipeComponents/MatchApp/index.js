@@ -17,13 +17,17 @@
 
 --------------------------------------------------------------------------------*/
 
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import ReactSwipeCard from '../ReactSwipeCard/index';
 import MatchList from '../MatchList/index';
 
 //import the array of animal orgs and then pass it down through the orgs prop to the swipe component below, depending on the category
-import { sampleAnimalOrgs } from '../../../libs/sampleOrgProfs';
-//FIXME: Testing for animals first! Will then adjust for the other categories' data after.
+import {
+  sampleAnimalOrgs,
+  sampleEnvironmentOrgs,
+  sampleLocalGroups,
+  sampleEvents,
+} from '../../../libs/sampleOrgProfs';
 
 //initial state for array that stores matches
 const initialMatchState = { matchResults: [] };
@@ -66,7 +70,15 @@ export default function MatchApp({ category }) {
       {!swipesDone && (
         <ReactSwipeCard
           category={category}
-          orgs={sampleAnimalOrgs}
+          orgs={
+            category === 'animals'
+              ? sampleAnimalOrgs
+              : category === 'environment'
+              ? sampleEnvironmentOrgs
+              : category === 'localGroups'
+              ? sampleLocalGroups
+              : sampleEvents
+          }
           swipeRight={swipeRight}
           showMatchList={showMatchList}
           matchesList={matchState.matchResults}

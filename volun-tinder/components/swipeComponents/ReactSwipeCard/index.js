@@ -10,7 +10,7 @@
 //TODO: Incorporate images into cards!
 //TODO: Design card to pull out and display each category of info for each org individually for swiping ✅ 
 //TODO: Refactor opportunities section re: Chris's note below
-//TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.**
+//TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.** ✅ 
 //TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed)
 
 --------------------------------------------------------------------------*/
@@ -79,8 +79,7 @@ function ReactSwipeCard({
             // onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
           >
-            {/* TODO: Link to image property in data! And change this from backgroundImage to adding an image to the card*/}
-            <div style={{ backgroundImage: `${org.url}` }}>
+            <div>
               <h3>Hi, we're {org.orgName}!</h3>
               <img alt={org.briefBio} src={org.img} className={css.orgImg} />
               <p>{org.briefBio}</p>
