@@ -33,13 +33,12 @@ export function matchReducer(matchState, action) {
   switch (type) {
     case 'swipe-right':
       //on swipe right, adds the match at the end of the existing list
-      //FIXME: test string in for now to set up the reducer mechanism; once reducer is working, then refactor to include the org info obj
       console.log('swipe-right action fired');
       console.log(matchState);
       return { matchResults: [...matchState.matchResults, payload] };
     default:
       //for anything else, just returns existing list w/o adding a match
-      return { matchResults: [matchState.matchResults] };
+      return { matchResults: [...matchState.matchResults] };
   }
 }
 
