@@ -28,7 +28,7 @@ import { sampleAnimalOrgs } from '../../../libs/sampleOrgProfs';
 //initial state for array that stores matches
 const initialMatchState = { matchResults: [] };
 
-function matchReducer(matchState, action) {
+export function matchReducer(matchState, action) {
   const { type, payload } = action;
   switch (type) {
     case 'swipe-right':
@@ -70,6 +70,7 @@ export default function MatchApp({ category }) {
           orgs={sampleAnimalOrgs}
           swipeRight={swipeRight}
           showMatchList={showMatchList}
+          matchesList={matchState.matchResults}
           key="0"
         />
       )}
