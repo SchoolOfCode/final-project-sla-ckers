@@ -111,7 +111,7 @@ function ReactSwipeCard({
       </div>
 
       {/* After swiping, if you've matched, button shows that takes you to your matches; if not, you get an option to go back to the home page: */}
-      {matchesList.join('') === '' ? (
+      {!matchesList ? (
         <p>
           Not feeling the spark with any of these? Click{' '}
           <span id={css.resetLink}>here</span> to go back to the home page where
