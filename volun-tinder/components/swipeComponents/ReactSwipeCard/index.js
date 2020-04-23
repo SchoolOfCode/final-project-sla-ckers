@@ -19,7 +19,13 @@ import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 
-function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
+function ReactSwipeCard({
+  category,
+  orgs,
+  swipeRight,
+  showMatchList,
+  matchesList,
+}) {
   const [lastDirection, setLastDirection] = useState();
 
   function swiped(direction, nameToDelete) {
@@ -104,10 +110,18 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
         ))}
       </div>
 
-      {/* After swiping, takes you to your matches (need to think through rendering/when this shows) */}
-      <button onClick={showMatchList}>
-        Your matches can't wait to hear from you! See how to get in touch.
-      </button>
+      {/* After swiping, if you've matched, button shows that takes you to your matches; if not, you get an option to go back to the home page: */}
+      {matchesList.join('') === '' ? (
+        <p>
+          Not feeling the spark with any of these? Click{' '}
+          <span id={css.resetLink}>here</span> to go back to the home page where
+          you can start again.
+        </p>
+      ) : (
+        <button onClick={showMatchList}>
+          Your matches can't wait to hear from you! See how to get in touch.
+        </button>
+      )}
     </div>
   );
 }
