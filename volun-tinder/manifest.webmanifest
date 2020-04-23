@@ -1,0 +1,22 @@
+{
+  "short_name": "Volun-Tinder",
+  "name": "Volun-Tinder",
+  "description": "A dating app for volunteers!",
+  "icons": [
+    {
+      "src": "./public/heart_hands192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./public/heart_hands.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/localhost:3000",
+  "background_color": "#f5dedc",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#f5dedc"
+}
