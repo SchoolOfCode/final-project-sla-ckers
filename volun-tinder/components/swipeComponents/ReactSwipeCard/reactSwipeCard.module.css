@@ -8,7 +8,9 @@
 }
 
 .card {
-  background-color: var(--palette2);
+  /* background-color: var(--palette2); */
+  background-color: rgba(240, 75, 75, 0.2);
+  border: coral 2px solid;
   border-radius: 20px;
   width: 500px;
   margin: 20px auto;
@@ -34,9 +36,9 @@
   font-weight: bold;
 }
 
-#resetP {
-  /*FIXME: Will sort bgrnd color w/ variable later! */
-  background-color: var(--palette2);
+.resetP {
+  /* background-color: var(--palette2); */
+  background-color: rgba(0, 139, 139, 0.2);
   border-radius: 20px;
   padding: 5px 0;
 }
