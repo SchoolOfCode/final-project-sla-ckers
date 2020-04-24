@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Layout";
+//import Infographic from "../libs/Images/volunteer.jpg";
 
 //Plan - Static knowledgeBase page
 //TODO: Create a page that displays info about being a volunteer
@@ -14,45 +14,46 @@ import Layout from "../components/Layout";
 export default function knowledgeBase() {
   return (
     <div>
-
-      <Layout>
-
-
-      <h1>Useful advice about volunteering</h1>
+      <h1>Knowledge Base: Become a Volunteer</h1>
+      <img
+        src="https://www.tmc.ac.uk/sites/default/files/volunteer.jpg"
+        alt="Benefits of being a volunteer infographic"
+      />
+      <p>Image Credit: Staffordshire County Council</p>
 
       <p>
-        Welcome to the knowledge base. Here you'll find useful links to
-        resources about volunteering.
+        Here you'll find useful links to guidances and resources about
+        volunteering.
       </p>
 
-      <div className="Benefits">
-        <p>
-          There are a number of advantages to being a volunteer both for you
-          personally and for your community.
-        </p>
-        <img
-          src="Benefits-of-volunteering-infographic.png"
-          alt="Benefits of being a volunteer infographic"
-        />
-        <p>Image Credit: Staffordshire County Council</p>
-      </div>
+      {/* <div className="Benefits"> */}
+      {/* <h3>Benefits of being a volunteer</h3> */}
+      {/* <p> */}
+      {/* There are numerous reasons to be a volunteer. See the infographic */}
+      {/* below to learn more. */}
+      {/* </p> */}
 
-      <ul>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering">Why Volunteer?</a>
-        </li>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering/i-want-to-volunteer">
-            Types of voluntary work
-          </a>
-        </li>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering/volunteers-week-2">
-            Volunteer Week
-          </a>
-        </li>
-      </ul>
-</Layout>
+      {/* </div> */}
+      <section className="VolunteerLinks">
+        <h3>Useful links</h3>
+        <ul>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering">
+              Why Volunteer?
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering/i-want-to-volunteer">
+              Types of voluntary work
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering/volunteers-week-2">
+              Volunteer Week
+            </a>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
