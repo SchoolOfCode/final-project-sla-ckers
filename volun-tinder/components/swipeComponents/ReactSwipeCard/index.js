@@ -18,6 +18,7 @@
 import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
+import Link from 'next/link';
 
 function ReactSwipeCard({
   category,
@@ -111,8 +112,10 @@ function ReactSwipeCard({
       {swipeRights === 0 ? (
         <p id={css.resetP}>
           Not feeling the spark with any of these? Click{' '}
-          <span id={css.resetLink}>here</span> to go back to the home page where
-          you can start again. **functionality coming soon**
+          <Link href="/">
+            <a id={css.resetLink}>here</a>
+          </Link>{' '}
+          to go back to the home page where you can start again.
         </p>
       ) : (
         <button onClick={showMatchList}>
