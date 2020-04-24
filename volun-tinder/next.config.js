@@ -1,7 +1,15 @@
-const withPWA = require("next-pwa");
+const withPWA = require('next-pwa');
 
 module.exports = withPWA({
   pwa: {
-    dest: "public",
+    dest: 'public',
+  },
+
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+      '/quiz': { page: '/quiz' },
+      '/knowledge-base': { page: '/knowledge-base' },
+    };
   },
 });
