@@ -16,7 +16,7 @@ function MatchList({ category, orgs, matchesList }) {
       {matchesList.map((org) => (
         <ContactCard org={org} key={org.orgName} />
       ))}
-      <p id={css.resetP}>
+      <p className={css.resetP}>
         Would you like to have another go at the quiz? Click{' '}
         <Link href="/">
           <a id={css.resetLink}>here</a>
