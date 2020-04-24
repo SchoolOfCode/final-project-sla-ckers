@@ -18,6 +18,7 @@
 import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
+import Link from 'next/link';
 
 function ReactSwipeCard({
   category,
@@ -74,13 +75,12 @@ function ReactSwipeCard({
       <div className={css.cardContainer}>
         {orgs.map((org) => (
           <TinderCard
-            className={css.card}
             key={org.name}
             onSwipe={(dir) => swiped(dir, org)}
             // onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
           >
-            <div>
+            <div className={css.card}>
               <h3>Hi, we're {org.orgName}!</h3>
               <img alt={org.briefBio} src={org.img} className={css.orgImg} />
               <p>{org.briefBio}</p>
@@ -109,10 +109,12 @@ function ReactSwipeCard({
 
       {/* After swiping, if you've matched, button shows that takes you to your matches; if not, you get an option to go back to the home page: */}
       {swipeRights === 0 ? (
-        <p id={css.resetP}>
+        <p className={css.resetP}>
           Not feeling the spark with any of these? Click{' '}
-          <span id={css.resetLink}>here</span> to go back to the home page where
-          you can start again. **functionality coming soon**
+          <Link href="/">
+            <a id={css.resetLink}>here</a>
+          </Link>{' '}
+          to go back to the home page where you can start again.
         </p>
       ) : (
         <button onClick={showMatchList}>
