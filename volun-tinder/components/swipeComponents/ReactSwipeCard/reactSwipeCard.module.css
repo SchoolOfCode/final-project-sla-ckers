@@ -8,7 +8,7 @@
 }
 
 .card {
-  border: 2px solid teal;
+  background-color: var(--palette2);
   border-radius: 20px;
   width: 500px;
   margin: 20px auto;
@@ -29,7 +29,14 @@
   width: auto;
 }
 
-.resetLink {
+#resetLink {
   text-decoration: underline;
   font-weight: bold;
+}
+
+#resetP {
+  /*FIXME: Will sort bgrnd color w/ variable later! */
+  background-color: var(--palette2);
+  border-radius: 20px;
+  padding: 5px 0;
 }
