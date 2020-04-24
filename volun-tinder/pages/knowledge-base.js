@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 //Plan - Static knowledgeBase page
 //TODO: Create a page that displays info about being a volunteer
@@ -12,21 +13,23 @@ import React from "react";
 export default function knowledgeBase() {
   return (
     <div>
-      <h1>Knowledge Base</h1>
+      <Layout>
+        <h1>Knowledge Base</h1>
 
-      <h3>Resources about how to volunteer and the benefits. </h3>
+        <h3>Resources about how to volunteer and the benefits. </h3>
 
-      <ul>
-        <li>
-          <a href="#">Why Volunteer?</a>
-        </li>
-        <li>
-          <a href="#">Volunteer Week</a>
-        </li>
-        <li>
-          <a href="#"></a>
-        </li>
-      </ul>
+        <ul>
+          <li>
+            <a href="#">Why Volunteer?</a>
+          </li>
+          <li>
+            <a href="#">Volunteer Week</a>
+          </li>
+          <li>
+            <a href="#"></a>
+          </li>
+        </ul>
+      </Layout>
     </div>
   );
 }

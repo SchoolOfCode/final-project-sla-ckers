@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/global.css";
-import QuizApp from "../components/quizComponents/QuizApp/index";
+import Link from "next/link";
+import Layout from "../components/Layout";
 
 //Need to build a layout for this page?
 //Header
@@ -12,7 +12,12 @@ import QuizApp from "../components/quizComponents/QuizApp/index";
 export default function Home() {
   return (
     <div>
-      <QuizApp />
+      <Layout>
+        <p>This is to explain what it do</p>
+        <Link href="/quiz">
+          <a>Take me to the quiz!</a>
+        </Link>
+      </Layout>
     </div>
   );
 }
