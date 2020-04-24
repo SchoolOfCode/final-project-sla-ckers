@@ -1,5 +1,5 @@
 .contactCard {
-  border: 2px solid coral;
+  background-color: var(--palette2);
   border-radius: 20px;
   width: 500px;
   margin: 20px auto;

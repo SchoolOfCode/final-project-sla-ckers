@@ -25,6 +25,7 @@ function ReactSwipeCard({
   swipeRight,
   showMatchList,
   matchesList,
+  swipeRights,
 }) {
   const [lastDirection, setLastDirection] = useState();
 
@@ -66,7 +67,7 @@ function ReactSwipeCard({
           </h2>
         )
       ) : (
-        <h2 className={css.infoText}>Get swiping!</h2>
+        <h2 className={css.infoText}>Start swiping!</h2>
       )}
 
       {/* Renders the cards: */}
@@ -107,11 +108,11 @@ function ReactSwipeCard({
       </div>
 
       {/* After swiping, if you've matched, button shows that takes you to your matches; if not, you get an option to go back to the home page: */}
-      {!matchesList ? (
-        <p>
+      {swipeRights === 0 ? (
+        <p id={css.resetP}>
           Not feeling the spark with any of these? Click{' '}
           <span id={css.resetLink}>here</span> to go back to the home page where
-          you can start again.
+          you can start again. **functionality coming soon**
         </p>
       ) : (
         <button onClick={showMatchList}>
