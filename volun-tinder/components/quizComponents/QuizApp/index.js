@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Quiz from '../Quiz/index';
 import MatchApp from '../../swipeComponents/MatchApp/index';
 import QuizResults from '../QuizResults';
-import ReactSwipeCard from '../../swipeComponents/ReactSwipeCard';
 
 function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
@@ -15,7 +14,7 @@ function QuizApp() {
 
   function handleClick() {
     setShowCards(true);
-    console.log("I'm working!");
+    console.log('Button on results page working!');
   }
 
   return (

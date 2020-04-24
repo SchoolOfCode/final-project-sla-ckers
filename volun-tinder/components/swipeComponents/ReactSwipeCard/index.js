@@ -10,7 +10,7 @@
 //TODO: Incorporate images into cards!
 //TODO: Design card to pull out and display each category of info for each org individually for swiping ✅ 
 //TODO: Refactor opportunities section re: Chris's note below
-//TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.**
+//TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.** ✅ 
 //TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed)
 
 --------------------------------------------------------------------------*/
@@ -19,20 +19,24 @@ import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 
-function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
+function ReactSwipeCard({
+  category,
+  orgs,
+  swipeRight,
+  showMatchList,
+  matchesList,
+  swipeRights,
+}) {
   const [lastDirection, setLastDirection] = useState();
 
-  function swiped(direction, nameToDelete) {
-    console.log('removing: ' + nameToDelete);
+  function swiped(direction, org) {
     setLastDirection(direction);
-  }
-
-  function outOfFrame(org) {
-    //We can have a version of this function for swiping right and add the charity to the list that we display at the end
-    //can take in the direction (along with name) and then if direction === right, add to a state or reducer
-    //This needs to happen at a level above this component I think...
-    swipeRight(org);
-    console.log('org has been swiped!');
+    if (direction === 'right') {
+      console.log('right yeet is meet');
+      swipeRight(org);
+    } else {
+      console.log('left yeet is YOTE');
+    }
   }
 
   return (
@@ -63,7 +67,7 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
           </h2>
         )
       ) : (
-        <h2 className={css.infoText}>Get swiping!</h2>
+        <h2 className={css.infoText}>Start swiping!</h2>
       )}
 
       {/* Renders the cards: */}
@@ -72,13 +76,13 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
           <TinderCard
             className={css.card}
             key={org.name}
-            onSwipe={(dir) => swiped(dir, org.name)}
-            onCardLeftScreen={() => outOfFrame(org)}
+            onSwipe={(dir) => swiped(dir, org)}
+            // onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
           >
-            {/* TODO: Link to image property in data! And change this from backgroundImage to adding an image to the card*/}
-            <div style={{ backgroundImage: `${org.url}` }}>
+            <div>
               <h3>Hi, we're {org.orgName}!</h3>
+              <img alt={org.briefBio} src={org.img} className={css.orgImg} />
               <p>{org.briefBio}</p>
               <p>
                 Is it us you're looking for? Swipe right if this sounds like
@@ -103,10 +107,18 @@ function ReactSwipeCard({ category, orgs, swipeRight, showMatchList }) {
         ))}
       </div>
 
-      {/* After swiping, takes you to your matches (need to think through rendering/when this shows) */}
-      <button onClick={showMatchList}>
-        Your matches can't wait to hear from you! See how to get in touch.
-      </button>
+      {/* After swiping, if you've matched, button shows that takes you to your matches; if not, you get an option to go back to the home page: */}
+      {swipeRights === 0 ? (
+        <p id={css.resetP}>
+          Not feeling the spark with any of these? Click{' '}
+          <span id={css.resetLink}>here</span> to go back to the home page where
+          you can start again. **functionality coming soon**
+        </p>
+      ) : (
+        <button onClick={showMatchList}>
+          Your matches can't wait to hear from you! See how to get in touch.
+        </button>
+      )}
     </div>
   );
 }
