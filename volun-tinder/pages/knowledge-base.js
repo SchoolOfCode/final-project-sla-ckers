@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 //Plan - Static knowledgeBase page
 //TODO: Create a page that displays info about being a volunteer
@@ -13,6 +14,10 @@ import React from "react";
 export default function knowledgeBase() {
   return (
     <div>
+
+      <Layout>
+
+
       <h1>Useful advice about volunteering</h1>
 
       <p>
@@ -47,6 +52,7 @@ export default function knowledgeBase() {
           </a>
         </li>
       </ul>
+</Layout>
     </div>
   );
 }
