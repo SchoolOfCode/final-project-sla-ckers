@@ -124,10 +124,12 @@ define("./sw.js",['./workbox-b90066a8'], function (workbox) { 'use strict';
     "revision": "82dca635a629d8ab38c3ad85b2ad65a2"
   }, {
     "url": "/_next/static/runtime/webpack.js",
+
     "revision": "86589eb9f6b474ccdd030f4658e94d6e"
   }, {
     "url": "/_next/static/runtime/webpack.js.map",
     "revision": "fa86654ca5511a77c6267f3cd3527f69"
+
   }], {
     "ignoreURLParametersMatching": [/ts/]
   });
