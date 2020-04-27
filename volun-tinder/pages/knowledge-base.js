@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 //Plan - Static knowledgeBase page
 //TODO: Create a page that displays info about being a volunteer
@@ -14,45 +14,44 @@ import Layout from "../components/Layout";
 export default function knowledgeBase() {
   return (
     <div>
-
       <Layout>
+        <h1>Useful advice about volunteering</h1>
 
-
-      <h1>Useful advice about volunteering</h1>
-
-      <p>
-        Welcome to the knowledge base. Here you'll find useful links to
-        resources about volunteering.
-      </p>
-
-      <div className="Benefits">
         <p>
-          There are a number of advantages to being a volunteer both for you
-          personally and for your community.
+          Welcome to the knowledge base. Here you'll find useful links to
+          resources about volunteering.
         </p>
-        <img
-          src="Benefits-of-volunteering-infographic.png"
-          alt="Benefits of being a volunteer infographic"
-        />
-        <p>Image Credit: Staffordshire County Council</p>
-      </div>
 
-      <ul>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering">Why Volunteer?</a>
-        </li>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering/i-want-to-volunteer">
-            Types of voluntary work
-          </a>
-        </li>
-        <li>
-          <a href="https://www.ncvo.org.uk/ncvo-volunteering/volunteers-week-2">
-            Volunteer Week
-          </a>
-        </li>
-      </ul>
-</Layout>
+        <div className="Benefits">
+          <p>
+            There are a number of advantages to being a volunteer both for you
+            personally and for your community.
+          </p>
+          <img
+            src="Benefits-of-volunteering-infographic.png"
+            alt="Benefits of being a volunteer infographic"
+          />
+          <p>Image Credit: Staffordshire County Council</p>
+        </div>
+
+        <ul>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering">
+              Why Volunteer?
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering/i-want-to-volunteer">
+              Types of voluntary work
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ncvo.org.uk/ncvo-volunteering/volunteers-week-2">
+              Volunteer Week
+            </a>
+          </li>
+        </ul>
+      </Layout>
     </div>
   );
 }

@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/localhost:3000",
+  "start_url": "../pages/index.js",
   "background_color": "#f5dedc",
   "display": "standalone",
   "scope": "/",

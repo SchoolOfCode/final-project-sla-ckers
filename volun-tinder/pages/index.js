@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
+import Head from "next/head";
 
 //Need to build a layout for this page?
 //Header
@@ -18,6 +19,11 @@ export default function Home() {
           <a>Take me to the quiz!</a>
         </Link>
       </Layout>
+      <style jsx global>{`
+        * {
+          font-family: calibri;
+        }
+      `}</style>
     </div>
   );
 }
