@@ -1,4 +1,5 @@
 import React from "react";
+import css from "./inputComponent.module.css";
 
 //Create a basic form for volunteers to log their details following the swipe component.
 //Details provided by the volunteer will be used to populate individual profiles/cards
@@ -15,7 +16,7 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="contact-fname"
           onChange={takeInData}
-          value={volunteerData.firstName}
+          //value={volunteerData.firstName}
           name="firstName"
         ></input>
 
@@ -24,7 +25,7 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="contact-lname"
           onChange={takeInData}
-          value={volunteerData.lastName}
+          //value={volunteerData.lastName}
           name="lastName"
         ></input>
 
@@ -33,7 +34,7 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="location"
           onChange={takeInData}
-          value={volunteerData.location}
+          //value={volunteerData.location}
           name="location"
         ></input>
 
@@ -42,7 +43,7 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="location"
           onChange={takeInData}
-          value={volunteerData.charityType}
+          //value={volunteerData.charityType}
           name="charityType"
         ></input>
 
@@ -51,7 +52,7 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="hours"
           onChange={takeInData}
-          value={volunteerData.hours}
+          //value={volunteerData.hours}
           name="hours"
         ></input>
 
@@ -60,16 +61,16 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
           type="text"
           id="bio"
           onChange={takeInData}
-          value={volunteerData.bio}
+          //value={volunteerData.bio}
           name="bio"
         ></input>
       </form>
     </div>
 
-    <section className="buttons">
-    <button className="button">Complete Registration</button>
-    </section>
+    //<section className="buttons">
+    //<button className="button">Complete Registration</button>
+    //</section>
   );
 }
 
-export default VolunteerRegistration
+export default VolunteerRegistration;
