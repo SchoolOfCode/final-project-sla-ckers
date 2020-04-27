@@ -65,5 +65,11 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
         ></input>
       </form>
     </div>
+
+    <section className="buttons">
+    <button className="button">Complete Registration</button>
+    </section>
   );
 }
+
+export default VolunteerRegistration
