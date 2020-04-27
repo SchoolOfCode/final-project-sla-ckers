@@ -1,4 +1,5 @@
 import React from "react";
+
 import css from "./inputComponent.module.css";
 
 //Create a basic form for volunteers to log their details following the swipe component.
@@ -7,7 +8,7 @@ import css from "./inputComponent.module.css";
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-function VolunteerRegistration({ takeInData }, { volunteerData }) {
+function volunteerRegistration({ takeInData }, { volunteerData }) {
   return (
     <div>
       <form className="volunteerForm">
@@ -73,4 +74,4 @@ function VolunteerRegistration({ takeInData }, { volunteerData }) {
   );
 }
 
-export default VolunteerRegistration;
+export default volunteerRegistration;
