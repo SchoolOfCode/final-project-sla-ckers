@@ -11,7 +11,7 @@ function Header() {
           <a className="navLinks">Home</a>
         </Link>
         <Link href="/quiz">
-          <a className="navLinks">Quiz</a>
+          <a className="navLinks">Take the Quiz</a>
         </Link>
         <Link href="/knowledge-base">
           <a className="navLinks">Knowledge Base</a>
