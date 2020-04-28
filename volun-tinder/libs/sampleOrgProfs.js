@@ -249,15 +249,3 @@ export const sampleEvents = [
       'https://pbs.twimg.com/profile_images/1246057483073806336/-i7xg9EM.jpg',
   },
 ];
-
-function printJSONs() {
-  const orgData = JSON.stringify([
-    ...sampleAnimalOrgs,
-    ...sampleEnvironmentOrgs,
-    ...sampleLocalGroups,
-    ...sampleEvents,
-  ]);
-  console.log(orgData);
-}
-
-printJSONs();
