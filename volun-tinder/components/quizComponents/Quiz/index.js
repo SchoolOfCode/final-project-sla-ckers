@@ -51,7 +51,7 @@ import { questions, answers } from '../../../libs/questionData';
 const initialState = { quizResults: [] };
 
 //reducer function to add category for each answer choice:
-function reducer(state, action) {
+export function reducer(state, action) {
   const { type } = action;
   switch (type) {
     case 'add-animal-choice':
@@ -63,7 +63,7 @@ function reducer(state, action) {
     case 'add-events-choice':
       return { quizResults: [...state.quizResults, 'events'] };
     default:
-      return { quizResults: [state.quizResults] };
+      return { quizResults: state.quizResults };
   }
 }
 
