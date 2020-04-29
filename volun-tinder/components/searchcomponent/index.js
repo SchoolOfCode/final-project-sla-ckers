@@ -8,7 +8,7 @@ function Search({ handleChange }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch(`${SERVER_URL}`)
+    fetch(`../../libs/sampleOrgProfs.js`)
       .then((response) => {
         return response.json();
       })
