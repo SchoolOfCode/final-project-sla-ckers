@@ -2,58 +2,45 @@ import React from 'react';
 import { reducer } from './index';
 
 //PLAN:
-//TODO: test animal choice
-//TODO: test environment choice
-//TODO: test localGroups choice
-//TODO: test event choice
-//TODO: test default case (by doing an action not defined in the reducer)
-//FIXME: investigate how to simplify with string interpolation/dolla squigz to reduce repetition
+//test animal choice ✅
+//test environment choice ✅
+//test localGroups choice ✅
+//test event choice ✅
+//test default case (by doing an action not defined in the reducer) ✅
 
 //FIXME: have a look into beforeEach and afterEach for tests - might help as each test should be completely stand alone, and there is some potential here for stuff to "leak" between tests
 
-/*
-TODO:
-Next step is to use variables for these. I actually like having these in a file called actionTypes.js and then exporting:
-
-export const ADD_ANIMAL_CHOICE = 'ADD_ANIMAL_CHOICE';
-export const ADD_EVENTS_CHOICE = 'ADD_EVENTS_CHOICE';
-Then you can import into both the test file and the reducer file and you'll be using the same variables everywhere. Easy to add more, and easy to change what the strings were if you wanted then (and no chance of typos).
-
-You could import into files as:
-
-import {ADD_ANIMAL_CHOICE} from '../actionTypes.js';
-
-// or
-
-import * as actions from '../actionTypes.js';
-
-// and then you'd do actions.ADD_ANIMAL_CHOICE, etc
-*/
+import {
+  ADD_ANIMAL_CHOICE,
+  ADD_ENVIRONMENT_CHOICE,
+  ADD_LOCALGROUPS_CHOICE,
+  ADD_EVENTS_CHOICE,
+} from './actionTypes';
 
 const initialState = { quizResults: [] };
 
 describe('reducer', () => {
   it('should add an animal response when animal choice is made', function () {
     const actual = reducer(initialState, {
-      type: 'add-animal-choice',
+      type: ADD_ANIMAL_CHOICE,
     });
     expect(actual).toEqual({ quizResults: ['animals'] });
   });
   it('should add an environment response when environment choice is made', function () {
     const actual = reducer(initialState, {
-      type: 'add-environment-choice',
+      type: ADD_ENVIRONMENT_CHOICE,
     });
     expect(actual).toEqual({ quizResults: ['environment'] });
   });
   it('should add an localGroups response when localGroups choice is made', function () {
     const actual = reducer(initialState, {
-      type: 'add-localGroups-choice',
+      type: ADD_LOCALGROUPS_CHOICE,
     });
     expect(actual).toEqual({ quizResults: ['localGroups'] });
   });
   it('should add an localGroups response when events choice is made', function () {
     const actual = reducer(initialState, {
-      type: 'add-events-choice',
+      type: ADD_EVENTS_CHOICE,
     });
     expect(actual).toEqual({ quizResults: ['events'] });
   });
