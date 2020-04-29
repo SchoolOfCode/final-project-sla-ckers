@@ -2,11 +2,11 @@ import React from 'react';
 import { reducer } from './index';
 
 //PLAN:
-//TODO: test animal choice
-//TODO: test environment choice
-//TODO: test localGroups choice
-//TODO: test event choice
-//TODO: test default case (by doing an action not defined in the reducer)
+//test animal choice ✅
+//test environment choice ✅
+//test localGroups choice ✅
+//test event choice ✅
+//test default case (by doing an action not defined in the reducer) ✅
 
 //FIXME: have a look into beforeEach and afterEach for tests - might help as each test should be completely stand alone, and there is some potential here for stuff to "leak" between tests
 
