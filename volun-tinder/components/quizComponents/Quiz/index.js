@@ -45,6 +45,13 @@ import React, { useState, useReducer } from 'react';
 
 import QuestionDisplay from '../QuestionDisplay/index';
 
+import {
+  ADD_ANIMAL_CHOICE,
+  ADD_ENVIRONMENT_CHOICE,
+  ADD_LOCALGROUPS_CHOICE,
+  ADD_EVENTS_CHOICE,
+} from './actionTypes';
+
 import { questions, answers } from '../../../libs/questionData';
 
 //initial state for array that stores answer categories
@@ -54,13 +61,13 @@ const initialState = { quizResults: [] };
 export function reducer(state, action) {
   const { type } = action;
   switch (type) {
-    case 'add-animal-choice':
+    case ADD_ANIMAL_CHOICE:
       return { quizResults: [...state.quizResults, 'animals'] };
-    case 'add-environment-choice':
+    case ADD_ENVIRONMENT_CHOICE:
       return { quizResults: [...state.quizResults, 'environment'] };
-    case 'add-localGroups-choice':
+    case ADD_LOCALGROUPS_CHOICE:
       return { quizResults: [...state.quizResults, 'localGroups'] };
-    case 'add-events-choice':
+    case ADD_EVENTS_CHOICE:
       return { quizResults: [...state.quizResults, 'events'] };
     default:
       return state;
