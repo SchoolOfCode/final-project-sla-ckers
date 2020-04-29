@@ -63,7 +63,7 @@ export function reducer(state, action) {
     case 'add-events-choice':
       return { quizResults: [...state.quizResults, 'events'] };
     default:
-      return { quizResults: state.quizResults };
+      return state;
   }
 }
 

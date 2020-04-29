@@ -43,18 +43,13 @@ export function matchReducer(matchState, action) {
         swipeRights: matchState.swipeRights + 1,
       };
     case 'swipe-left':
+      //for left swipe,
       console.log('swipe-left action fired');
-      return {
-        matchResults: [...matchState.matchResults],
-        swipeRights: matchState.swipeRights,
-      };
+      return matchState;
     default:
       //for anything else, just returns existing list w/o adding a match
       console.log('weird swipe yo');
-      return {
-        matchResults: [...matchState.matchResults],
-        swipeRights: matchState.swipeRights,
-      };
+      return matchState;
   }
 }
 
