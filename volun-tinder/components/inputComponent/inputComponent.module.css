@@ -1,5 +1,6 @@
 #InputComponent {
-  text-align: center;
+  text-align: left;
+
   width: 80vw;
   margin: 50px auto;
 }

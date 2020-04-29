@@ -35,7 +35,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="briefBio"
             onChange={takeInData}
-            //value={orgData.briefBio}
+            placeholder="Give a brief bio of the organisation"
             name="BriefBio"
           ></input>
         </section>
@@ -48,7 +48,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="oppDescrip"
             onChange={takeInData}
-            //value={orgData.oppDescrip}
+            placeholder="Describe the opportunity available"
             name="oppDescrip"
           ></input>
 
@@ -57,7 +57,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="timeReq"
             onChange={takeInData}
-            //value={orgData.timeReq}
+            placeholder="Indicate the number of hours a week"
             name="timeReq"
           ></input>
         </section>
@@ -72,7 +72,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="threethings1"
             onChange={takeInData}
-            //value={orgData.threethings1}
+            placeholder="Identify essential quality here"
             name="threethings1"
           ></input>
 
@@ -81,7 +81,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="threethings2"
             onChange={takeInData}
-            //value={orgData.threethings2}
+            placeholder="Identify essential quality here"
             name="threethings2"
           ></input>
 
@@ -90,7 +90,7 @@ function InputComponent({ takeInData, orgData }) {
             type="text"
             id="threethings3"
             onChange={takeInData}
-            //value={orgData.threethings3}
+            placeholder="Identify essential quality here"
             name="threethings1"
           ></input>
         </section>
@@ -116,11 +116,10 @@ function InputComponent({ takeInData, orgData }) {
           ></input>
         </section>
       </form>
+      <section className="buttons">
+        <button className="button">Post opportunity</button>
+      </section>
     </div>
-
-    //<section className="buttons">
-    //<button className="button">Complete Registration</button>
-    //</section>
   );
 }
 
