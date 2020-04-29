@@ -14,6 +14,7 @@
 //TODO: Take in the state into this match component as a prop; this should (when rendered in the right order) now have all the swiped right orgs ✅ 
 //TODO: In this component, render a nice list of all the org names and contact info for these (map fx again?) ✅ 
 
+//FIXME: have a look into beforeEach and afterEach for tests - might help as each test should be completely stand alone, and there is some potential here for stuff to "leak" between tests
 --------------------------------------------------------------------------------*/
 
 import React, { useReducer, useState } from 'react';
