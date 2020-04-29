@@ -13,7 +13,11 @@ export default function Home() {
   return (
     <div>
       <Layout>
-        <p>This is to explain what it do</p>
+        <p>
+          Welcome to Volun-Tinder, the app that aims to match individual
+          volunteers to a charity that they can pursue a long-term relationship
+          with. This app combines volunteering with dating app functionality.
+        </p>
         <Link href="/quiz">
           <a>Take me to the quiz!</a>
         </Link>
