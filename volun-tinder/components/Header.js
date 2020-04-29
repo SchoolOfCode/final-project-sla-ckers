@@ -46,11 +46,10 @@ function Header() {
           <a className="navLinks">Knowledge Base</a>
         </Link>
         <Link href="/org-form">
-          <a className="navLinks">Organisation Form</a>
-
+          <a className="navLinks">Organisations Form</a>
+        </Link>
         <Link href="/orgsList">
           <a className="navLinks">Organisations List</a>
-
         </Link>
       </div>
     </div>
