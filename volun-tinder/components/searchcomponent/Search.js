@@ -1,6 +1,7 @@
 import React from "react";
 
-//
+//Search bar input
+//on change
 
 function Search({ handleChange }) {
   function onChange(event) {
@@ -9,7 +10,7 @@ function Search({ handleChange }) {
   return (
     <input
       type="text"
-      className="search-box"
+      className="searchBox"
       placeholder="Type in an organisation name"
       onChange={onChange}
     ></input>
