@@ -45,6 +45,9 @@ function Header() {
         <Link href="/knowledge-base">
           <a className="navLinks">Knowledge Base</a>
         </Link>
+        <Link href="/org-form">
+          <a className="navLinks">Organisation Form</a>
+        </Link>
       </div>
     </div>
   );
