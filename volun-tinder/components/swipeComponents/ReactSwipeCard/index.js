@@ -1,21 +1,26 @@
 /* -----------------------------PLAN:-------------------------------------
 
 //SETUP AND TEST:
-//TODO: Install/import TinderCard and set up code ✅ 
-//TODO: Test out component with dummyOrgs data array so that the names come through and the swiping works ✅ 
+//Install/import TinderCard and set up code ✅ 
+//Test out component with dummyOrgs data array so that the names come through and the swiping works ✅ 
 
 //MAKE INTO USABLE COMPONENT WITH OUR PROPER TEST DATA:
-//TODO: Set up a prop to take in the sampleOrgProfs array of data for the relevant category (will be passed in where the component is called), and change const orgs to equal that array ✅ 
-//TODO: Have a category prop to feed into header/description ✅  
-//TODO: Incorporate images into cards!
-//TODO: Design card to pull out and display each category of info for each org individually for swiping ✅ 
-//TODO: Refactor opportunities section re: Chris's note below
-//TODO: Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.** ✅ 
-//TODO: Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed)
+//Set up a prop to take in the sampleOrgProfs array of data for the relevant category (will be passed in where the component is called), and change const orgs to equal that array ✅ 
+//Have a category prop to feed into header/description ✅  
+//Incorporate images into cards!
+//Design card to pull out and display each category of info for each org individually for swiping ✅ 
+//Refactor opportunities section re: Chris's note below
+//Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.** ✅ 
+//Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed) ✅ 
+
+//HOOK UP TO DB:
+//TODO: take in state as a prop that holds fetched data
+//TODO: 
+//TODO: 
 
 --------------------------------------------------------------------------*/
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 import Link from 'next/link';
