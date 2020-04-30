@@ -21,7 +21,7 @@ function InputComponent({ takeInData, orgData }) {
         <section>
           <h3>About the Organisation</h3>
 
-          <label htmlFor="org-name">Name of organisation:</label>
+          <label>Name of organisation:</label>
           <input
             type="text"
             id="org-name"
@@ -30,7 +30,7 @@ function InputComponent({ takeInData, orgData }) {
             name="orgName"
           ></input>
 
-          <label htmlFor="briefBio">Brief Bio of Organisation:</label>
+          <label>Brief Bio of Organisation:</label>
           <input
             type="text"
             id="briefBio"
@@ -43,7 +43,7 @@ function InputComponent({ takeInData, orgData }) {
         <section>
           <h3>Opportunities Available</h3>
 
-          <label htmlFor="oppDescrip">Description of opportunity:</label>
+          <label>Description of opportunity:</label>
           <input
             type="text"
             id="oppDescrip"
@@ -52,7 +52,7 @@ function InputComponent({ takeInData, orgData }) {
             name="oppDescrip"
           ></input>
 
-          <label htmlFor="timeReq">Weekly hourly commitment required:</label>
+          <label>Weekly hourly commitment required:</label>
           <input
             type="text"
             id="timeReq"
@@ -67,7 +67,7 @@ function InputComponent({ takeInData, orgData }) {
             with your organisation.{" "}
           </h3>
 
-          <label htmlFor="threeThings">Quality 1</label>
+          <label>Quality 1</label>
           <input
             type="text"
             id="threethings1"
@@ -76,7 +76,7 @@ function InputComponent({ takeInData, orgData }) {
             name="threethings1"
           ></input>
 
-          <label htmlFor="threeThings">Quality 2</label>
+          <label>Quality 2</label>
           <input
             type="text"
             id="threethings2"
@@ -85,7 +85,7 @@ function InputComponent({ takeInData, orgData }) {
             name="threethings2"
           ></input>
 
-          <label htmlFor="threeThings">Quality 3</label>
+          <label>Quality 3</label>
           <input
             type="text"
             id="threethings3"
@@ -97,7 +97,7 @@ function InputComponent({ takeInData, orgData }) {
         <section>
           <h3>Contact Information</h3>
 
-          <label htmlFor="contactName">Contact Name:</label>
+          <label>Contact Name:</label>
           <input
             type="text"
             id="contactName"
@@ -106,7 +106,7 @@ function InputComponent({ takeInData, orgData }) {
             name="contactName"
           ></input>
 
-          <label htmlFor="contactDetails">Email:</label>
+          <label>Email:</label>
           <input
             type="text"
             id="contactDetails"
