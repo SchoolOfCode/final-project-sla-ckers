@@ -28,14 +28,6 @@ import MatchList from '../MatchList/index';
 import { apiUrl } from '../../../libs/config';
 import { SWIPE_RIGHT, SWIPE_LEFT } from './actiontypes';
 
-//import the array of animal orgs and then pass it down through the orgs prop to the swipe component below, depending on the category
-// import {
-//   sampleAnimalOrgs,
-//   sampleEnvironmentOrgs,
-//   sampleLocalGroups,
-//   sampleEvents,
-// } from '../../../libs/sampleOrgProfs';
-
 //initial state for array that stores matches
 const initialMatchState = { matchResults: [], swipeRights: 0 };
 
@@ -86,16 +78,10 @@ export default function MatchApp({ category }) {
         //map through array of objects, and for each object, puts it into the allOrgs array:
         const orgs = data.map((org) => org);
         setAllOrgs(orgs);
-        //filters the data by the category:
-        // const categoryData = allOrgs.filter((org) => {
-        //   if (org.category === category) {
-        //     return org;
-        //   }
-        // });
-        // setCategoryOrgs(categoryData);
       });
   }, []); //ignore the warning - want it to stay [] so it acts on mount!
 
+  //filters the fetched data by category:
   useEffect(() => {
     const categoryData = allOrgs.filter((org) => {
       if (org.category === category) {
