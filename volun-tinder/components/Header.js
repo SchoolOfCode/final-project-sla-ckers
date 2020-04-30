@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import routes from "../libs/config";
 
 function Header() {
   return (
@@ -36,19 +37,19 @@ function Header() {
       {/* <img alt="logo" /> */}
       <h1>Volun-Tinder</h1>
       <div id="navLinks">
-        <Link href="./">
+        <Link href={routes.home}>
           <a className="navLinks">Home</a>
         </Link>
-        <Link href="/quiz">
+        <Link href={routes.quiz}>
           <a className="navLinks">Take the Quiz</a>
         </Link>
-        <Link href="/knowledge-base">
+        <Link href={routes.knowledgeBase}>
           <a className="navLinks">Knowledge Base</a>
         </Link>
-        <Link href="/org-form">
+        <Link href={routes.orgForm}>
           <a className="navLinks">Organisations Form</a>
         </Link>
-        <Link href="/orgsList">
+        <Link href={routes.orgList}>
           <a className="navLinks">Organisations List</a>
         </Link>
       </div>
