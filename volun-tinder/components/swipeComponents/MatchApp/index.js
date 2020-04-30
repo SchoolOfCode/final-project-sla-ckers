@@ -29,12 +29,12 @@ import { apiUrl } from '../../../libs/config';
 import { SWIPE_RIGHT, SWIPE_LEFT } from './actiontypes';
 
 //import the array of animal orgs and then pass it down through the orgs prop to the swipe component below, depending on the category
-import {
-  sampleAnimalOrgs,
-  sampleEnvironmentOrgs,
-  sampleLocalGroups,
-  sampleEvents,
-} from '../../../libs/sampleOrgProfs';
+// import {
+//   sampleAnimalOrgs,
+//   sampleEnvironmentOrgs,
+//   sampleLocalGroups,
+//   sampleEvents,
+// } from '../../../libs/sampleOrgProfs';
 
 //initial state for array that stores matches
 const initialMatchState = { matchResults: [], swipeRights: 0 };
@@ -73,6 +73,7 @@ export default function MatchApp({ category }) {
     initialMatchState
   );
 
+  //fetches the data:
   useEffect(() => {
     fetch(apiUrl)
       .then((response) => {
@@ -86,6 +87,17 @@ export default function MatchApp({ category }) {
         setAllOrgs(orgs);
       });
   }, []); //ignore the warning - want it to stay [] so it acts on mount!
+
+  //filters the data by the category:
+  useEffect(() => {
+    const categoryData = allOrgs.filter((org) => {
+      if (org.category === category) {
+        return org;
+      }
+    });
+    console.log(categoryData);
+    //FIXME:finish this!
+  });
 
   function swipeRight(org) {
     matchDispatch({ type: 'swipe-right', payload: org });
@@ -102,13 +114,13 @@ export default function MatchApp({ category }) {
         <ReactSwipeCard
           category={category}
           orgs={
-            category === 'animals'
-              ? sampleAnimalOrgs
-              : category === 'environment'
-              ? sampleEnvironmentOrgs
-              : category === 'localGroups'
-              ? sampleLocalGroups
-              : sampleEvents
+            // category === 'animals'
+            //   ? sampleAnimalOrgs
+            //   : category === 'environment'
+            //   ? sampleEnvironmentOrgs
+            //   : category === 'localGroups'
+            //   ? sampleLocalGroups
+            //   : sampleEvents
           }
           swipeRight={swipeRight}
           showMatchList={showMatchList}
