@@ -87,17 +87,27 @@ export default function MatchApp({ category }) {
         const orgs = data.map((org) => org);
         setAllOrgs(orgs);
         //filters the data by the category:
-        const categoryData = allOrgs.filter((org) => {
-          if (org.category === category) {
-            return org;
-          }
-        });
-        setCategoryOrgs(categoryData);
+        // const categoryData = allOrgs.filter((org) => {
+        //   if (org.category === category) {
+        //     return org;
+        //   }
+        // });
+        // setCategoryOrgs(categoryData);
       });
-  }, [category]); //ignore the warning - want it to stay [] so it acts on mount!
+  }, []); //ignore the warning - want it to stay [] so it acts on mount!
+
+  useEffect(() => {
+    const categoryData = allOrgs.filter((org) => {
+      if (org.category === category) {
+        return org;
+      }
+    });
+    console.log({ categoryData });
+    setCategoryOrgs(categoryData);
+  }, [allOrgs, category]);
 
   function swipeRight(org) {
-    matchDispatch({ type: 'swipe-right', payload: org });
+    matchDispatch({ type: SWIPE_RIGHT, payload: org });
   }
 
   function showMatchList() {
