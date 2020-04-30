@@ -84,16 +84,16 @@ function Quiz({ setHighestCat, setQuizOver }) {
   //function that adds the category and then counts the answer (and, once questionToShow reaches 4, triggers calculateResults):
   function handleClick(category) {
     if (category === 0) {
-      dispatch({ type: 'add-animal-choice' });
+      dispatch({ type: ADD_ANIMAL_CHOICE });
     }
     if (category === 1) {
-      dispatch({ type: 'add-environment-choice' });
+      dispatch({ type: ADD_ENVIRONMENT_CHOICE });
     }
     if (category === 2) {
-      dispatch({ type: 'add-localGroups-choice' });
+      dispatch({ type: ADD_LOCALGROUPS_CHOICE });
     }
     if (category === 3) {
-      dispatch({ type: 'add-events-choice' });
+      dispatch({ type: ADD_EVENTS_CHOICE });
     }
     console.log(state.quizResults);
     questionToShow < 4
