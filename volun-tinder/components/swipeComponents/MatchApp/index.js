@@ -17,8 +17,8 @@
 //FIXME: have a look into beforeEach and afterEach for tests - might help as each test should be completely stand alone, and there is some potential here for stuff to "leak" between tests
 
 //HOOKING UP TO DB:
-//TODO: import api url and use it in a useEffect to fetch
-//TODO: make state to hold the data that's fetched (make sure it's all async/awaited up and not a pending promise!)
+//import api url and use it in a useEffect to fetch ✅  
+//TODO: make state to hold the data that's fetched and ensure that comes through correctly 
 //TODO: pass this down as props to ReactSwipeCard and MatchList
 --------------------------------------------------------------------------------*/
 
@@ -62,8 +62,8 @@ export function matchReducer(matchState, action) {
 }
 
 export default function MatchApp({ category }) {
-  //state to take in fetched orgs:
-  const [orgsData, setOrgsData] = useState({});
+  //state to store orgs from fetch:
+  const [allOrgs, setAllOrgs] = useState([]);
   //state to handle cond rendering of match list after swiping:
   const [swipesDone, setSwipesDone] = useState(false);
 
@@ -79,10 +79,13 @@ export default function MatchApp({ category }) {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        setOrgsData(data);
+        //console.log(data);
+        //data is an array of objects -> [{org}, {org}, {org}]
+        //map through array of objects, and for each object, push it into the orgData array
+        const orgs = data.map((org) => org);
+        setAllOrgs(orgs);
       });
-  }, []);
+  }, []); //ignore the warning - want it to stay [] so it acts on mount!
 
   function swipeRight(org) {
     matchDispatch({ type: 'swipe-right', payload: org });
