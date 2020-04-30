@@ -82,23 +82,19 @@ export default function MatchApp({ category }) {
         return response.json();
       })
       .then((data) => {
-        //console.log(data);
         //data is an array of objects -> [{org}, {org}, {org}]
-        //map through array of objects, and for each object, push it into the orgData array
+        //map through array of objects, and for each object, puts it into the allOrgs array:
         const orgs = data.map((org) => org);
         setAllOrgs(orgs);
+        //filters the data by the category:
+        const categoryData = allOrgs.filter((org) => {
+          if (org.category === category) {
+            return org;
+          }
+        });
+        setCategoryOrgs(categoryData);
       });
-  }, []); //ignore the warning - want it to stay [] so it acts on mount!
-
-  //filters the data by the category:
-  useEffect(() => {
-    const categoryData = allOrgs.filter((org) => {
-      if (org.category === category) {
-        return org;
-      }
-    });
-    setCategoryOrgs(categoryData);
-  });
+  }, [category]); //ignore the warning - want it to stay [] so it acts on mount!
 
   function swipeRight(org) {
     matchDispatch({ type: 'swipe-right', payload: org });
