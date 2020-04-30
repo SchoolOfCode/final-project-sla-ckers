@@ -40,7 +40,6 @@ function InputComponent({ takeInData, orgData }) {
           </p>
           <p>
             <input
-              id={css.briefBio}
               className={css.input}
               type="text"
               id="briefBio"
@@ -163,8 +162,8 @@ function InputComponent({ takeInData, orgData }) {
         </section>
       </form>
       <br></br>
-      <section className="buttons">
-        <button className="button">Post opportunity</button>
+      <section>
+        <button className={css.button}>Post opportunity</button>
       </section>
     </div>
   );
