@@ -1,6 +1,15 @@
 #InputComponent {
   text-align: left;
-
   width: 80vw;
   margin: 50px auto;
+  overflow: auto;
+}
+
+.input {
+  width: 500px;
+  height: 2vw;
+}
+
+#briefBio {
+  height: 20vw;
 }
