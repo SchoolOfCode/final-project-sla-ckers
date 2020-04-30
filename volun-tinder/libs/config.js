@@ -3,4 +3,5 @@ export const routes = {
   quiz: "/quiz",
   knowledgeBase: "/knowledge-base",
   orgForm: "/org-form",
+  orgList: "/org-list",
 };
