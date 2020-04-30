@@ -1,20 +1,22 @@
 import React from 'react';
 import { matchReducer } from './index';
 
+import { SWIPE_RIGHT, SWIPE_LEFT } from './actiontypes';
+
 const initialMatchState = { matchResults: [], swipeRights: 0 };
 const org = { orgName: 'Test Org' };
 
 describe('matchReducer', () => {
   it('should add test org to matchResults array when swiped right', function () {
     const actual = matchReducer(initialMatchState, {
-      type: 'swipe-right',
+      type: SWIPE_RIGHT,
       payload: org,
     });
     expect(actual).toEqual({ matchResults: [org], swipeRights: 1 });
   });
   it('should not add test org to matchResults array when swiped left', function () {
     const actual = matchReducer(initialMatchState, {
-      type: 'swipe-left',
+      type: SWIPE_LEFT,
       payload: org,
     });
     expect(actual).toEqual(initialMatchState);

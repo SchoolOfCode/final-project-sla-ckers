@@ -2,76 +2,125 @@ import React from "react";
 
 import css from "./inputComponent.module.css";
 
-//Create a basic form for volunteers to log their details following the swipe component.
-//Details provided by the volunteer will be used to populate individual profiles/cards
-//TODO: Create a form that captures the following data:  firstName, lastName, location, charityType, hrCommitment, bio.
+//Create a basic form for orgs to log their opportunity details.
+//Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
+//TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, threeThings, contactName and contactDetails.
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-function volunteerRegistration({ takeInData }, { volunteerData }) {
+function InputComponent({ takeInData, orgData }) {
   return (
-    <div>
-      <form className="volunteerForm">
-        <label for="contact-fname">First Name:</label>
-        <input
-          type="text"
-          id="contact-fname"
-          onChange={takeInData}
-          //value={volunteerData.firstName}
-          name="firstName"
-        ></input>
+    <div id={css.InputComponent}>
+      <form className="orgForm">
+        <h1>Post your voluntary opportunities</h1>
 
-        <label for="contact-lname">Last Name:</label>
-        <input
-          type="text"
-          id="contact-lname"
-          onChange={takeInData}
-          //value={volunteerData.lastName}
-          name="lastName"
-        ></input>
+        <h3>
+          Please complete the form below with details about your opportunities.
+        </h3>
 
-        <label for="location">Location</label>
-        <input
-          type="text"
-          id="location"
-          onChange={takeInData}
-          //value={volunteerData.location}
-          name="location"
-        ></input>
+        <section>
+          <h3>About the Organisation</h3>
 
-        <label for="charityType">Charity Type:</label>
-        <input
-          type="text"
-          id="location"
-          onChange={takeInData}
-          //value={volunteerData.charityType}
-          name="charityType"
-        ></input>
+          <label htmlFor="org-name">Name of organisation:</label>
+          <input
+            type="text"
+            id="org-name"
+            onChange={takeInData}
+            placeholder="Name of organisation"
+            name="orgName"
+          ></input>
 
-        <label for="hours">Hours available a week:</label>
-        <input
-          type="text"
-          id="hours"
-          onChange={takeInData}
-          //value={volunteerData.hours}
-          name="hours"
-        ></input>
+          <label htmlFor="briefBio">Brief Bio of Organisation:</label>
+          <input
+            type="text"
+            id="briefBio"
+            onChange={takeInData}
+            placeholder="Give a brief bio of the organisation"
+            name="BriefBio"
+          ></input>
+        </section>
 
-        <label for="bio">Volunteer Bio:</label>
-        <input
-          type="text"
-          id="bio"
-          onChange={takeInData}
-          //value={volunteerData.bio}
-          name="bio"
-        ></input>
+        <section>
+          <h3>Opportunities Available</h3>
+
+          <label htmlFor="oppDescrip">Description of opportunity:</label>
+          <input
+            type="text"
+            id="oppDescrip"
+            onChange={takeInData}
+            placeholder="Describe the opportunity available"
+            name="oppDescrip"
+          ></input>
+
+          <label htmlFor="timeReq">Weekly hourly commitment required:</label>
+          <input
+            type="text"
+            id="timeReq"
+            onChange={takeInData}
+            placeholder="Indicate the number of hours a week"
+            name="timeReq"
+          ></input>
+        </section>
+        <section>
+          <h3>
+            Identify three essential qualities the volunteer needs to be a match
+            with your organisation.{" "}
+          </h3>
+
+          <label htmlFor="threeThings">Quality 1</label>
+          <input
+            type="text"
+            id="threethings1"
+            onChange={takeInData}
+            placeholder="Identify essential quality here"
+            name="threethings1"
+          ></input>
+
+          <label htmlFor="threeThings">Quality 2</label>
+          <input
+            type="text"
+            id="threethings2"
+            onChange={takeInData}
+            placeholder="Identify essential quality here"
+            name="threethings2"
+          ></input>
+
+          <label htmlFor="threeThings">Quality 3</label>
+          <input
+            type="text"
+            id="threethings3"
+            onChange={takeInData}
+            placeholder="Identify essential quality here"
+            name="threethings1"
+          ></input>
+        </section>
+        <section>
+          <h3>Contact Information</h3>
+
+          <label htmlFor="contactName">Contact Name:</label>
+          <input
+            type="text"
+            id="contactName"
+            onChange={takeInData}
+            placeholder="Contact Name"
+            name="contactName"
+          ></input>
+
+          <label htmlFor="contactDetails">Email:</label>
+          <input
+            type="text"
+            id="contactDetails"
+            onChange={takeInData}
+            placeholder="Email"
+            name="contactDetails"
+          ></input>
+        </section>
       </form>
+      <section className="buttons">
+        <button className="button">Post opportunity</button>
+      </section>
     </div>
-
-    //<section className="buttons">
-    //<button className="button">Complete Registration</button>
-    //</section>
   );
 }
 
-export default volunteerRegistration;
+export default InputComponent;
