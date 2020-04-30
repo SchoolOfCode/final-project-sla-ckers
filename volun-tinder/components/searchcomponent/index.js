@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { apiUrl } from '../../libs/config';
 
 //Search bar input
 //on change takes in input and sets the search term
@@ -11,10 +12,10 @@ import React, { useState, useEffect } from "react";
 
 function Search({ handleChange }) {
   const [list, setList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch(`https://hnyslsh8ne.execute-api.eu-west-1.amazonaws.com/dev/orgs`)
+    fetch(apiUrl)
       .then((response) => {
         return response.json();
       })
