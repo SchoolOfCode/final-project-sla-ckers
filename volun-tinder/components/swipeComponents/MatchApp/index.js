@@ -64,6 +64,8 @@ export function matchReducer(matchState, action) {
 export default function MatchApp({ category }) {
   //state to store orgs from fetch:
   const [allOrgs, setAllOrgs] = useState([]);
+  //state to store orgs matching specific category:
+  const [categoryOrgs, setCategoryOrgs] = useState([]);
   //state to handle cond rendering of match list after swiping:
   const [swipesDone, setSwipesDone] = useState(false);
 
@@ -95,8 +97,7 @@ export default function MatchApp({ category }) {
         return org;
       }
     });
-    console.log(categoryData);
-    //FIXME:finish this!
+    setCategoryOrgs(categoryData);
   });
 
   function swipeRight(org) {
@@ -113,15 +114,7 @@ export default function MatchApp({ category }) {
       {!swipesDone && (
         <ReactSwipeCard
           category={category}
-          orgs={
-            // category === 'animals'
-            //   ? sampleAnimalOrgs
-            //   : category === 'environment'
-            //   ? sampleEnvironmentOrgs
-            //   : category === 'localGroups'
-            //   ? sampleLocalGroups
-            //   : sampleEvents
-          }
+          orgs={categoryOrgs}
           swipeRight={swipeRight}
           showMatchList={showMatchList}
           matchesList={matchState.matchResults}
@@ -133,7 +126,7 @@ export default function MatchApp({ category }) {
       {swipesDone && (
         <MatchList
           category={category}
-          orgs={sampleAnimalOrgs}
+          orgs={categoryOrgs}
           matchesList={matchState.matchResults}
         />
       )}
