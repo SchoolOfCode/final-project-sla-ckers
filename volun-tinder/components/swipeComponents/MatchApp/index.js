@@ -15,21 +15,18 @@
 //In this component, render a nice list of all the org names and contact info for these (map fx again?) ✅ 
 
 //FIXME: have a look into beforeEach and afterEach for tests - might help as each test should be completely stand alone, and there is some potential here for stuff to "leak" between tests
+
+//HOOKING UP TO DB:
+//import api url and use it in a useEffect to fetch ✅  
+//TODO: make state to hold the data that's fetched and ensure that comes through correctly 
+//TODO: pass this down as props to ReactSwipeCard and MatchList
 --------------------------------------------------------------------------------*/
 
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import ReactSwipeCard from '../ReactSwipeCard/index';
 import MatchList from '../MatchList/index';
-
+import { apiUrl } from '../../../libs/config';
 import { SWIPE_RIGHT, SWIPE_LEFT } from './actiontypes';
-
-//import the array of animal orgs and then pass it down through the orgs prop to the swipe component below, depending on the category
-import {
-  sampleAnimalOrgs,
-  sampleEnvironmentOrgs,
-  sampleLocalGroups,
-  sampleEvents,
-} from '../../../libs/sampleOrgProfs';
 
 //initial state for array that stores matches
 const initialMatchState = { matchResults: [], swipeRights: 0 };
@@ -57,6 +54,10 @@ export function matchReducer(matchState, action) {
 }
 
 export default function MatchApp({ category }) {
+  //state to store orgs from fetch:
+  const [allOrgs, setAllOrgs] = useState([]);
+  //state to store orgs matching specific category:
+  const [categoryOrgs, setCategoryOrgs] = useState([]);
   //state to handle cond rendering of match list after swiping:
   const [swipesDone, setSwipesDone] = useState(false);
 
@@ -66,8 +67,33 @@ export default function MatchApp({ category }) {
     initialMatchState
   );
 
+  //fetches the data:
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        //data is an array of objects -> [{org}, {org}, {org}]
+        //map through array of objects, and for each object, puts it into the allOrgs array:
+        const orgs = data.map((org) => org);
+        setAllOrgs(orgs);
+      });
+  }, []); //ignore the warning - want it to stay [] so it acts on mount!
+
+  //filters the fetched data by category:
+  useEffect(() => {
+    const categoryData = allOrgs.filter((org) => {
+      if (org.category === category) {
+        return org;
+      }
+    });
+    console.log({ categoryData });
+    setCategoryOrgs(categoryData);
+  }, [allOrgs, category]);
+
   function swipeRight(org) {
-    matchDispatch({ type: 'swipe-right', payload: org });
+    matchDispatch({ type: SWIPE_RIGHT, payload: org });
   }
 
   function showMatchList() {
@@ -80,15 +106,7 @@ export default function MatchApp({ category }) {
       {!swipesDone && (
         <ReactSwipeCard
           category={category}
-          orgs={
-            category === 'animals'
-              ? sampleAnimalOrgs
-              : category === 'environment'
-              ? sampleEnvironmentOrgs
-              : category === 'localGroups'
-              ? sampleLocalGroups
-              : sampleEvents
-          }
+          orgs={categoryOrgs}
           swipeRight={swipeRight}
           showMatchList={showMatchList}
           matchesList={matchState.matchResults}
@@ -100,7 +118,7 @@ export default function MatchApp({ category }) {
       {swipesDone && (
         <MatchList
           category={category}
-          orgs={sampleAnimalOrgs}
+          orgs={categoryOrgs}
           matchesList={matchState.matchResults}
         />
       )}
