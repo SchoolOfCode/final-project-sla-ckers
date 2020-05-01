@@ -39,6 +39,7 @@ const intialOrgData = {
 
 function formReducer(orgData, action) {
   const { type, payload } = action;
+
   switch (type) {
     case OPPDESCRIP_CHANGE:
       return {
@@ -113,11 +114,14 @@ function InputComponent() {
     console.log({ name, input });
   }
 
-  function handleSubmit() {}
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log({ orgData });
+  }
 
   return (
     <div className={css.form}>
-      <form className="orgForm" onSubmit={handleSubmit}>
+      <form className="orgForm">
         <h1>Post your voluntary opportunities</h1>
         <h3>
           Please complete the form below with details about your opportunities.
@@ -277,7 +281,7 @@ function InputComponent() {
         </section>
       </form>
       <section className={css.submitBtnSection}>
-        <button className={css.button}>Post opportunity</button>
+        <input type="submit" className={css.button} onClick={handleSubmit} />
       </section>
     </div>
   );
