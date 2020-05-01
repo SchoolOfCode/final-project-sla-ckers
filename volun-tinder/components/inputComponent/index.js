@@ -131,7 +131,7 @@ function InputComponent({}) {
               className={css.input}
               type="text"
               id="threethings2"
-              onChange={handleChange.threeThings[1]}
+              onChange={handleChange}
               value={orgData.threeThings[1]}
               placeholder="Identify essential quality here"
               name="threethings2"
