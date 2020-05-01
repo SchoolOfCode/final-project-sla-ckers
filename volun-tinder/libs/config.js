@@ -3,9 +3,9 @@ export const routes = {
   quiz: '/quiz',
   knowledgeBase: '/knowledge-base',
   orgForm: '/org-form',
+  orgList: '/orgsList',
 };
 
 //Base URL to data in Lambda/DynamoDB - import where fetching!
 export const apiUrl =
   'https://hnyslsh8ne.execute-api.eu-west-1.amazonaws.com/dev/orgs/';
-

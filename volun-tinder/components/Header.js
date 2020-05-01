@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Head from "next/head";
-import routes from "../libs/config";
+import React from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { routes } from '../libs/config';
 
 function Header() {
   return (

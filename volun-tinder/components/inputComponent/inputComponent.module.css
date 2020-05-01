@@ -1,6 +1,31 @@
 #InputComponent {
   text-align: left;
-
   width: 80vw;
   margin: 50px auto;
+  overflow: auto;
+}
+
+.form {
+  padding: 20px;
+}
+
+.input {
+  width: 500px;
+  height: 2vw;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.button {
+  width: 160px;
+  height: 3em;
+  border-radius: 32px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.submitBtnSection {
+  padding-top: 40px;
 }
