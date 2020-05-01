@@ -25,7 +25,13 @@ const intialOrgData = {
       timeReq: '',
     },
   ],
-  threeThings: ['', '', ''],
+  threeThings: [
+    {
+      threeThings1: '',
+      threeThings2: '',
+      threeThings3: '',
+    },
+  ],
   contactName: '',
   contactDetails: '',
   img: '',
@@ -47,17 +53,17 @@ function formReducer(orgData, action) {
     case THING_ONE_CHANGE:
       return {
         ...orgData,
-        [orgData.threeThings[0]]: payload.input,
+        [orgData.threeThings.threeThings1]: payload.input,
       };
     case THING_TWO_CHANGE:
       return {
         ...orgData,
-        [orgData.threeThings[1]]: payload.input,
+        [orgData.threeThings.threeThings2]: payload.input,
       };
     case THING_THREE_CHANGE:
       return {
         ...orgData,
-        [orgData.threeThings[2]]: payload.input,
+        [orgData.threeThings.threeThings3]: payload.input,
       };
     case OTHER_CHANGE:
       return {
@@ -70,65 +76,6 @@ function formReducer(orgData, action) {
 }
 
 function InputComponent() {
-  // const [orgData, setOrgData] = useState({
-  //   orgName: '',
-  //   category: '',
-  //   briefBio: '',
-  //   opportunities: [
-  //     {
-  //       oppDescrip: '',
-  //       timeReq: '',
-  //     },
-  //   ],
-  //   threeThings: ['', '', ''],
-  //   contactName: '',
-  //   contactDetails: '',
-  //   img: '',
-  // });
-
-  // const [thing1, setThing1] = useState('');
-  // const [thing2, setThing2] = useState('');
-  // const [thing3, setThing3] = useState('');
-
-  // const [threeThingsData, setThreeThingsData] = useState([]);
-
-  // const [opportunitiesData, setOpportunitiesData] = useState({
-  //   oppDescrip: '',
-  //   timeReq: '',
-  // });
-
-  // function handleChange(event) {
-  //   setOrgData({ ...orgData, threeThings: threeThingsData });
-  //   setOrgData({ ...orgData, opportunities: [opportunitiesData] });
-  //   console.log({ [event.target.name]: event.target.value });
-  // }
-
-  // function handleChangeThings(event) {
-  //   //This is complicated and convoluted, I know! Will try and refactor to make it snappier soon... Just want to try and get it working for now!
-  //   //FIXME: potential useReducer?
-  //   switch (event.target.name) {
-  //     case 'threeThings1':
-  //       setThing1(event.target.value);
-  //       break;
-  //     case 'threeThings2':
-  //       setThing2(event.target.value);
-  //       break;
-  //     case 'threeThings3':
-  //       setThing3(event.target.value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  //   setThreeThingsData([thing1, thing2, thing3]);
-  // }
-
-  // function handleChangeOpportunities(event) {
-  //   setOpportunitiesData({
-  //     ...opportunitiesData,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // }
-
   const [orgData, formDispatch] = useReducer(formReducer, intialOrgData);
 
   function handleChangeOpp(event) {
@@ -263,7 +210,7 @@ function InputComponent() {
               type="text"
               id="threeThings1"
               onChange={handleChangeThing}
-              value={orgData.threeThings[0]}
+              value={orgData.threeThings.threeThings1}
               placeholder="Identify essential quality here"
               name="threeThings1"
             ></input>
@@ -277,7 +224,7 @@ function InputComponent() {
               type="text"
               id="threeThings2"
               onChange={handleChangeThing}
-              value={orgData.threeThings[1]}
+              value={orgData.threeThings.threeThings2}
               placeholder="Identify essential quality here"
               name="threeThings2"
             ></input>
@@ -289,11 +236,11 @@ function InputComponent() {
             <input
               className={css.input}
               type="text"
-              id="threeThings1"
+              id="threeThings3"
               onChange={handleChangeThing}
-              value={orgData.threeThings[2]}
+              value={orgData.threeThings.threeThings3}
               placeholder="Identify essential quality here"
-              name="threeThings1"
+              name="threeThings3"
             ></input>
           </p>
         </section>
