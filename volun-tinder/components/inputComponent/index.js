@@ -21,7 +21,10 @@ function InputComponent({}) {
     contactDetails: "",
     img: "",
   });
-  function handleChange(event) {}
+  function handleChange(event) {
+    console.log({ [event.target.name]: event.target.value });
+    setOrgData({ ...orgData, [event.target.name]: event.target.value });
+  }
   function handleSubmit() {}
   return (
     <div className={css.form}>
