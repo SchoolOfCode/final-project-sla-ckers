@@ -25,10 +25,14 @@ function InputComponent({}) {
     console.log({ [event.target.name]: event.target.value });
     setOrgData({ ...orgData, [event.target.name]: event.target.value });
   }
-  function handleSubmit() {}
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(orgData);
+  }
+
   return (
     <div className={css.form}>
-      <form className="orgForm" onSubmit={handleSubmit}>
+      <form className="orgForm">
         <h1>Post your voluntary opportunities</h1>
         <h3>
           Please complete the form below with details about your opportunities.
@@ -188,7 +192,7 @@ function InputComponent({}) {
         </section>
       </form>
       <section className={css.submitBtnSection}>
-        <button className={css.button}>Post opportunity</button>
+        <input type="submit" className={css.button} onSubmit={handleSubmit} />
       </section>
     </div>
   );
