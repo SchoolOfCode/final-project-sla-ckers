@@ -2,6 +2,7 @@ const { createServer } = require("http");
 const { join } = require("path");
 const { parse } = require("url");
 const next = require("next");
+const PORT = process.env.PORT || 3000;
 
 const app = next({ dev: process.env.NODE_ENV !== "production" });
 const handle = app.getRequestHandler();
@@ -19,7 +20,7 @@ app.prepare().then(() => {
     } else {
       handle(req, res, parsedUrl);
     }
-  }).listen(3001, () => {
-    console.log(`> Ready on http://localhost:${3001}`);
+  }).listen(PORT, () => {
+    console.log(`custom server Ready on http://localhost:${PORT}`);
   });
 });
