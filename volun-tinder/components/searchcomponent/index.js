@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { apiUrl } from '../../libs/config';
+import React, { useState, useEffect } from "react";
+import { apiUrl } from "../../libs/config";
 
 //Search bar input
-//on change takes in input and sets the search term
-//fires handleChange which fetches organisation data from DB
-//renders organisation data
+//on change takes in input
+//fires handleChange which sets searchTerm state to what's inputted
+//fetches org data from DB
+//filters data by org name and renders on page.
 //        - Org name
 //        - Org image
 
@@ -12,7 +13,7 @@ import { apiUrl } from '../../libs/config';
 
 function Search({ handleChange }) {
   const [list, setList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch(apiUrl)
