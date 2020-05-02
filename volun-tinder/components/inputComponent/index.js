@@ -25,16 +25,9 @@ const intialOrgData = {
       timeReq: '',
     },
   ],
-  threeThings: [
-    // {
-    //   threeThings1: '',
-    //   threeThings2: '',
-    //   threeThings3: '',
-    // },
-    '',
-    '',
-    '',
-  ],
+  threeThings1: '',
+  threeThings2: '',
+  threeThings3: '',
   contactName: '',
   contactDetails: '',
   img: '',
@@ -45,37 +38,19 @@ function formReducer(orgData, action) {
 
   switch (type) {
     case OPPDESCRIP_CHANGE:
-      console.log('OPPDESCRIP_CHANGE in reducer', payload);
+      console.log('OPPDESCRIP_CHANGE in reducer', { payload });
       return {
         ...orgData,
-        [orgData.opportunities.oppDescrip]: payload.input,
+        [orgData.opportunities[0].oppDescrip]: payload.input,
       };
     case TIMEREQ_CHANGE:
-      console.log('TIMEREQ_CHANGE in reducer', payload);
+      console.log('TIMEREQ_CHANGE in reducer', { payload });
       return {
         ...orgData,
-        [orgData.opportunities.timeReq]: payload.input,
-      };
-    case THING_ONE_CHANGE:
-      console.log('THING_ONE_CHANGE in reducer', payload);
-      return {
-        ...orgData,
-        [orgData.threeThings.threeThings1]: payload.input,
-      };
-    case THING_TWO_CHANGE:
-      console.log('THING_TWO_CHANGE in reducer', payload);
-      return {
-        ...orgData,
-        [orgData.threeThings.threeThings2]: payload.input,
-      };
-    case THING_THREE_CHANGE:
-      console.log('THING_THREE_CHANGE in reducer', payload);
-      return {
-        ...orgData,
-        [orgData.threeThings.threeThings3]: payload.input,
+        [orgData.opportunities[0].timeReq]: payload.input,
       };
     case OTHER_CHANGE:
-      console.log('OTHER_CHANGE in reducer', payload);
+      console.log('OTHER_CHANGE in reducer', { payload });
       return {
         ...orgData,
         [payload.name]: payload.input,
@@ -100,27 +75,7 @@ function InputComponent() {
     }
     console.log({ name, input });
   }
-  function handleChangeThing(event) {
-    let input = event.target.value;
-    let name = event.target.name;
-    switch (name) {
-      case 'threeThings1':
-        console.log('handleChangeThing: threeThings1 fx hit');
-        formDispatch({ type: THING_ONE_CHANGE, payload: input });
-        break;
-      case 'threeThings2':
-        console.log('handleChangeThing: threeThings2 fx hit');
-        formDispatch({ type: THING_TWO_CHANGE, payload: input });
-        break;
-      case 'threeThings3':
-        console.log('handleChangeThing: threeThings3 fx hit');
-        formDispatch({ type: THING_THREE_CHANGE, payload: input });
-        break;
-      default:
-        return;
-    }
-    console.log({ name, input });
-  }
+
   function handleChangeOther(event) {
     let name = event.target.name;
     let input = event.target.value;
@@ -227,8 +182,8 @@ function InputComponent() {
               className={css.input}
               type="text"
               id="threeThings1"
-              onChange={handleChangeThing}
-              value={orgData.threeThings.threeThings1}
+              onChange={handleChangeOther}
+              value={orgData.threeThings1}
               placeholder="Identify essential quality here"
               name="threeThings1"
             ></input>
@@ -241,8 +196,8 @@ function InputComponent() {
               className={css.input}
               type="text"
               id="threeThings2"
-              onChange={handleChangeThing}
-              value={orgData.threeThings.threeThings2}
+              onChange={handleChangeOther}
+              value={orgData.threeThings2}
               placeholder="Identify essential quality here"
               name="threeThings2"
             ></input>
@@ -255,8 +210,8 @@ function InputComponent() {
               className={css.input}
               type="text"
               id="threeThings3"
-              onChange={handleChangeThing}
-              value={orgData.threeThings.threeThings3}
+              onChange={handleChangeOther}
+              value={orgData.threeThings3}
               placeholder="Identify essential quality here"
               name="threeThings3"
             ></input>
