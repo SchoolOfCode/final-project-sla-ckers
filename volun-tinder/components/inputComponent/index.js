@@ -26,11 +26,14 @@ const intialOrgData = {
     },
   ],
   threeThings: [
-    {
-      threeThings1: '',
-      threeThings2: '',
-      threeThings3: '',
-    },
+    // {
+    //   threeThings1: '',
+    //   threeThings2: '',
+    //   threeThings3: '',
+    // },
+    '',
+    '',
+    '',
   ],
   contactName: '',
   contactDetails: '',
@@ -42,31 +45,37 @@ function formReducer(orgData, action) {
 
   switch (type) {
     case OPPDESCRIP_CHANGE:
+      console.log('OPPDESCRIP_CHANGE in reducer', payload);
       return {
         ...orgData,
         [orgData.opportunities.oppDescrip]: payload.input,
       };
     case TIMEREQ_CHANGE:
+      console.log('TIMEREQ_CHANGE in reducer', payload);
       return {
         ...orgData,
         [orgData.opportunities.timeReq]: payload.input,
       };
     case THING_ONE_CHANGE:
+      console.log('THING_ONE_CHANGE in reducer', payload);
       return {
         ...orgData,
         [orgData.threeThings.threeThings1]: payload.input,
       };
     case THING_TWO_CHANGE:
+      console.log('THING_TWO_CHANGE in reducer', payload);
       return {
         ...orgData,
         [orgData.threeThings.threeThings2]: payload.input,
       };
     case THING_THREE_CHANGE:
+      console.log('THING_THREE_CHANGE in reducer', payload);
       return {
         ...orgData,
         [orgData.threeThings.threeThings3]: payload.input,
       };
     case OTHER_CHANGE:
+      console.log('OTHER_CHANGE in reducer', payload);
       return {
         ...orgData,
         [payload.name]: payload.input,
@@ -83,8 +92,10 @@ function InputComponent() {
     let input = event.target.value;
     let name = event.target.name;
     if (name === 'oppDescrip') {
+      console.log('handleChangeOpp: oppDescrip fx hit');
       formDispatch({ type: OPPDESCRIP_CHANGE, payload: input });
     } else {
+      console.log('handleChangeOpp: timeReq fx hit');
       formDispatch({ type: TIMEREQ_CHANGE, payload: input });
     }
     console.log({ name, input });
@@ -94,12 +105,15 @@ function InputComponent() {
     let name = event.target.name;
     switch (name) {
       case 'threeThings1':
+        console.log('handleChangeThing: threeThings1 fx hit');
         formDispatch({ type: THING_ONE_CHANGE, payload: input });
         break;
       case 'threeThings2':
+        console.log('handleChangeThing: threeThings2 fx hit');
         formDispatch({ type: THING_TWO_CHANGE, payload: input });
         break;
       case 'threeThings3':
+        console.log('handleChangeThing: threeThings3 fx hit');
         formDispatch({ type: THING_THREE_CHANGE, payload: input });
         break;
       default:
