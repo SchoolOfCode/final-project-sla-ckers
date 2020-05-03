@@ -90,14 +90,14 @@ function ReactSwipeCard({
               </p>
               {/* FIXME: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
               <p>
-                {org.opportunity.oppDescrip} - {org.opportunity.timeReq} hours
-                per week
+                {org.opportunities.oppDescrip} - {org.opportunities.timeReq}{' '}
+                hours per week
               </p>
               <p>What we're looking for in a match:</p>
               <ul className={css.qualitiesList}>
-                <li>{org.threeThings1}</li>
-                <li>{org.threeThings2}</li>
-                <li>{org.threeThings3}</li>
+                {org.qualities.map((quality) => (
+                  <li>{quality}</li>
+                ))}
               </ul>
             </div>
           </TinderCard>
