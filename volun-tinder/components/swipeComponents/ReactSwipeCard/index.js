@@ -13,11 +13,6 @@
 //Set up state (or reducer??) to record orgs that have been swiped right on (with function to do this on the right direction's swipe) - **NOTE: This may or may not need to be on this level or higher up... We'll see how it goes.** ✅ 
 //Need a way to progress to the match page (button or triggered on last swipe...?); conditionally render so it's not showing until the swiping is done (if button!) -> hook up to match page (or placeholder until match page is designed) ✅ 
 
-//HOOK UP TO DB:
-//TODO: take in state as a prop that holds fetched data
-//TODO: 
-//TODO: 
-
 --------------------------------------------------------------------------*/
 
 import React, { useState, useEffect } from 'react';
@@ -61,7 +56,7 @@ function ReactSwipeCard({
       </h2>
 
       {/* Message that renders based on swipe direction: */}
-      {/* TODO: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
+      {/* FIXME: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
       {lastDirection ? (
         lastDirection === 'right' ? (
           <h2 className={css.infoText}>
@@ -93,19 +88,16 @@ function ReactSwipeCard({
                 Is it us you're looking for? Swipe right if this sounds like
                 something you'd enjoy:
               </p>
-              {/* TODO: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
-              {org.opportunities.map((opp) => (
-                <p>
-                  {opp.oppDescrip} - {opp.timeReq}
-                </p>
-              ))}
-              {/* <p>{org.opportunities[0].oppDescrip}</p>
-              <p>Time requirement: {org.opportunities[0].timeReq}</p> */}
+              {/* FIXME: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
+              <p>
+                {org.opportunity.oppDescrip} - {org.opportunity.timeReq} hours
+                per week
+              </p>
               <p>What we're looking for in a match:</p>
               <ul className={css.qualitiesList}>
-                {org.threeThings.map((thing) => (
-                  <li>{thing}</li>
-                ))}
+                <li>{org.threeThings1}</li>
+                <li>{org.threeThings2}</li>
+                <li>{org.threeThings3}</li>
               </ul>
             </div>
           </TinderCard>
