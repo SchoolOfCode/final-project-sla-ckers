@@ -2,11 +2,12 @@ import React, { useState, useReducer } from 'react';
 import css from './inputComponent.module.css';
 //Create a basic form for orgs to log their opportunity details.
 //Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
-//TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, threeThings, contactName and contactDetails.
+//TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails.
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-import { OPP_CHANGE, OTHER_CHANGE } from './actionTypes';
+import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from './actionTypes';
+import { apiUrl } from '../../libs/config';
 
 const intialOrgData = {
   orgName: '',
@@ -16,9 +17,7 @@ const intialOrgData = {
     oppDescrip: '',
     timeReq: '',
   },
-  threeThings1: '',
-  threeThings2: '',
-  threeThings3: '',
+  qualities: ['', '', ''],
   contactName: '',
   contactDetails: '',
   img: '',
@@ -32,8 +31,18 @@ function formReducer(orgData, action) {
       console.log('OPP_CHANGE in reducer', { payload });
       return {
         ...orgData,
-        [orgData.opportunities[payload.name]]: payload.input,
+        opportunities: {
+          ...orgData.opportunities,
+          [payload.name]: payload.input,
+        },
       };
+    case QUALITIES_CHANGE:
+      console.log('QUALITIES_CHANGE in reducer');
+      //payload has index and value
+      //spreading the array makes a proper copy instead of just a reference
+      const qualities = [...orgData.qualities];
+      qualities[payload.index] = payload.input;
+      return { ...orgData, qualities };
     case OTHER_CHANGE:
       console.log('OTHER_CHANGE in reducer', { payload });
       return {
@@ -55,6 +64,11 @@ function InputComponent() {
     console.log({ name, input });
   }
 
+  function handleChangeQualities(event, index) {
+    let input = event.target.value;
+    formDispatch({ type: QUALITIES_CHANGE, payload: { input, index } });
+  }
+
   function handleChangeOther(event) {
     let name = event.target.name;
     let input = event.target.value;
@@ -65,6 +79,14 @@ function InputComponent() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log({ orgData });
+
+    fetch(apiUrl, {
+      method: 'POST',
+      body: JSON.stringify(orgData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log('posted: ', data))
+      .catch((error) => console.log('failed to fetch: ', error));
   }
 
   return (
@@ -167,48 +189,22 @@ function InputComponent() {
             Identify three essential qualities the volunteer needs to be a match
             with your organisation.{' '}
           </h3>
-          <p>
-            <label>Quality 1</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="threeThings1"
-              onChange={handleChangeOther}
-              value={orgData.threeThings1}
-              placeholder="Identify essential quality here"
-              name="threeThings1"
-            ></input>
-          </p>
-          <p>
-            <label>Quality 2</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="threeThings2"
-              onChange={handleChangeOther}
-              value={orgData.threeThings2}
-              placeholder="Identify essential quality here"
-              name="threeThings2"
-            ></input>
-          </p>
-          <p>
-            <label>Quality 3</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="threeThings3"
-              onChange={handleChangeOther}
-              value={orgData.threeThings3}
-              placeholder="Identify essential quality here"
-              name="threeThings3"
-            ></input>
-          </p>
+          {orgData.qualities.map((value, index) => (
+            <p>
+              <label>
+                Quality {index + 1}
+                <input
+                  className={css.input}
+                  type="text"
+                  onChange={function (event) {
+                    handleChangeQualities(event, index);
+                  }}
+                  value={value}
+                  placeholder="Identify essential quality here"
+                ></input>
+              </label>
+            </p>
+          ))}
         </section>
         <section>
           <h3>Contact Information</h3>
