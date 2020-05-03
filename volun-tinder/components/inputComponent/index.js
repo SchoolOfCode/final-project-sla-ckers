@@ -6,25 +6,16 @@ import css from './inputComponent.module.css';
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-import {
-  OPPDESCRIP_CHANGE,
-  TIMEREQ_CHANGE,
-  THING_ONE_CHANGE,
-  THING_TWO_CHANGE,
-  THING_THREE_CHANGE,
-  OTHER_CHANGE,
-} from './actionTypes';
+import { OPP_CHANGE, OTHER_CHANGE } from './actionTypes';
 
 const intialOrgData = {
   orgName: '',
   category: '',
   briefBio: '',
-  opportunities: [
-    {
-      oppDescrip: '',
-      timeReq: '',
-    },
-  ],
+  opportunities: {
+    oppDescrip: '',
+    timeReq: '',
+  },
   threeThings1: '',
   threeThings2: '',
   threeThings3: '',
@@ -37,17 +28,11 @@ function formReducer(orgData, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case OPPDESCRIP_CHANGE:
-      console.log('OPPDESCRIP_CHANGE in reducer', { payload });
+    case OPP_CHANGE:
+      console.log('OPP_CHANGE in reducer', { payload });
       return {
         ...orgData,
-        [orgData.opportunities[0].oppDescrip]: payload.input,
-      };
-    case TIMEREQ_CHANGE:
-      console.log('TIMEREQ_CHANGE in reducer', { payload });
-      return {
-        ...orgData,
-        [orgData.opportunities[0].timeReq]: payload.input,
+        [orgData.opportunities[payload.name]]: payload.input,
       };
     case OTHER_CHANGE:
       console.log('OTHER_CHANGE in reducer', { payload });
@@ -66,13 +51,7 @@ function InputComponent() {
   function handleChangeOpp(event) {
     let input = event.target.value;
     let name = event.target.name;
-    if (name === 'oppDescrip') {
-      console.log('handleChangeOpp: oppDescrip fx hit');
-      formDispatch({ type: OPPDESCRIP_CHANGE, payload: input });
-    } else {
-      console.log('handleChangeOpp: timeReq fx hit');
-      formDispatch({ type: TIMEREQ_CHANGE, payload: input });
-    }
+    formDispatch({ type: OPP_CHANGE, payload: { name, input } });
     console.log({ name, input });
   }
 
@@ -139,9 +118,23 @@ function InputComponent() {
               name="briefBio"
             ></input>
           </p>
+          <p>
+            <label>Image link:</label>
+          </p>
+          <p>
+            <input
+              className={css.input}
+              type="text"
+              id="img"
+              onChange={handleChangeOther}
+              value={orgData.img}
+              placeholder="Image link (ending in .jpg for example)"
+              name="img"
+            ></input>
+          </p>
         </section>
         <section>
-          <h3>Opportunities Available</h3>
+          <h3>Volunteering Opportunities Available</h3>
           <p>
             <label>Description of opportunity:</label>
           </p>
