@@ -17,6 +17,7 @@ const intialOrgData = {
     oppDescrip: '',
     timeReq: '',
   },
+
   qualities: ['', '', ''],
   contactName: '',
   contactDetails: '',
@@ -110,7 +111,7 @@ function InputComponent() {
               value={orgData.orgName}
               placeholder="Name of organisation"
               name="orgName"
-            ></input>
+            />
           </p>
           <p>
             <label>Category:</label>
@@ -124,7 +125,7 @@ function InputComponent() {
               value={orgData.category}
               placeholder="Category"
               name="category"
-            ></input>
+            />
           </p>
           <p>
             <label>Brief Bio of Organisation:</label>
@@ -138,7 +139,7 @@ function InputComponent() {
               value={orgData.briefBio}
               placeholder="Give a brief bio of the organisation"
               name="briefBio"
-            ></input>
+            />
           </p>
           <p>
             <label>Image link:</label>
@@ -152,37 +153,41 @@ function InputComponent() {
               value={orgData.img}
               placeholder="Image link (ending in .jpg for example)"
               name="img"
-            ></input>
+            />
           </p>
         </section>
         <section>
+          {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
           <h3>Volunteering Opportunities Available</h3>
           <p>
-            <label>Description of opportunity:</label>
+            <label>
+              Description of opportunity:
+              <input
+                className={css.input}
+                type="text"
+                id="oppDescrip"
+                onChange={handleChangeOpp}
+                value={orgData.opportunities.oppDescrip}
+                placeholder="Describe the opportunity available"
+                name="oppDescrip"
+              />
+            </label>
           </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="oppDescrip"
-              onChange={handleChangeOpp}
-              value={orgData.opportunities.oppDescrip}
-              placeholder="Describe the opportunity available"
-              name="oppDescrip"
-            ></input>
-          </p>
-          <label>Weekly hourly commitment required:</label>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="timeReq"
-              onChange={handleChangeOpp}
-              value={orgData.opportunities.timeReq}
-              placeholder="Indicate the number of hours a week"
-              name="timeReq"
-            ></input>
-          </p>
+          <p></p>
+          <label>
+            Weekly hourly commitment required:
+            <p>
+              <input
+                className={css.input}
+                type="text"
+                id="timeReq"
+                onChange={handleChangeOpp}
+                value={orgData.opportunities.timeReq}
+                placeholder="Indicate the number of hours a week"
+                name="timeReq"
+              />
+            </p>
+          </label>
         </section>
         <section>
           <h3>
@@ -192,7 +197,7 @@ function InputComponent() {
           {orgData.qualities.map((value, index) => (
             <p>
               <label>
-                Quality {index + 1}
+                <p>Quality {index + 1}</p>
                 <input
                   className={css.input}
                   type="text"
@@ -201,7 +206,7 @@ function InputComponent() {
                   }}
                   value={value}
                   placeholder="Identify essential quality here"
-                ></input>
+                />
               </label>
             </p>
           ))}
@@ -220,7 +225,7 @@ function InputComponent() {
               value={orgData.contactName}
               placeholder="Contact Name"
               name="contactName"
-            ></input>
+            />
           </p>
           <p>
             <label>Email:</label>
@@ -234,7 +239,7 @@ function InputComponent() {
               value={orgData.contactDetails}
               placeholder="Email"
               name="contactDetails"
-            ></input>
+            />
           </p>
         </section>
       </form>
