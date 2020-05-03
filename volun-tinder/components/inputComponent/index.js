@@ -53,6 +53,7 @@ function formReducer(orgData, action) {
     default:
       return orgData;
   }
+
 }
 
 function InputComponent() {
@@ -88,6 +89,7 @@ function InputComponent() {
       .then((res) => res.json())
       .then((data) => console.log('posted: ', data))
       .catch((error) => console.log('failed to fetch: ', error));
+
   }
 
   return (
@@ -244,7 +246,9 @@ function InputComponent() {
         </section>
       </form>
       <section className={css.submitBtnSection}>
+
         <input type="submit" className={css.button} onClick={handleSubmit} />
+
       </section>
     </div>
   );
