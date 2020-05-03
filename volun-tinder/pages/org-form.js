@@ -19,7 +19,7 @@ import Layout from '../components/Layout';
 import Login from '../components/AuthComponents/Login/index';
 import LogoutButton from '../components/AuthComponents/LogoutButton/index';
 
-import firebase from 'firebase';
+import firebase from '../libs/firebase';
 
 export default function OrgForm() {
   //state for the logged in user; this way it'll trigger a re-render and store the user object in here:
