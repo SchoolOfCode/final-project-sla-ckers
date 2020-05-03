@@ -11,6 +11,9 @@ PLAN FOR LOGIN:
 
 - After the flow above is set up, need to then add in the edit capabilities so that if the user account is already associated with an organisation, the data pulls through into the org form and it then becomes a put rather than a post req to edit their details... No clue yet how to work through this one! One step at a time. Will worry about that once the basic logging in is hooked up and working. 
 
+- Test accounts:
+  test@testy.test, pass: testing
+
 ----------------------------------------------------------------------------*/
 
 import React, { useState } from 'react';
@@ -132,7 +135,6 @@ export default function OrgForm() {
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
         {loggedInUser && <InputComponent />}
-        <InputComponent />
       </Layout>
     </div>
   );
