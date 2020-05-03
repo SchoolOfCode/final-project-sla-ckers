@@ -53,7 +53,6 @@ function formReducer(orgData, action) {
     default:
       return orgData;
   }
-
 }
 
 function InputComponent() {
@@ -85,11 +84,13 @@ function InputComponent() {
     fetch(apiUrl, {
       method: 'POST',
       body: JSON.stringify(orgData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then((res) => res.json())
       .then((data) => console.log('posted: ', data))
       .catch((error) => console.log('failed to fetch: ', error));
-
   }
 
   return (
@@ -161,9 +162,10 @@ function InputComponent() {
         <section>
           {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
           <h3>Volunteering Opportunities Available</h3>
-          <p>
-            <label>
-              Description of opportunity:
+
+          <label>
+            <p>Description of opportunity:</p>
+            <p>
               <input
                 className={css.input}
                 type="text"
@@ -173,11 +175,11 @@ function InputComponent() {
                 placeholder="Describe the opportunity available"
                 name="oppDescrip"
               />
-            </label>
-          </p>
-          <p></p>
+            </p>
+          </label>
+
           <label>
-            Weekly hourly commitment required:
+            <p>Weekly hourly commitment required:</p>
             <p>
               <input
                 className={css.input}
@@ -197,20 +199,18 @@ function InputComponent() {
             with your organisation.{' '}
           </h3>
           {orgData.qualities.map((value, index) => (
-            <p>
-              <label>
-                <p>Quality {index + 1}</p>
-                <input
-                  className={css.input}
-                  type="text"
-                  onChange={function (event) {
-                    handleChangeQualities(event, index);
-                  }}
-                  value={value}
-                  placeholder="Identify essential quality here"
-                />
-              </label>
-            </p>
+            <label key={index}>
+              <p>Quality {index + 1}</p>
+              <input
+                className={css.input}
+                type="text"
+                onChange={function (event) {
+                  handleChangeQualities(event, index);
+                }}
+                value={value}
+                placeholder="Identify essential quality here"
+              />
+            </label>
           ))}
         </section>
         <section>
@@ -246,9 +246,7 @@ function InputComponent() {
         </section>
       </form>
       <section className={css.submitBtnSection}>
-
         <input type="submit" className={css.button} onClick={handleSubmit} />
-
       </section>
     </div>
   );
