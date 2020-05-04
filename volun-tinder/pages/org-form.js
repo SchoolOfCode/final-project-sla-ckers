@@ -31,6 +31,7 @@ export default function OrgForm() {
   const [formState, setFormState] = useState({ email: '', password: '' });
 
   //Observer that watches out for change of auth state (i.e. a login):
+  //FIXME: From Chris: "should this be in a useEffect on component mount? It's setting up a listener I think, which you probably only need to do once rather then on every render"
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // If there's a user object, user is signed in
