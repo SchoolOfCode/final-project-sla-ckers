@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from './Header';
+import React from "react";
+import Header from "./Header";
 
 function Layout(props) {
   return (
@@ -8,8 +8,8 @@ function Layout(props) {
       {props.children}
       <style jsx global>{`
         * {
-          @import url('https://fonts.googleapis.com/css?family=Capriola&display=swap');
-          font-family: 'Capriola', sans-serif;
+          @import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
+          font-family: "Capriola", sans-serif;
         }
       `}</style>
       <style jsx>{`
@@ -17,15 +17,15 @@ function Layout(props) {
           background: #c6ffdd; /* fallback for old browsers */
           background: -webkit-linear-gradient(
             to right,
-            #f7797d,
-            #fbd786,
-            #c6ffdd
+            #e5107b,
+            #ffffff,
+            #45d7bb
           ); /* Chrome 10-25, Safari 5.1-6 */
           background: linear-gradient(
             to right,
-            #f7797d,
-            #fbd786,
-            #c6ffdd
+            #e5107b,
+            #ffffff,
+            #45d7bb
           ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
       `}</style>
