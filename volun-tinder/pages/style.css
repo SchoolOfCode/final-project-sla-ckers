@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Capriola&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
 
 :root {
   --palette1: #129f91;
@@ -8,5 +8,5 @@
   --palette5: #dcbb25;
   --palette6: #dc431e;
   --palette7: #63a242;
-  font-family: 'Capriola', sans-serif;
+  font-family: "Capriola", sans-serif;
 }

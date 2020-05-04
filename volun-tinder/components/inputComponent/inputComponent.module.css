@@ -3,10 +3,12 @@
   width: 80vw;
   margin: 50px auto;
   overflow: auto;
+  padding: 6px;
 }
 
 .form {
   padding: 20px;
+  color: whitesmoke;
 }
 
 .section {
@@ -22,6 +24,12 @@
   height: 2vw;
   border-radius: 10px;
   padding: 6px;
+
+  margin-bottom: 20px;
+}
+
+.label {
+  padding-top: 60px;
 }
 
 .button {

@@ -107,7 +107,7 @@ function InputComponent() {
         <section className={css.section}>
           <h3>About the Organisation</h3>
           <p>
-            <label>Name of organisation:</label>
+            <label className={css.label}>Name of organisation:</label>
           </p>
 
           <p>
@@ -136,7 +136,7 @@ function InputComponent() {
             />
           </p>
           <p>
-            <label>Brief Bio of Organisation:</label>
+            <label>Brief bio of the organisation:</label>
           </p>
           <p>
             <input
@@ -168,7 +168,7 @@ function InputComponent() {
           {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
           <h3>Volunteering Opportunities Available</h3>
 
-          <label>
+          <label className={css.label}>
             <p>Description of opportunity:</p>
             <p>
               <input
@@ -204,7 +204,7 @@ function InputComponent() {
             with your organisation.{" "}
           </h3>
           {orgData.qualities.map((value, index) => (
-            <label key={index}>
+            <label key={index} className={css.label}>
               <p>Quality {index + 1}</p>
               <input
                 className={css.input}
