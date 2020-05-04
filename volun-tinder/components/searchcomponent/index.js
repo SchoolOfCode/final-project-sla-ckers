@@ -35,7 +35,10 @@ function Search() {
       <ul>
         {list
           .filter(function (org) {
-            return org.orgName.toLowerCase().includes(searchTerm.toLowerCase());
+            return (
+              org.orgName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
+            );
           })
           .map((org) => (
             <li>
