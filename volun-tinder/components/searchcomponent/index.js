@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { apiUrl } from "../../libs/config";
 import SearchInput from "./SearchInput";
 import ContactCard from "./OrgCard";
+import css from "./OrgCard/orgCard.module.css";
 
 //Search bar input
 //on change takes in input - DONE
@@ -58,8 +59,12 @@ function Search() {
               <ContactCard org={org} />
             ) : (
               <li onClick={() => handleClick(index)}>
-                {org.orgName} {org.briefBio}{" "}
-                <img src={org.img} alt={org.briefBio} />{" "}
+                {org.orgName} {org.briefBio} <br></br>
+                <img
+                  src={org.img}
+                  alt={org.briefBio}
+                  className={css.orgImg}
+                />{" "}
               </li>
             )
           )}
