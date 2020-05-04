@@ -33,12 +33,16 @@ function Search() {
     <div>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <ul>
-        {list.map((org) => (
-          <li>
-            {org.orgName} {org.briefBio}{" "}
-            <img src={org.img} alt={org.briefBio} />{" "}
-          </li>
-        ))}
+        {list
+          .filter(function (org) {
+            return org.orgName.toLowerCase().includes(searchTerm.toLowerCase());
+          })
+          .map((org) => (
+            <li>
+              {org.orgName} {org.briefBio}{" "}
+              <img src={org.img} alt={org.briefBio} />{" "}
+            </li>
+          ))}
       </ul>
     </div>
   );
