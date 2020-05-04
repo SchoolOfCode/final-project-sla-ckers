@@ -2,9 +2,9 @@ import React from "react";
 
 function ContactCard({ org }) {
   return (
-    <div className={css.contactCard}>
+    <div>
       <h3>{org.orgName}</h3>
-      <img alt={org.briefBio} src={org.img} className={css.orgImg} />
+      <img alt={org.briefBio} src={org.img} />
       <p>About: {org.briefBio}</p>
       <p>{org.opportunities.oppDescrip}</p>
       <p>Time required: {org.opportunities.timeReq}</p>

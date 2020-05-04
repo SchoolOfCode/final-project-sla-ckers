@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { apiUrl } from "../../libs/config";
 import SearchInput from "./SearchInput";
-import contactCard from "./OrgCard";
+import ContactCard from "./OrgCard";
 
 //Search bar input
-//on change takes in input
-//fires handleChange which sets searchTerm state to what's inputted
-//fetches org data from DB
+//on change takes in input - DONE
+//fires handleChange which sets searchTerm state to what's inputted - DONE
+//fetch org data from DB - DONE
 //filters data by org name and renders on page.
 //        - Org name
 //        - Org image
-//        - Org bio
+//        - Org bio - DONE
 
-// On enter key down or just autocomplete similar to WMCA project?
+// On enter key down or just autocomplete similar to WMCA project? - NAH.
+
+//When org is clicked render a card with the full details of that organisation
+//
 
 function Search() {
   const [list, setList] = useState([]);
@@ -50,13 +53,16 @@ function Search() {
               org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
             );
           })
-          .map((org, index) => (
-            <li onClick={() => handleClick(index)}>
-              {org.orgName} {org.briefBio}{" "}
-              <img src={org.img} alt={org.briefBio} />{" "}
-              {isClicked === index && org.contactName}
-            </li>
-          ))}
+          .map((org, index) =>
+            isClicked === index ? (
+              <ContactCard org={org} />
+            ) : (
+              <li onClick={() => handleClick(index)}>
+                {org.orgName} {org.briefBio}{" "}
+                <img src={org.img} alt={org.briefBio} />{" "}
+              </li>
+            )
+          )}
       </ul>
     </div>
   );
