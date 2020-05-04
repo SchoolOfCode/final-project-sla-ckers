@@ -54,8 +54,6 @@ export default function OrgForm() {
     //Gets the details from the form:
     const email = formState.email;
     const password = formState.password;
-    //TODO: FIXME:Remove this console.log once tested!
-    console.log({ email, password });
     //Tells Firebase to make the new user:
     firebase
       .auth()
@@ -74,8 +72,6 @@ export default function OrgForm() {
     //gets info from login form:
     const email = formState.email;
     const password = formState.password;
-    //TODO: FIXME:Remove this console.log once tested!
-    console.log({ email, password });
     //passes it to Firebase and tells it to sign the user in with these credentials:
     firebase
       .auth()
