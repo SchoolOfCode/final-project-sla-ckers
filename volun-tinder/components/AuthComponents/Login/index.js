@@ -33,7 +33,6 @@ function Login({
           onChange={handleChange}
           value={formState.email}
         />
-        <br />
         <label>Password: </label>
         <input
           type="password"
@@ -41,7 +40,6 @@ function Login({
           name="password"
           value={formState.password}
         />
-        <br />
         <input type="submit" />
       </form>
       <button onClick={handleSignInWithPopup}>
