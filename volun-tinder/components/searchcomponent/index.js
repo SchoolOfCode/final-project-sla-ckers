@@ -32,9 +32,14 @@ function Search() {
   return (
     <div>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {list.map(function (orgs) {
-        return <li></li>;
-      })}
+      <ul>
+        {list.map((org) => (
+          <li>
+            {org.orgName} {org.briefBio}{" "}
+            <img src={org.img} alt={org.briefBio} />{" "}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
