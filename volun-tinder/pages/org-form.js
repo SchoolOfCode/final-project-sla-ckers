@@ -13,10 +13,11 @@ PLAN FOR LOGIN:
 
 - Test accounts:
   test@testy.test, pass: testing
+  slackers@soc.com, pass: finalproject
 
 -----------------------------------------------------------------------------*/
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputComponent from '../components/InputComponent/index';
 import Layout from '../components/Layout';
 import Login from '../components/AuthComponents/Login/index';
@@ -32,19 +33,21 @@ export default function OrgForm() {
 
   //Observer that watches out for change of auth state (i.e. a login):
   //FIXME: From Chris: "should this be in a useEffect on component mount? It's setting up a listener I think, which you probably only need to do once rather then on every render"
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // If there's a user object, user is signed in
-      let email = user.email;
-      console.log(`${email} is logged in`);
-    } else {
-      // If there's no user object, user is signed out
-      console.log('no user signed in');
-    }
-    //Sets the loggedInUser state with the user object:
-    setLoggedInUser(user);
-    console.log(user);
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // If there's a user object, user is signed in
+        let email = user.email;
+        console.log(`${email} is logged in`);
+      } else {
+        // If there's no user object, user is signed out
+        console.log('no user signed in');
+      }
+      //Sets the loggedInUser state with the user object:
+      setLoggedInUser(user);
+      console.log(user);
+    });
+  }, []);
 
   //Function hooked up to signup button in login form
   function handleSignup() {
