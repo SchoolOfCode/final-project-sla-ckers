@@ -1,4 +1,4 @@
-/* ----------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------
 PLAN FOR LOGIN:
 
 - Need logic to listen for auth state change (via Firebase) and set the loggedInUser state accordingly - presumably on this level, so we can conditionally render the org form and the logout button once the user is logged in -> as set up but commented out for now below.
@@ -14,7 +14,7 @@ PLAN FOR LOGIN:
 - Test accounts:
   test@testy.test, pass: testing
 
-----------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------*/
 
 import React, { useState } from 'react';
 import InputComponent from '../components/InputComponent/index';
