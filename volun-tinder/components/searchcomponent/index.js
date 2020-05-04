@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { apiUrl } from "../../libs/config";
 import SearchInput from "./SearchInput";
+import contactCard from "./OrgCard";
 
 //Search bar input
 //on change takes in input
@@ -16,6 +17,11 @@ import SearchInput from "./SearchInput";
 function Search() {
   const [list, setList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isClicked, setIsClicked] = useState("");
+
+  function handleClick(index) {
+    setIsClicked(index);
+  }
 
   useEffect(() => {
     fetch(apiUrl)
@@ -31,6 +37,10 @@ function Search() {
 
   return (
     <div>
+      <p>
+        Search our list of organisations and opportunities to see if any turn
+        your head!
+      </p>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <ul>
         {list
@@ -40,10 +50,11 @@ function Search() {
               org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
             );
           })
-          .map((org) => (
-            <li>
+          .map((org, index) => (
+            <li onClick={() => handleClick(index)}>
               {org.orgName} {org.briefBio}{" "}
               <img src={org.img} alt={org.briefBio} />{" "}
+              {isClicked === index && org.contactName}
             </li>
           ))}
       </ul>
