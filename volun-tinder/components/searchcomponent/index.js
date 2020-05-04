@@ -59,7 +59,7 @@ function Search() {
               <ContactCard org={org} />
             ) : (
               <li onClick={() => handleClick(index)}>
-                {org.orgName} {org.briefBio} <br></br>
+                {org.orgName} {org.briefBio}
                 <img
                   src={org.img}
                   alt={org.briefBio}
