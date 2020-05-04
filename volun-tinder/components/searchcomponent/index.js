@@ -9,6 +9,7 @@ import SearchInput from "./SearchInput";
 //filters data by org name and renders on page.
 //        - Org name
 //        - Org image
+//        - Org bio
 
 // On enter key down or just autocomplete similar to WMCA project?
 
@@ -26,7 +27,12 @@ function Search() {
       });
   }, []);
 
-  return <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />;
+  return (
+    <div>
+      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {list}
+    </div>
+  );
 }
 
 export default Search;
