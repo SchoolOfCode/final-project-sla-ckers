@@ -25,14 +25,13 @@ import LogoutButton from '../components/AuthComponents/LogoutButton/index';
 
 import firebase from '../libs/firebase';
 
-export default function OrgForm() {
+export default function OrgDashboard() {
   //state for the logged in user; this way it'll trigger a re-render and store the user object in here:
   const [loggedInUser, setLoggedInUser] = useState(null);
   //form state that holds the info from the login and/or register form
   const [formState, setFormState] = useState({ email: '', password: '' });
 
   //Observer that watches out for change of auth state (i.e. a login):
-  //FIXME: From Chris: "should this be in a useEffect on component mount? It's setting up a listener I think, which you probably only need to do once rather then on every render"
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

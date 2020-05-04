@@ -46,8 +46,8 @@ function Header() {
         <Link href={routes.knowledgeBase}>
           <a className="navLinks">Knowledge Base</a>
         </Link>
-        <Link href={routes.orgForm}>
-          <a className="navLinks">Organisations Form</a>
+        <Link href={routes.orgDashboard}>
+          <a className="navLinks">Organisation Dashboard</a>
         </Link>
         <Link href={routes.orgList}>
           <a className="navLinks">Organisations List</a>
