@@ -23,14 +23,18 @@ function Search() {
         return response.json();
       })
       .then((data) => {
-        setList(data);
+        const orgs = data.map((org) => org);
+        setList(orgs);
+        console.log(orgs);
       });
   }, []);
 
   return (
     <div>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {list}
+      {list.map(function (orgs) {
+        return <li></li>;
+      })}
     </div>
   );
 }
