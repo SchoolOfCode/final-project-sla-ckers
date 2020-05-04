@@ -1,5 +1,5 @@
-import React from "react";
-import Header from "./Header";
+import React from 'react';
+import Header from './Header';
 
 function Layout(props) {
   return (
@@ -8,7 +8,8 @@ function Layout(props) {
       {props.children}
       <style jsx global>{`
         * {
-          font-family: calibri;
+          @import url('https://fonts.googleapis.com/css?family=Capriola&display=swap');
+          font-family: 'Capriola', sans-serif;
         }
       `}</style>
       <style jsx>{`
