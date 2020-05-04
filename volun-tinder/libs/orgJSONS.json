@@ -3,13 +3,11 @@
     "orgName": "Pistols for Pandas",
     "category": "animals",
     "briefBio": "A charity aiming to help our beloved pandas protect themselves from extinction",
-    "opportunities": [
-      {
-        "oppDescrip": "Remote opportunity to raise the organisational profile through our social media channels",
-        "timeReq": "2"
-      }
-    ],
-    "threeThings": ["A way with words", "Charm", "Wit"],
+    "opportunities": {
+      "oppDescrip": "Remote opportunity to raise the organisational profile through our social media channels",
+      "timeReq": "2"
+    },
+    "qualities": ["A way with words", "Charm", "Wit"],
     "contactName": "Paul Cowen",
     "contactDetails": "paul.cowen@pistolsforpandas.com",
     "img": "https://www.muraldecal.com/en/img/as364-jpg/folder/products-listado-merchanthover/wall-stickers-banksy-panda-armed.jpg"
@@ -18,13 +16,11 @@
     "orgName": "Hungry Hedgehogs",
     "category": "animals",
     "briefBio": "The way to a hedgehog's heart its through their stomach. Show some love for your prickly friends and put your culinary skills to the test.",
-    "opportunities": [
-      {
-        "oppDescrip": "Cook up some delicious delights for our endangered nocturnal garden visitors",
-        "timeReq": "4"
-      }
-    ],
-    "threeThings": [
+    "opportunities": {
+      "oppDescrip": "Cook up some delicious delights for our endangered nocturnal garden visitors",
+      "timeReq": "4"
+    },
+    "qualities": [
       "Culinary skills",
       "A big heart",
       "A love of the great outdoors"
@@ -37,13 +33,11 @@
     "orgName": "Forever Swan",
     "category": "animals",
     "briefBio": "Swans mate for life.  Help the singletons find their true match by creating some ambient surroundings",
-    "opportunities": [
-      {
-        "oppDescrip": "Physical work.  Clean, tidy and prune your local pond or lake.  Prepared to get dirty.",
-        "timeReq": "3"
-      }
-    ],
-    "threeThings": ["Physically fit", "Proactive", "Considerate"],
+    "opportunities": {
+      "oppDescrip": "Physical work.  Clean, tidy and prune your local pond or lake. Prepare to get dirty.",
+      "timeReq": "3"
+    },
+    "qualities": ["Physically fit", "Proactive", "Considerate"],
     "contactName": "Lauren",
     "contactDetails": "lauren@foreverswan.com",
     "img": "https://www.clipartkey.com/mpngs/m/64-645018_transparent-geese-png-swan-heart-clipart.png"
@@ -52,17 +46,11 @@
     "orgName": "Sweet Nothings",
     "category": "environment",
     "briefBio": "Confectionary is the sweetest thing but not when it's stuck to the pavement.",
-    "opportunities": [
-      {
-        "oppDescrip": "Volunteers required to jet clean those chewing gum kisses from the local walk ways.",
-        "timeReq": "2"
-      }
-    ],
-    "threeThings": [
-      "Tenacity",
-      "Good observation skills",
-      "Technical know how"
-    ],
+    "opportunities": {
+      "oppDescrip": "Volunteers required to jet clean those chewing gum kisses from the local walkways.",
+      "timeReq": "2"
+    },
+    "qualities": ["Tenacity", "Good observation skills", "Technical know-how"],
     "contactName": "Toby",
     "contactDetails": "toby.volunteer@gmail.com",
     "img": "https://img1.thelist.com/img/gallery/when-you-chew-gum-every-day-this-is-what-happens-to-your-body/intro-1579289076.jpg"
@@ -71,13 +59,11 @@
     "orgName": "Tree Huggers",
     "category": "environment",
     "briefBio": "Showing our love for the natural world, planting one tree at a time.",
-    "opportunities": [
-      {
-        "oppDescrip": "Volunteers required to help us regenerate brown field sites by planting trees.  Weekend opportunity.",
-        "timeReq": "2"
-      }
-    ],
-    "threeThings": ["Manual handling", "Passion for nature", "Outdoors lover"],
+    "opportunities": {
+      "oppDescrip": "Volunteers required to help us regenerate brownfield sites by planting trees.  Weekend opportunity.",
+      "timeReq": "2"
+    },
+    "qualities": ["Manual handling", "Passion for nature", "Outdoors lover"],
     "contactName": "Ali Orchards",
     "contactDetails": "aliOrchards@treehuggers.com",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDNVxRzOFybA6nZVK1us_mdoBd_IarF6pG_qgW0gmda-7wTexm&usqp=CAU"
@@ -86,13 +72,11 @@
     "orgName": "Love Island Patrol",
     "category": "environment",
     "briefBio": "We aim to keep the coastal community a paradise for all its admirers.",
-    "opportunities": [
-      {
-        "oppDescrip": "Volunteers required to keep the beach beautiful so visitors flock back in a heartbeart. Involves getting rid of plastic waste and mending public spaces. ",
-        "timeReq": "2"
-      }
-    ],
-    "threeThings": [
+    "opportunities": {
+      "oppDescrip": "Volunteers required to keep the beach beautiful so visitors flock back in a heartbeart. Involves getting rid of plastic waste and mending public spaces. ",
+      "timeReq": "2"
+    },
+    "qualities": [
       "Teamwork",
       "Love of the outdoors",
       "Good observation skills"
@@ -104,15 +88,13 @@
   {
     "orgName": "Puppy Love",
     "category": "localGroups",
-    "briefBio": "Our furry friends need regular exercise. Make a loyal friend and watch them give you those big puppy eyes",
-    "opportunities": [
-      {
-        "oppDescrip": "Become a dog walker for the elderly or vunerable member of the local community",
-        "timeReq": "1"
-      }
-    ],
-    "threeThings": [
-      "Passion for running",
+    "briefBio": "Our furry friends need regular exercise. Make a loyal friend and watch them give you those big puppy eyes.",
+    "opportunities": {
+      "oppDescrip": "Become a dog walker for the elderly or vunerable member of the local community",
+      "timeReq": "1"
+    },
+    "qualities": [
+      "Passion for walking or running",
       "Love of the great outdoors",
       "Be full of beans"
     ],
@@ -121,16 +103,14 @@
     "img": "https://www.goodtherapy.org/blog/blog/wp-content/uploads/2014/02/valentine-puppy-love-1024x919.jpg"
   },
   {
-    "orgName": "Build a bridge to their heart",
+    "orgName": "Build a Bridge to Their Heart",
     "category": "localGroups",
     "briefBio": "A community group offering a befriending service to the elderly.",
-    "opportunities": [
-      {
-        "oppDescrip": "Use your charm and wit to amuse the older generation. Show some love, write a letter, have a chinwag and generally be a pal.",
-        "timeReq": "1"
-      }
-    ],
-    "threeThings": [
+    "opportunities": {
+      "oppDescrip": "Use your charm and wit to amuse the older generation. Show some love, write a letter, have a chinwag and generally be a pal.",
+      "timeReq": "1"
+    },
+    "qualities": [
       "Great penmanship",
       "Good conversationalist",
       "Caring and thoughtful"
@@ -143,13 +123,11 @@
     "orgName": "Healing Hands",
     "category": "localGroups",
     "briefBio": "Fixing the odd jobs required by vunerable members of the community.",
-    "opportunities": [
-      {
-        "oppDescrip": "With a passion for mending the broken components of everyday life, we need handy individuals to fix household items for local people ",
-        "timeReq": "2-4"
-      }
-    ],
-    "threeThings": ["Manual dexterity", "Problem solver", "Creative thinking"],
+    "opportunities": {
+      "oppDescrip": "With a passion for mending the broken components of everyday life, we need handy individuals to fix household items for local people ",
+      "timeReq": "2-4"
+    },
+    "qualities": ["Manual dexterity", "Problem solver", "Creative thinking"],
     "contactName": "Hailey Houghton",
     "contactDetails": "hailey@healinghands.co.uk",
     "img": "https://pbs.twimg.com/profile_images/944405568147505152/Yi8ZwhoZ_400x400.jpg"
@@ -158,13 +136,11 @@
     "orgName": "On Stage Cupids",
     "category": "events",
     "briefBio": "Community theatre group looking for hearthrobs for its latest production.",
-    "opportunities": [
-      {
-        "oppDescrip": "Budding actors and stage production crew required to enthrall and entertain the local community.",
-        "timeReq": "4 or more"
-      }
-    ],
-    "threeThings": ["Acting skills", "Imagination", "Confidence"],
+    "opportunities": {
+      "oppDescrip": "Budding actors and stage production crew required to enthrall and entertain the local community.",
+      "timeReq": "4 or more"
+    },
+    "qualities": ["Acting skills", "Imagination", "Confidence"],
     "contactName": "Ben Romeo",
     "contactDetails": "b.romeo@onstagecupids.co.uk",
     "img": "https://northwestend.co.uk/images/Cupids_Revenge.jpg"
@@ -173,16 +149,14 @@
     "orgName": "Serenading for Good",
     "category": "events",
     "briefBio": "Community project raising money for local charities through music.",
-    "opportunities": [
-      {
-        "oppDescrip": "Musicians required to entertain; stewards needed to guard against fainting and bartenders are essential to make people merry. ",
-        "timeReq": "2.5"
-      }
-    ],
-    "threeThings": [
+    "opportunities": {
+      "oppDescrip": "Musicians required to entertain, stewards needed to guard against fainting, and bartenders to make people merry. ",
+      "timeReq": "2.5"
+    },
+    "qualities": [
       "Play an instrument or sing",
-      "Outgoing character",
-      "Good communication skills"
+      "Good communication skills",
+      "Outgoing character"
     ],
     "contactName": "Kylie Jason",
     "contactDetails": "kylie.jason@sfg.co.uk",
@@ -192,17 +166,11 @@
     "orgName": "Underneath the Stars Festival",
     "category": "events",
     "briefBio": "Cosy camp out for star crossed lovers.",
-    "opportunities": [
-      {
-        "oppDescrip": "Volunters required to facilitate a positive experience for visitors. Stewards, bartenders and security guards required.",
-        "timeReq": "One weekend annually"
-      }
-    ],
-    "threeThings": [
-      "Good communication skills",
-      "Organisation",
-      "Music lovers"
-    ],
+    "opportunities": {
+      "oppDescrip": "Volunters required to facilitate a positive experience for visitors. Stewards, bartenders and security guards required.",
+      "timeReq": "One weekend annually"
+    },
+    "qualities": ["Good communication skills", "Organisation", "Music lover"],
     "contactName": "Alexa",
     "contactDetails": "alexa@starsfest.com",
     "img": "https://pbs.twimg.com/profile_images/1246057483073806336/-i7xg9EM.jpg"
