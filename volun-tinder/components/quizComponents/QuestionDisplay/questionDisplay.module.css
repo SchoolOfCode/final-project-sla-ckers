@@ -1,8 +1,9 @@
 .questionDisplay {
-  background-color: #796f9c;
+  background-color: #814987;
   width: 25vw;
   margin: 50vh auto;
   padding: 20px;
   border-radius: 20px;
   overflow: auto;
+  text-align: center;
 }
