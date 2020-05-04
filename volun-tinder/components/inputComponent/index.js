@@ -24,6 +24,10 @@ const intialOrgData = {
   img: '',
 };
 
+//FIXME:From Chris re: qualities array:
+// "Last bit of refactoring you could do is a dynamic array here based on a variable:
+// qualities: Array(n).fill('')"
+
 function formReducer(orgData, action) {
   const { type, payload } = action;
 
