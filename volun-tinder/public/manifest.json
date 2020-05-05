@@ -1,6 +1,6 @@
 {
-  "short_name": "Volt",
-  "name": "Volt",
+  "short_name": "Volun-Tinder",
+  "name": "Volun-Tinder",
   "description": "A dating app for volunteers!",
   "icons": [
     {
@@ -15,8 +15,8 @@
     }
   ],
   "start_url": "../pages/index.js",
-  "background_color": " #f067b4",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#f067b4"
+  "theme_color": "#ffffff"
 }
