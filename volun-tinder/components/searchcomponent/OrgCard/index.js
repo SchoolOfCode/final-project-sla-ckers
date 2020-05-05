@@ -2,7 +2,7 @@ import React from "react";
 
 import css from "./orgCard.module.css";
 
-function ContactCard({ org }) {
+function OrgCard({ org, handleClose }) {
   return (
     <div>
       <h3>{org.orgName}</h3>
@@ -14,8 +14,9 @@ function ContactCard({ org }) {
         Sounds like a keeper? contact {org.contactName} at the below address!
       </p>
       <p>{org.contactDetails}</p>
+      <button onClick={handleClose}>Close</button>
     </div>
   );
 }
 
-export default ContactCard;
+export default OrgCard;
