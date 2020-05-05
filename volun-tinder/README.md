@@ -1,6 +1,10 @@
 # Team SLA-ckers final project - VOLT
 
-Opening paragraph
+VOLT is the final project of Team SLA-ckers and is the result of 16 solid weeks of intensive learning at the School of code bootcamp in Birmingham. Just to reiterate - 4 months prior to this we knew very little about coding of any sort!
+
+Our team was tasked with creating a volunteer app with a very open brief - basically something which connected volunteers with opportunities and organisations in their local area and online and very quickly the idea of creating a "dating app" to match the two was born.
+
+VOLT is a progressive web application and was built to serve volunteers looking for oppoortunities to offer their time as well as the organisations who need said volunteers. As most charities or organisations would be likely using PCs or laptops to access the app and our surveying showed that the vast majority of volunteers look for opportunities on their mobile devices we felt a PWA was the ideal solution.
 
 ## Getting Started
 
@@ -58,17 +62,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+- [Next.js](http://www.next.js.org) - The web framework used
+- [Dynamo](https://aws.amazon.com/dynamodb/) - our DB
+- [Firebase](https://firebase.google.com/) - to manage logins
 
 ## Authors
 
@@ -77,12 +73,9 @@ Sarah Barkle - github.com/adoptedthistle
 Alexa-Jane Berry - github.com/leckzilla  
 Liz Kaufman - github.com/lizkaufman
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- React Tinder card component from Jakob Unnebäck
+- Chris Meah and all at School of Code for taking us on a mad journey
+-
+-
