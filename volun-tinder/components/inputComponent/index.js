@@ -138,9 +138,21 @@ function InputComponent({ userId }) {
             />
           </p>
           <p>
-            <label>Category:</label>
+            <label>
+              Category:
+              <select
+                id="categories"
+                name="category"
+                onChange={handleChangeOther}
+              >
+                <option value="animals">Animals</option>
+                <option value="environment">Environment</option>
+                <option value="localGroups">Local Community Groups</option>
+                <option value="events">Festivals and Events</option>
+              </select>
+            </label>
           </p>
-          <p>
+          {/* <p>
             <input
               className={css.input}
               type="text"
@@ -150,7 +162,7 @@ function InputComponent({ userId }) {
               placeholder="Category"
               name="category"
             />
-          </p>
+          </p> */}
           <p>
             <label>Brief bio of the organisation:</label>
           </p>
