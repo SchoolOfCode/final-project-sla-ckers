@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import { routes } from '../libs/config';
+import React from "react";
+import Link from "next/link";
+import Head from "next/head";
+import { routes } from "../libs/config";
 
 function Header() {
   return (
@@ -15,17 +15,17 @@ function Header() {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>VOLT</title>
+        <title>Volt</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link
-          href="../public/heart_hands.png"
+          href="../public/Volt_512.png"
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
-          href="../public/heart_hands192.png"
+          href="../public/Volt_192.png"
           rel="icon"
           type="image/png"
           sizes="192x192"
@@ -36,7 +36,7 @@ function Header() {
 
       {/* <img alt="logo" /> */}
 
-      <h1>VOLT</h1>
+      <h1>Volt</h1>
 
       <div id="navLinks">
         <Link href={routes.home}>

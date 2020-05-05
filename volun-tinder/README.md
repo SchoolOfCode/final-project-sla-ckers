@@ -1,30 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Team SLA-ckers final project - VOLT
+
+VOLT is the final project of Team SLA-ckers and is the result of 16 solid weeks of intensive learning at the School of code bootcamp in Birmingham. Just to reiterate - 4 months prior to this we knew very little about coding of any sort!
+
+Our team was tasked with creating a volunteer app with a very open brief - basically something which connected volunteers with opportunities and organisations in their local area and online and very quickly the idea of creating a "dating app" to match the two was born.
+
+VOLT is a progressive web application and was built to serve volunteers looking for oppoortunities to offer their time as well as the organisations who need said volunteers. As most charities or organisations would be likely using PCs or laptops to access the app and our surveying showed that the vast majority of volunteers look for opportunities on their mobile devices we felt a PWA was the ideal solution.
 
 ## Getting Started
 
-First, run the development server:
+Link to repo - git clone
 
-```bash
-npm run dev
-# or
-yarn dev
+### Prerequisites
+
+To install dependencies
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installing
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To launch in dev mode just run
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Running the tests
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Watch this space...
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+### And coding style tests
 
-## Deploy on ZEIT Now
+If we have time...
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+Give an example
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Built With
+
+- [Next.js](http://www.next.js.org)
+- [Dynamo](https://aws.amazon.com/dynamodb/)
+- [API Gateway](https://aws.amazon.com/api-gateway/)
+- [Lambda](https://aws.amazon.com/lambda/)
+- [Serverless](serverless.com)
+- [Firebase](https://firebase.google.com/)
+
+## Authors
+
+Made by  
+Sarah Barkle - github.com/adoptedthistle  
+Alexa-Jane Berry - github.com/leckzilla  
+Liz Kaufman - github.com/lizkaufman
+
+## Acknowledgments
+
+- React Tinder card component from Jakob Unnebäck
+- Chris Meah, Ben Lee and all at School of Code for taking us on a mad journey
