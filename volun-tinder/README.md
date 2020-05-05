@@ -20,21 +20,11 @@ npm install
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+To launch in dev mode just run
 
 ```
-Give the example
+npm run dev
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -50,21 +40,20 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+If we have time...
 
 ```
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
-- [Next.js](http://www.next.js.org) - The web framework used
-- [Dynamo](https://aws.amazon.com/dynamodb/) - our DB
-- [Firebase](https://firebase.google.com/) - to manage logins
+- [Next.js](http://www.next.js.org)
+- [Dynamo](https://aws.amazon.com/dynamodb/)
+- [API Gateway](https://aws.amazon.com/api-gateway/)
+- [Lambda](https://aws.amazon.com/lambda/)
+- [Serverless](serverless.com)
+- [Firebase](https://firebase.google.com/)
 
 ## Authors
 
@@ -76,6 +65,4 @@ Liz Kaufman - github.com/lizkaufman
 ## Acknowledgments
 
 - React Tinder card component from Jakob Unnebäck
-- Chris Meah and all at School of Code for taking us on a mad journey
--
--
+- Chris Meah, Ben Lee and all at School of Code for taking us on a mad journey
