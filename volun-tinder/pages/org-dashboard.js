@@ -138,7 +138,7 @@ export default function OrgDashboard() {
           />
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
-        {loggedInUser && <InputComponent />}
+        {loggedInUser && <InputComponent userId={userId} />}
       </Layout>
     </div>
   );
