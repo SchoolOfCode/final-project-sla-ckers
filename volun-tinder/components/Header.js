@@ -15,7 +15,7 @@ function Header() {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Volun-Tinder</title>
+        <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link
@@ -35,7 +35,9 @@ function Header() {
       </Head>
 
       {/* <img alt="logo" /> */}
-      <h1>Volt</h1>
+
+      <h1>VOLT</h1>
+
       <div id="navLinks">
         <Link href={routes.home}>
           <a className="navLinks">Home</a>
@@ -46,8 +48,8 @@ function Header() {
         <Link href={routes.knowledgeBase}>
           <a className="navLinks">Knowledge Base</a>
         </Link>
-        <Link href={routes.orgForm}>
-          <a className="navLinks">Organisations Form</a>
+        <Link href={routes.orgDashboard}>
+          <a className="navLinks">Organisations Dashboard</a>
         </Link>
         <Link href={routes.orgList}>
           <a className="navLinks">Organisations List</a>
