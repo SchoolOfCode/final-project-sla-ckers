@@ -23,18 +23,15 @@ import Layout from '../components/Layout';
 import Login from '../components/AuthComponents/Login/index';
 import LogoutButton from '../components/AuthComponents/LogoutButton/index';
 
+import firebase from '../libs/firebase';
 
-import firebase from "../libs/firebase";
-
-export default function OrgForm() {
+export default function OrgDashboard() {
   //state for the logged in user; this way it'll trigger a re-render and store the user object in here:
   const [loggedInUser, setLoggedInUser] = useState(null);
   //form state that holds the info from the login and/or register form
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
 
   //Observer that watches out for change of auth state (i.e. a login):
-  //FIXME: From Chris: "should this be in a useEffect on component mount? It's setting up a listener I think, which you probably only need to do once rather then on every render"
-
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -51,7 +48,6 @@ export default function OrgForm() {
     });
   }, []);
 
-
   //Function hooked up to signup button in login form
   function handleSignup() {
     //Gets the details from the form:
@@ -65,7 +61,7 @@ export default function OrgForm() {
         console.error(error);
       });
     //Clears the form after it sends the details to Firebase:
-    setFormState({ email: "", password: "" });
+    setFormState({ email: '', password: '' });
     console.log(`new user signed up with email ${email}`);
   }
 
@@ -83,8 +79,8 @@ export default function OrgForm() {
         let errorCode = error.code;
         let errorMessage = error.message;
         //handles wrong password with specific alert to user:
-        if (errorCode === "auth/wrong-password") {
-          alert("Wrong password.");
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
           //handles other errors with more general alert:
         } else {
           alert(errorMessage);
@@ -92,8 +88,8 @@ export default function OrgForm() {
         console.log(error);
       });
     //clears out the form once it's done:
-    setFormState({ email: "", password: "" });
-    console.log("login finished");
+    setFormState({ email: '', password: '' });
+    console.log('login finished');
   }
 
   //Signs out signed-in user:
@@ -103,7 +99,7 @@ export default function OrgForm() {
       .auth()
       .signOut()
       .then(function () {
-        console.log("user logged out");
+        console.log('user logged out');
       })
       .catch(function (error) {
         console.error(error);

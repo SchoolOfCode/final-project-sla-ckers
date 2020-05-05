@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Head from "next/head";
-import { routes } from "../libs/config";
+import React from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { routes } from '../libs/config';
 
 function Header() {
   return (
@@ -49,7 +49,7 @@ function Header() {
           <a className="navLinks">Knowledge Base</a>
         </Link>
         <Link href={routes.orgDashboard}>
-          <a className="navLinks">Organisations Dashboard</a>
+          <a className="navLinks">Organisation Dashboard</a>
         </Link>
         <Link href={routes.orgList}>
           <a className="navLinks">Organisations List</a>
