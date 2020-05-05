@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { apiUrl } from "../../libs/config";
-import SearchInput from "./SearchInput";
-import ContactCard from "./OrgCard";
-import css from "./OrgCard/orgCard.module.css";
+import { apiUrl } from "../../../libs/config";
+import SearchInput from "../SearchInput";
+import OrgCard from "../OrgCard";
+import css from "../OrgCard/orgCard.module.css";
 
 //Search bar input
 //on change takes in input - DONE
@@ -15,8 +15,8 @@ import css from "./OrgCard/orgCard.module.css";
 
 // On enter key down or just autocomplete similar to WMCA project? - NAH.
 
-//When org is clicked render a card with the full details of that organisation
-//
+//When org is clicked render a card with the full details of that organisation - DONE
+//Make it a toggle!
 
 function Search() {
   const [list, setList] = useState([]);
@@ -25,6 +25,10 @@ function Search() {
 
   function handleClick(index) {
     setIsClicked(index);
+  }
+
+  function handleClose() {
+    setIsClicked("");
   }
 
   useEffect(() => {
@@ -56,7 +60,7 @@ function Search() {
           })
           .map((org, index) =>
             isClicked === index ? (
-              <ContactCard org={org} />
+              <OrgCard handleClose={handleClose} org={org} />
             ) : (
               <li onClick={() => handleClick(index)}>
                 {org.orgName} {org.briefBio}
