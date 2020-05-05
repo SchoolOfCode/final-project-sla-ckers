@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Head from "next/head";
-import { routes } from "../libs/config";
+import React from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { routes } from '../libs/config';
 
 function Header() {
   return (
@@ -37,6 +37,7 @@ function Header() {
       {/* <img alt="logo" /> */}
 
       <h1>VOLT</h1>
+
       <div id="navLinks">
         <Link href={routes.home}>
           <a className="navLinks">Home</a>
