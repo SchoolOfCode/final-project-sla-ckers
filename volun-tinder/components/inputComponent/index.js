@@ -22,7 +22,6 @@ const intialOrgData = {
     oppDescrip: '',
     timeReq: '',
   },
-
   qualities: ['', '', ''],
   contactName: '',
   contactDetails: '',

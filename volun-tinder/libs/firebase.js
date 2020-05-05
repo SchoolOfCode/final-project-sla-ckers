@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyD_nZ_3sc4zpQlTgWd7nsxLMxuY6-fkems',
   authDomain: 'volt-40afc.firebaseapp.com',
@@ -8,5 +9,7 @@ const firebaseConfig = {
   messagingSenderId: '622522572877',
   appId: '1:622522572877:web:1ca6bd4cf7862503467c04',
 };
+
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+
 export default firebase;
