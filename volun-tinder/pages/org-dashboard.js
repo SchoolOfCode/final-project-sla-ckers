@@ -30,6 +30,8 @@ export default function OrgDashboard() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   //form state that holds the info from the login and/or register form
   const [formState, setFormState] = useState({ email: '', password: '' });
+  //state that holds uid from Firebase (set when user logs in):
+  const [userId, setUserId] = useState('');
 
   //Observer that watches out for change of auth state (i.e. a login):
   useEffect(() => {
@@ -37,9 +39,12 @@ export default function OrgDashboard() {
       if (user) {
         // If there's a user object, user is signed in
         let email = user.email;
+        //Uses the uid from the Firebase user object to set the userID state:
+        setUserId(user.uid);
         console.log(`${email} is logged in`);
       } else {
-        // If there's no user object, user is signed out
+        // If there's no user object, user is signed out (also clears out userID state):
+        setUserId('');
         console.log('no user signed in');
       }
       //Sets the loggedInUser state with the user object:
