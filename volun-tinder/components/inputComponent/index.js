@@ -1,27 +1,27 @@
-import React, { useState, useReducer } from 'react';
-import css from './inputComponent.module.css';
+import React, { useState, useReducer } from "react";
+import css from "./inputComponent.module.css";
 //Create a basic form for orgs to log their opportunity details.
 //Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
 //TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails.
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from './actionTypes';
-import { apiUrl } from '../../libs/config';
+import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from "./actionTypes";
+import { apiUrl } from "../../libs/config";
 
 const intialOrgData = {
-  orgName: '',
-  category: '',
-  briefBio: '',
+  orgName: "",
+  category: "",
+  briefBio: "",
   opportunities: {
-    oppDescrip: '',
-    timeReq: '',
+    oppDescrip: "",
+    timeReq: "",
   },
 
-  qualities: ['', '', ''],
-  contactName: '',
-  contactDetails: '',
-  img: '',
+  qualities: ["", "", ""],
+  contactName: "",
+  contactDetails: "",
+  img: "",
 };
 
 //FIXME:From Chris re: qualities array:
@@ -33,7 +33,7 @@ function formReducer(orgData, action) {
 
   switch (type) {
     case OPP_CHANGE:
-      console.log('OPP_CHANGE in reducer', { payload });
+      console.log("OPP_CHANGE in reducer", { payload });
       return {
         ...orgData,
         opportunities: {
@@ -42,14 +42,14 @@ function formReducer(orgData, action) {
         },
       };
     case QUALITIES_CHANGE:
-      console.log('QUALITIES_CHANGE in reducer');
+      console.log("QUALITIES_CHANGE in reducer");
       //payload has index and value
       //spreading the array makes a proper copy instead of just a reference
       const qualities = [...orgData.qualities];
       qualities[payload.index] = payload.input;
       return { ...orgData, qualities };
     case OTHER_CHANGE:
-      console.log('OTHER_CHANGE in reducer', { payload });
+      console.log("OTHER_CHANGE in reducer", { payload });
       return {
         ...orgData,
         [payload.name]: payload.input,
@@ -86,15 +86,15 @@ function InputComponent() {
     console.log({ orgData });
 
     fetch(apiUrl, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(orgData),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log('posted: ', data))
-      .catch((error) => console.log('failed to fetch: ', error));
+      .then((data) => console.log("posted: ", data))
+      .catch((error) => console.log("failed to fetch: ", error));
   }
 
   return (
@@ -104,11 +104,12 @@ function InputComponent() {
         <h3>
           Please complete the form below with details about your opportunities.
         </h3>
-        <section>
+        <section className={css.section}>
           <h3>About the Organisation</h3>
           <p>
-            <label>Name of organisation:</label>
+            <label className={css.label}>Name of organisation:</label>
           </p>
+
           <p>
             <input
               className={css.input}
@@ -135,7 +136,7 @@ function InputComponent() {
             />
           </p>
           <p>
-            <label>Brief Bio of Organisation:</label>
+            <label>Brief bio of the organisation:</label>
           </p>
           <p>
             <input
@@ -163,11 +164,11 @@ function InputComponent() {
             />
           </p>
         </section>
-        <section>
+        <section className={css.section}>
           {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
           <h3>Volunteering Opportunities Available</h3>
 
-          <label>
+          <label className={css.label}>
             <p>Description of opportunity:</p>
             <p>
               <input
@@ -197,13 +198,13 @@ function InputComponent() {
             </p>
           </label>
         </section>
-        <section>
+        <section className={css.section}>
           <h3>
             Identify three essential qualities the volunteer needs to be a match
-            with your organisation.{' '}
+            with your organisation.{" "}
           </h3>
           {orgData.qualities.map((value, index) => (
-            <label key={index}>
+            <label key={index} className={css.label}>
               <p>Quality {index + 1}</p>
               <input
                 className={css.input}
@@ -217,7 +218,7 @@ function InputComponent() {
             </label>
           ))}
         </section>
-        <section>
+        <section className={css.section}>
           <h3>Contact Information</h3>
           <p>
             <label>Contact Name:</label>
