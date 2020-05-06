@@ -30,10 +30,26 @@ function Form({
             />
           </p>
           <p>
-            <label>Category:</label>
+            <label>
+              Category:
+              <p>
+                <select
+                  name="category"
+                  onChange={handleChangeOther}
+                  value={orgData.category}
+                  id="category"
+                >
+                  <option value="animals">Animals</option>
+                  <option value="environment">Environment</option>
+                  <option value="localGroups">
+                    Local Community Organisation
+                  </option>
+                  <option value="events">Festivals and Events</option>
+                </select>
+              </p>
+            </label>
           </p>
-          <p>
-            <input
+          {/* <input
               className={css.input}
               type="text"
               id="org-name"
@@ -41,8 +57,7 @@ function Form({
               value={orgData.category}
               placeholder="Category"
               name="category"
-            />
-          </p>
+            /> */}
           <p>
             <label>Brief bio of the organisation:</label>
           </p>
