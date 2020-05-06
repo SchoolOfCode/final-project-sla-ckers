@@ -15,7 +15,10 @@
 - if there's a match, return that org's data obj (in its own state) ✅ 
 -TODO: add case to reducer to populate orgData with the matchedOrgData object if there's a match 
 -TODO: make a different handleSubmit for a PUT rather than a POST 
-- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated ✅ 
+- make sure PUT has the uuid from the back end in the URL! (should come thru in matchedOrgData) ✅ 
+- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated ✅
+
+FIXME: might need to fix on back end - it has userId while front end obj has uid 
 -------------------------------
 */
 //--------------------------------------------------------
@@ -27,6 +30,7 @@ import Form from './Form';
 
 import {
   UID_CHANGE,
+  MATCHED_ORG_CHANGE,
   OPP_CHANGE,
   OTHER_CHANGE,
   QUALITIES_CHANGE,
@@ -60,6 +64,8 @@ function formReducer(orgData, action) {
     case UID_CHANGE:
       console.log('UID_CHANGE in reducer', { payload });
       return { ...orgData, uid: payload };
+    case MATCHED_ORG_CHANGE:
+      return { payload };
     case OPP_CHANGE:
       console.log('OPP_CHANGE in reducer', { payload });
       return {
@@ -113,7 +119,7 @@ function InputComponent({ uid }) {
 
   //filters allOrgs for uid and returns org if found in matchedOrgData
   useEffect(() => {
-    let matchedOrg = allOrgs.filter((org) => org.uid.includes(uid));
+    let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
     matchedOrg && setMatchedOrgData(matchedOrg);
   }, [allOrgs]);
 
@@ -136,6 +142,7 @@ function InputComponent({ uid }) {
     console.log({ name, input });
   }
 
+  //Submit for fresh, first-time form:
   function handleSubmit(event) {
     event.preventDefault();
     console.log({ orgData });
@@ -152,7 +159,22 @@ function InputComponent({ uid }) {
       .catch((error) => console.log('failed to fetch: ', error));
   }
 
-  function handleEditSubmit(event) {}
+  //Submit for EDITED INFO form:
+  function handleEditSubmit(event) {
+    event.preventDefault();
+    console.log({ orgData });
+
+    fetch(`${apiUrl}/${matchedOrgData.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(orgData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log('edited: ', data))
+      .catch((error) => console.log('failed to fetch: ', error));
+  }
 
   return (
     <div className={css.form}>
