@@ -52,7 +52,7 @@ export default function OrgDashboard() {
       if (user) {
         // If there's a user object, user is signed in
         let email = user.email;
-        setUid(user.uid);
+        setUid(user.uid); //✅
         console.log(`${email} is logged in`);
       } else {
         // If there's no user object, user is signed out
