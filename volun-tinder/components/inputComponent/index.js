@@ -1,27 +1,56 @@
-import React, { useState, useReducer } from "react";
-import css from "./inputComponent.module.css";
+//--------------PLAN:-----------------------------------
 //Create a basic form for orgs to log their opportunity details.
 //Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
-//TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails.
+//Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails. ✅
 //TODO: Link to a profile picture
-//TODO: Button that onClick saves the data in a JSON file
+//Button that onClick saves the data in a JSON file ✅
 
-import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from "./actionTypes";
-import { apiUrl } from "../../libs/config";
+/*
+--------- LIZ'S UPDATE FORM PLAN: --------
+- hook up uid into orgData (reducer, etc.) ✅ 
+- move form into sep component so can cond render different versions ✅ 
+- make a separate fetch in another useEffect that pulls in the org data as-is (like on the other pages) and puts it in a state ✅ 
+- functionality to take the uid from firebase and search it against the uids in the existing org data ✅ 
+- make a state to hold the org obj that matches the uid ✅  
+- if there's a match, return that org's data obj (in its own state) ✅ 
+- add case to reducer to populate orgData with the matchedOrgData object if there's a match ✅ 
+- make a different handleSubmit for a PUT rather than a POST ✅ 
+- make sure PUT has the uuid from the back end in the URL! (should come thru in matchedOrgData) ✅ 
+- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated ✅
+
+FIXME: might need to fix on back end - it has userId while front end obj has uid 
+-------------------------------
+*/
+//--------------------------------------------------------
+//
+import React, { useReducer, useState, useEffect } from 'react';
+
+import css from './inputComponent.module.css';
+import Form from './Form';
+
+import {
+  UID_CHANGE,
+  MATCHED_ORG_CHANGE,
+  OPP_CHANGE,
+  OTHER_CHANGE,
+  QUALITIES_CHANGE,
+} from './actionTypes';
+import { apiUrl } from '../../libs/config';
 
 const intialOrgData = {
-  orgName: "",
-  category: "",
-  briefBio: "",
+  orgName: '',
+  category: '',
+  briefBio: '',
   opportunities: {
-    oppDescrip: "",
-    timeReq: "",
+    oppDescrip: '',
+    timeReq: '',
   },
 
-  qualities: ["", "", ""],
-  contactName: "",
-  contactDetails: "",
-  img: "",
+  qualities: ['', '', ''],
+  contactName: '',
+  contactDetails: '',
+  img: '',
+  uid: '',
 };
 
 //FIXME:From Chris re: qualities array:
@@ -32,8 +61,15 @@ function formReducer(orgData, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case UID_CHANGE:
+      console.log('UID_CHANGE in reducer', { payload });
+      return { ...orgData, uid: payload };
+    case MATCHED_ORG_CHANGE:
+      console.log('MATCHED_ORG_CHANGE in reducer', { payload });
+      return payload;
+    //took squigs off payload to see if it'll help
     case OPP_CHANGE:
-      console.log("OPP_CHANGE in reducer", { payload });
+      console.log('OPP_CHANGE in reducer', { payload });
       return {
         ...orgData,
         opportunities: {
@@ -42,14 +78,14 @@ function formReducer(orgData, action) {
         },
       };
     case QUALITIES_CHANGE:
-      console.log("QUALITIES_CHANGE in reducer");
+      console.log('QUALITIES_CHANGE in reducer');
       //payload has index and value
       //spreading the array makes a proper copy instead of just a reference
       const qualities = [...orgData.qualities];
       qualities[payload.index] = payload.input;
       return { ...orgData, qualities };
     case OTHER_CHANGE:
-      console.log("OTHER_CHANGE in reducer", { payload });
+      console.log('OTHER_CHANGE in reducer', { payload });
       return {
         ...orgData,
         [payload.name]: payload.input,
@@ -59,8 +95,40 @@ function formReducer(orgData, action) {
   }
 }
 
-function InputComponent() {
+function InputComponent({ uid }) {
+  //reducer that populates orgData with whatever is entered into the form:
   const [orgData, formDispatch] = useReducer(formReducer, intialOrgData);
+
+  //state to store orgs from initial fetch:
+  const [allOrgs, setAllOrgs] = useState([]);
+
+  //state that holdes specific org's data if there's a uid match:
+  const [matchedOrgData, setMatchedOrgData] = useState({});
+
+  //sets uid in orgData and then fetches existing org data so we can then compare uid:
+  useEffect(() => {
+    formDispatch({ type: UID_CHANGE, payload: uid });
+    fetch(apiUrl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const orgs = data.map((org) => org);
+        console.log(orgs);
+        setAllOrgs(orgs);
+      });
+  }, [uid]);
+
+  // filters allOrgs for uid and returns org if found in matchedOrgData
+  useEffect(() => {
+    let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
+    if (matchedOrg) {
+      formDispatch({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
+      setMatchedOrgData(matchedOrg);
+    } else {
+      setMatchedOrgData({});
+    }
+  }, [allOrgs]);
 
   function handleChangeOpp(event) {
     let input = event.target.value;
@@ -81,178 +149,78 @@ function InputComponent() {
     console.log({ name, input });
   }
 
+  //Submit for fresh, first-time form:
   function handleSubmit(event) {
     event.preventDefault();
     console.log({ orgData });
 
     fetch(apiUrl, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(orgData),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log("posted: ", data))
-      .catch((error) => console.log("failed to fetch: ", error));
+      .then((data) => console.log('posted: ', data))
+      .catch((error) => console.log('failed to fetch: ', error));
+  }
+
+  //Submit for EDITED INFO form:
+  function handleEditSubmit(event) {
+    event.preventDefault();
+    console.log({ orgData });
+
+    fetch(`${apiUrl}/${matchedOrgData.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(orgData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log('edited: ', data))
+      .catch((error) => console.log('failed to fetch: ', error));
   }
 
   return (
     <div className={css.form}>
-      <form className="orgForm">
-        <h1>Post your voluntary opportunities</h1>
-        <h3>
-          Please complete the form below with details about your opportunities.
-        </h3>
-        <section className={css.section}>
-          <h3>About the Organisation</h3>
-          <p>
-            <label className={css.label}>Name of organisation:</label>
-          </p>
+      <h1>Post your volunteering opportunities</h1>
 
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="org-name"
-              onChange={handleChangeOther}
-              value={orgData.orgName}
-              placeholder="Name of organisation"
-              name="orgName"
-            />
-          </p>
-          <p>
-            <label>Category:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="org-name"
-              onChange={handleChangeOther}
-              value={orgData.category}
-              placeholder="Category"
-              name="category"
-            />
-          </p>
-          <p>
-            <label>Brief bio of the organisation:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="briefBio"
-              onChange={handleChangeOther}
-              value={orgData.briefBio}
-              placeholder="Give a brief bio of the organisation"
-              name="briefBio"
-            />
-          </p>
-          <p>
-            <label>Image link:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="img"
-              onChange={handleChangeOther}
-              value={orgData.img}
-              placeholder="Image link (ending in .jpg for example)"
-              name="img"
-            />
-          </p>
-        </section>
-        <section className={css.section}>
-          {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
-          <h3>Volunteering Opportunities Available</h3>
-
-          <label className={css.label}>
-            <p>Description of opportunity:</p>
-            <p>
-              <input
-                className={css.input}
-                type="text"
-                id="oppDescrip"
-                onChange={handleChangeOpp}
-                value={orgData.opportunities.oppDescrip}
-                placeholder="Describe the opportunity available"
-                name="oppDescrip"
-              />
-            </p>
-          </label>
-
-          <label>
-            <p>Weekly hourly commitment required:</p>
-            <p>
-              <input
-                className={css.input}
-                type="text"
-                id="timeReq"
-                onChange={handleChangeOpp}
-                value={orgData.opportunities.timeReq}
-                placeholder="Indicate the number of hours a week"
-                name="timeReq"
-              />
-            </p>
-          </label>
-        </section>
-        <section className={css.section}>
+      {/* If there IS existing org data with matching uid from login, render pre-populated data with instructions on editing: */}
+      {matchedOrgData && (
+        <>
           <h3>
-            Identify three essential qualities the volunteer needs to be a match
-            with your organisation.{" "}
+            Make any changes to your details about your organisation and
+            opportunities below to update our database.
           </h3>
-          {orgData.qualities.map((value, index) => (
-            <label key={index} className={css.label}>
-              <p>Quality {index + 1}</p>
-              <input
-                className={css.input}
-                type="text"
-                onChange={function (event) {
-                  handleChangeQualities(event, index);
-                }}
-                value={value}
-                placeholder="Identify essential quality here"
-              />
-            </label>
-          ))}
-        </section>
-        <section className={css.section}>
-          <h3>Contact Information</h3>
-          <p>
-            <label>Contact Name:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="contactName"
-              onChange={handleChangeOther}
-              value={orgData.contactName}
-              placeholder="Contact Name"
-              name="contactName"
-            />
-          </p>
-          <p>
-            <label>Email:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="contactDetails"
-              onChange={handleChangeOther}
-              value={orgData.contactDetails}
-              placeholder="Email"
-              name="contactDetails"
-            />
-          </p>
-        </section>
-      </form>
-      <section className={css.submitBtnSection}>
-        <input type="submit" className={css.button} onClick={handleSubmit} />
-      </section>
+          <Form
+            orgData={orgData}
+            handleChangeOpp={handleChangeOpp}
+            handleChangeQualities={handleChangeQualities}
+            handleChangeOther={handleChangeOther}
+            handleSubmit={handleEditSubmit}
+          />
+        </>
+      )}
+
+      {/* If there's no org data with matching uid, render an empty form: */}
+      {!matchedOrgData && (
+        <>
+          <h3>
+            Please complete the form below with details about your organisation
+            and opportunities. Volunteers-to-be will see this information and be
+            enchanted and eager to connect!
+          </h3>
+          <Form
+            orgData={orgData}
+            handleChangeOpp={handleChangeOpp}
+            handleChangeQualities={handleChangeQualities}
+            handleChangeOther={handleChangeOther}
+            handleSubmit={handleSubmit}
+          />
+        </>
+      )}
     </div>
   );
 }
