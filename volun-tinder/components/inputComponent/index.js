@@ -7,6 +7,7 @@
 
 /*
 --------- LIZ'S UPDATE FORM PLAN: --------
+- hook up uid into orgData (reducer, etc.) ✅ 
 - move form into sep component so can cond render different versions ✅ 
 - make a separate fetch in another useEffect that pulls in the org data as-is (like on the other pages) and puts it in a state ✅ 
 - functionality to take the uid from firebase and search it against the uids in the existing org data
@@ -96,12 +97,9 @@ function InputComponent({ uid }) {
   //state that holdes specific org's data if there's a uid match:
   const [matchedOrgData, setMatchedOrgData] = useState({});
 
+  //sets uid in orgData and then fetches existing org data so we can then compare uid:
   useEffect(() => {
     formDispatch({ type: UID_CHANGE, payload: uid });
-  }, [uid]);
-
-  //fetches existing org data so we can then compare uid:
-  useEffect(() => {
     fetch(apiUrl)
       .then((response) => {
         return response.json();
@@ -109,8 +107,15 @@ function InputComponent({ uid }) {
       .then((data) => {
         const orgs = data.map((org) => org);
         setAllOrgs(orgs);
+        allOrgs.filter((org) => org.includes(uid));
       });
-  }, []);
+  }, [uid]);
+
+  //filters allOrgs for uid and returns org if found in matchedOrgData
+  useEffect(() => {
+    let matchedOrg = allOrgs.filter((org) => org.uid.includes(uid));
+    matchedOrg && setMatchedOrgData(matchedOrg);
+  }, [allOrgs]);
 
   function handleChangeOpp(event) {
     let input = event.target.value;
