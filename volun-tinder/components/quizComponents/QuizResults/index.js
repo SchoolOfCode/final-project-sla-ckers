@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import css from './quizResults.module.css';
+import css from "./quizResults.module.css";
 
 //This component will show the user their ideal category based on the answers they gave
 //on the personality quiz.
@@ -14,21 +14,21 @@ import css from './quizResults.module.css';
 function QuizResults({ highestCat, handleClick }) {
   //state to translate JS category names to more grammatically displayable ones
   //FIXME: potential to change this to a reducer to make it more robust later!
-  const [displayCat, setDisplayCat] = useState('');
+  const [displayCat, setDisplayCat] = useState("");
 
   useEffect(() => {
     switch (highestCat) {
-      case 'animals':
-        setDisplayCat('animals');
+      case "animals":
+        setDisplayCat("animals");
         break;
-      case 'environment':
-        setDisplayCat('the environment');
+      case "environment":
+        setDisplayCat("the environment");
         break;
-      case 'localGroups':
-        setDisplayCat('local community groups and organisations');
+      case "localGroups":
+        setDisplayCat("local community groups and organisations");
         break;
-      case 'events':
-        setDisplayCat('festivals and events');
+      case "events":
+        setDisplayCat("festivals and events");
         break;
       default:
         return highestCat;
@@ -42,7 +42,9 @@ function QuizResults({ highestCat, handleClick }) {
         organisation crazy about...
       </h3>
       <h2>{displayCat}!</h2>
-      <button onClick={handleClick}>Could any of these be the one?</button>
+      <button classname={css.resultsBtn} onClick={handleClick}>
+        Could any of these be the one?
+      </button>
     </div>
   );
 }

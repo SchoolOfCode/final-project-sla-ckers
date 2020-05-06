@@ -9,12 +9,13 @@
 
 .card {
   /* background-color: var(--palette2); */
-  background-color: rgba(240, 75, 75, 0.2);
-  border: coral 2px solid;
+  background-color: #814987;
+  border: #81ffef 4px solid;
   border-radius: 20px;
   width: 500px;
   margin: 20px auto;
-  padding: 10px;
+  padding: 20px;
+  color: whitesmoke;
 }
 
 .qualitiesList {

@@ -104,34 +104,39 @@ define('./sw.js', ['./workbox-b90066a8'], function (workbox) {
    * See https://goo.gl/S9QRab
    */
 
-  workbox.precacheAndRoute(
-    [
-      {
-        url: '/_next/static/runtime/amp.js',
-        revision: '68599c7975699254d1a0d3782dcb7e1e',
-      },
-      {
-        url: '/_next/static/runtime/amp.js.map',
-        revision: '7098cccd7c3951a19cb15bc6d3deffc1',
-      },
-      {
-        url: '/_next/static/runtime/main.js',
-        revision: '0ef83b92b7f690e44a8ec1399f43caab',
-      },
-      {
-        url: '/_next/static/runtime/main.js.map',
-        revision: '8847e3b62a8e351f7b06cc728dedcbf7',
-      },
-      {
-        url: '/_next/static/runtime/polyfills.js',
-        revision: 'cf6f4b12f4634f8f79378d41f3a855a4',
-      },
-      {
-        url: '/_next/static/runtime/polyfills.js.map',
-        revision: '82dca635a629d8ab38c3ad85b2ad65a2',
-      },
-      {
-        url: '/_next/static/runtime/webpack.js',
+  workbox.precacheAndRoute([{
+    "url": "/_next/static/runtime/amp.js",
+    "revision": "68599c7975699254d1a0d3782dcb7e1e"
+  }, {
+    "url": "/_next/static/runtime/amp.js.map",
+    "revision": "7098cccd7c3951a19cb15bc6d3deffc1"
+  }, {
+    "url": "/_next/static/runtime/main.js",
+
+    "revision": "0ef83b92b7f690e44a8ec1399f43caab"
+
+  }, {
+    "url": "/_next/static/runtime/main.js.map",
+    "revision": "8847e3b62a8e351f7b06cc728dedcbf7"
+  }, {
+    "url": "/_next/static/runtime/polyfills.js",
+    "revision": "cf6f4b12f4634f8f79378d41f3a855a4"
+  }, {
+    "url": "/_next/static/runtime/polyfills.js.map",
+    "revision": "82dca635a629d8ab38c3ad85b2ad65a2"
+  }, {
+    "url": "/_next/static/runtime/webpack.js",
+
+    "revision": "3b5aa7598f610c21dcc60ee02bec2e58"
+  }, {
+    "url": "/_next/static/runtime/webpack.js.map",
+    "revision": "990bf29d15c908b3668111ba1ebe7c5c"
+
+  }], {
+    "ignoreURLParametersMatching": [/ts/]
+  });
+  workbox.cleanupOutdatedCaches();
+
 
         revision: 'e143bf746290ba945cb4af160e586563',
       },

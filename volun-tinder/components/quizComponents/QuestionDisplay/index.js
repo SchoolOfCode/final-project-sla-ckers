@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 //PLAN FOR QUESTION DISPLAY COMPONENT:
 //TODO: needs to take in the question string from the .map function along with the index and the answers array ✅
@@ -6,14 +6,14 @@ import React from 'react';
 //TODO: then render an AnswerChoice component for each answer choice ✅
 //TODO: needs to pass down a function to each answer choice to be clickable and collect the category ✅
 
-import css from './questionDisplay.module.css';
+import css from "./questionDisplay.module.css";
 
-import AnswerChoice from '../AnswerChoice/index';
+import AnswerChoice from "../AnswerChoice/index";
 
 function QuestionDisplay({ question, answers, i, handleClick }) {
   return (
     <div className={css.questionDisplay}>
-      <h2>{question}</h2>
+      <h2 className={css.questionText}>{question}</h2>
       <ul>
         <AnswerChoice
           answerChoice={answers[i]}
