@@ -174,5 +174,24 @@
     "contactName": "Alexa",
     "contactDetails": "alexa@starsfest.com",
     "img": "https://pbs.twimg.com/profile_images/1246057483073806336/-i7xg9EM.jpg"
+  },
+  {
+    "img": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011e9954-5f1a-446f-965c-6ebf20479a0b/d7p8u6x-6eb6bbf8-c794-4fa1-8a27-3b736b8fff96.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDExZTk5NTQtNWYxYS00NDZmLTk2NWMtNmViZjIwNDc5YTBiXC9kN3A4dTZ4LTZlYjZiYmY4LWM3OTQtNGZhMS04YTI3LTNiNzM2YjhmZmY5Ni5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.XW7gl5fwa9i6rFXV_3q567cZLi_-AOaZgVkKMCJexh8",
+    "qualities": [
+      "Vague yet menacing demeanour",
+      "Own tin foil hat",
+      "Helicopter License"
+    ],
+    "orgName": "Night Vale Sheriff's Secret Police",
+    "contactName": "The Sheriff of Night Vale",
+    "briefBio": "Once it gets dark, forget everything you ever knew and be silent.",
+    "category": "localGroups",
+    "createdAt": "2020-05-05T11:17:22.352Z",
+    "contactDetails": "sheriff@secretpolice.org",
+    "opportunities": {
+      "oppDescrip": "As all Night Vale citizens are constantly being watched, the Sheriff's Secret Police advices any citizen who sees something to say, \"Something.\"[4] That is the codeword to call a Secret Police raid on a neighbor or stranger.",
+      "timeReq": "2"
+    },
+    "id": "8caaadfa-01aa-4f3d-b64a-bce9eeb6a77b"
   }
 ]
