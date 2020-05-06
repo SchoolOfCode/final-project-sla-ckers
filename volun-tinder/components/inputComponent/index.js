@@ -13,8 +13,8 @@
 - functionality to take the uid from firebase and search it against the uids in the existing org data ✅ 
 - make a state to hold the org obj that matches the uid ✅  
 - if there's a match, return that org's data obj (in its own state) ✅ 
--TODO: add case to reducer to populate orgData with the matchedOrgData object if there's a match 
--TODO: make a different handleSubmit for a PUT rather than a POST 
+- add case to reducer to populate orgData with the matchedOrgData object if there's a match ✅ 
+- make a different handleSubmit for a PUT rather than a POST ✅ 
 - make sure PUT has the uuid from the back end in the URL! (should come thru in matchedOrgData) ✅ 
 - cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated ✅
 
@@ -100,8 +100,8 @@ function InputComponent({ uid }) {
   //state to store orgs from initial fetch:
   const [allOrgs, setAllOrgs] = useState([]);
 
-  //state that holdes specific org's data if there's a uid match:
-  const [matchedOrgData, setMatchedOrgData] = useState({});
+  // //state that holdes specific org's data if there's a uid match:
+  // const [matchedOrgData, setMatchedOrgData] = useState({});
 
   //sets uid in orgData and then fetches existing org data so we can then compare uid:
   useEffect(() => {
@@ -120,7 +120,9 @@ function InputComponent({ uid }) {
   //filters allOrgs for uid and returns org if found in matchedOrgData
   useEffect(() => {
     let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
-    matchedOrg && setMatchedOrgData(matchedOrg);
+    if (matchedOrg) {
+      formReducer({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
+    }
   }, [allOrgs]);
 
   function handleChangeOpp(event) {
