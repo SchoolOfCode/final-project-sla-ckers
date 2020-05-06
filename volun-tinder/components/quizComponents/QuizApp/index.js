@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Quiz from '../Quiz/index';
-import MatchApp from '../../swipeComponents/MatchApp/index';
+import Quiz from '../Quiz';
+import MatchApp from '../../swipeComponents/MatchApp';
 import QuizResults from '../QuizResults';
 
 function QuizApp() {
