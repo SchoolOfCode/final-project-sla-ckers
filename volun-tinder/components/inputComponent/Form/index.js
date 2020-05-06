@@ -49,15 +49,6 @@ function Form({
               </p>
             </label>
           </p>
-          {/* <input
-              className={css.input}
-              type="text"
-              id="org-name"
-              onChange={handleChangeOther}
-              value={orgData.category}
-              placeholder="Category"
-              name="category"
-            /> */}
           <p>
             <label>Brief bio of the organisation:</label>
           </p>

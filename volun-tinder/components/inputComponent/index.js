@@ -1,12 +1,25 @@
 //--------------PLAN:-----------------------------------
 //Create a basic form for orgs to log their opportunity details.
 //Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
-//TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails.
+//Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails. ✅
 //TODO: Link to a profile picture
-//TODO: Button that onClick saves the data in a JSON file
+//Button that onClick saves the data in a JSON file ✅
+
+/*
+--------- LIZ'S UPDATE FORM PLAN: --------
+- move form into sep component so can cond render different versions ✅ 
+- make a separate fetch in another useEffect that pulls in the org data as-is (like on the other pages) and puts it in a state ✅ 
+- functionality to take the uid from firebase and search it against the uids in the existing org data
+- make a state to hold the org obj that matches the uid ✅  
+- if there's match, return that org's data obj (in its own state?), and if not, render a fresh empty form (so if that state stays {})
+- add case to reducer to populate orgData with the matchedOrgData object if there's a match 
+- make a different handleSubmit for a PUT rather than a POST 
+- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated
+-------------------------------
+*/
 //--------------------------------------------------------
 //
-import React, { useReducer } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 
 import css from './inputComponent.module.css';
 import Form from './Form';
@@ -65,7 +78,26 @@ function formReducer(orgData, action) {
 }
 
 function InputComponent() {
+  //reducer that populates orgData with whatever is entered into the form:
   const [orgData, formDispatch] = useReducer(formReducer, intialOrgData);
+
+  //state to store orgs from initial fetch:
+  const [allOrgs, setAllOrgs] = useState([]);
+
+  //state that holdes specific org's data if there's a uid match:
+  const [matchedOrgData, setMatchedOrgData] = useState({});
+
+  //fetches existing org data so we can then compare uid:
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const orgs = data.map((org) => org);
+        setAllOrgs(orgs);
+      });
+  }, []);
 
   function handleChangeOpp(event) {
     let input = event.target.value;
