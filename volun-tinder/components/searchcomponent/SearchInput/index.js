@@ -3,7 +3,6 @@ import React from "react";
 function SearchInput({ searchTerm, setSearchTerm }) {
   function onChange(event) {
     setSearchTerm(event.target.value);
-    console.log(event.target.value);
   }
   return (
     <div>
