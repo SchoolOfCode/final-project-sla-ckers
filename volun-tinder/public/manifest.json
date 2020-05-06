@@ -4,12 +4,12 @@
   "description": "A dating app for volunteers!",
   "icons": [
     {
-      "src": "/heart_hands192.png",
+      "src": "/Volt_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/heart_hands.png",
+      "src": "/Volt_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
