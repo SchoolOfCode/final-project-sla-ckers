@@ -43,7 +43,7 @@
 
 import React, { useState, useReducer } from 'react';
 
-import QuestionDisplay from '../QuestionDisplay/index';
+import QuestionDisplay from '../QuestionDisplay';
 
 import {
   ADD_ANIMAL_CHOICE,
@@ -53,6 +53,8 @@ import {
 } from './actionTypes';
 
 import { questions, answers } from '../../../libs/questionData';
+
+const answerKey = { animals: 0, environment: 1, localGroups: 2, events: 3 };
 
 //initial state for array that stores answer categories
 const initialState = { quizResults: [] };
@@ -96,39 +98,34 @@ function Quiz({ setHighestCat, setQuizOver }) {
       dispatch({ type: ADD_EVENTS_CHOICE });
     }
     console.log(state.quizResults);
-    questionToShow < 4
-      ? setQuestionToShow(questionToShow + 1)
+    questionToShow < questions.length
+      ? //now if adding another question, still works
+        setQuestionToShow(questionToShow + 1)
       : calculateResults();
   }
 
   function calculateResults() {
     console.log('button pressed');
-    //array w/ objects w/ counters for each category:
-    let categoryResults = [
-      { category: 'animals', count: 0 },
-      { category: 'environment', count: 0 },
-      { category: 'localGroups', count: 0 },
-      { category: 'events', count: 0 },
-    ];
-    //for loop that iterates through results array to count categories:
-    for (let i = 0; i < state.quizResults.length; i++) {
-      switch (state.quizResults[i]) {
-        case 'animals':
-          categoryResults[0].count = categoryResults[0].count + 1;
-          break;
-        case 'environment':
-          categoryResults[1].count = categoryResults[1].count + 1;
-          break;
-        case 'localGroups':
-          categoryResults[2].count = categoryResults[2].count + 1;
-          break;
-        case 'events':
-          categoryResults[3].count = categoryResults[3].count + 1;
-          break;
-        default:
-          return;
-      }
-    }
+    const categoryResults = state.quizResults.reduce(
+      (tally, cur) => {
+        const categoryIndex = answerKey[cur];
+        if (typeof categoryIndex === 'undefined') {
+          return tally;
+        }
+        return [
+          ...tally.slice(0, categoryIndex),
+          { ...tally[categoryIndex], count: tally[categoryIndex].count + 1 },
+          ...tally.slice(categoryIndex + 1),
+        ];
+      },
+      //FIXME: refactor tally array below based on answerKey rather than hard-coded categories
+      [
+        { category: 'animals', count: 0 },
+        { category: 'environment', count: 0 },
+        { category: 'localGroups', count: 0 },
+        { category: 'events', count: 0 },
+      ]
+    );
     console.log(categoryResults);
     //return the category with the highest count:
     let highestCatSoFar = 0;
@@ -144,7 +141,7 @@ function Quiz({ setHighestCat, setQuizOver }) {
     setHighestCat(result.category);
     setQuizOver(true);
   }
-
+  //FIXME: refactor so that the quesiton numbers aren't hard coded
   return (
     <div>
       {questionToShow === 0 && (
