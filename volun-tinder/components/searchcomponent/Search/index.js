@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { apiUrl } from "../../../libs/config";
 import SearchInput from "../SearchInput";
 import ContactCard from "../OrgCard";
-import css from "../OrgCard/orgCard.module.css";
+import css from "./search.module.css";
 import FlipMove from "react-flip-move";
 
 //Search bar input
@@ -59,7 +59,7 @@ function Search() {
             isClicked === index ? (
               <ContactCard org={org} />
             ) : (
-              <li onClick={() => handleClick(index)}>
+              <li className={css.card} onClick={() => handleClick(index)}>
                 {org.orgName} {org.briefBio}
                 <img
                   src={org.img}
