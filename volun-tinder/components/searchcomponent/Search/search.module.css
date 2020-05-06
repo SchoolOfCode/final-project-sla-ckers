@@ -1,8 +1,11 @@
 .orgImg {
   height: 150px;
   width: auto;
+  text-align: center;
 }
-
+.ul {
+  list-style-type: none;
+}
 .card {
   /* background-color: var(--palette2); */
   background-color: #814987;
@@ -12,4 +15,5 @@
   margin: 20px auto;
   padding: 20px;
   color: whitesmoke;
+  text-align: center;
 }
