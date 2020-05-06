@@ -24,7 +24,12 @@ import React, { useReducer, useState, useEffect } from 'react';
 import css from './inputComponent.module.css';
 import Form from './Form';
 
-import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from './actionTypes';
+import {
+  UID_CHANGE,
+  OPP_CHANGE,
+  OTHER_CHANGE,
+  QUALITIES_CHANGE,
+} from './actionTypes';
 import { apiUrl } from '../../libs/config';
 
 const intialOrgData = {
@@ -51,6 +56,9 @@ function formReducer(orgData, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case UID_CHANGE:
+      console.log('UID_CHANGE in reducer', { payload });
+      return { ...orgData, uid: payload };
     case OPP_CHANGE:
       console.log('OPP_CHANGE in reducer', { payload });
       return {
@@ -87,6 +95,10 @@ function InputComponent({ uid }) {
 
   //state that holdes specific org's data if there's a uid match:
   const [matchedOrgData, setMatchedOrgData] = useState({});
+
+  useEffect(() => {
+    formDispatch({ type: UID_CHANGE, payload: uid });
+  }, [uid]);
 
   //fetches existing org data so we can then compare uid:
   useEffect(() => {
