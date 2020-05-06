@@ -47,9 +47,9 @@ function Login({
         />
         <input type="submit" />
       </form>
-      <button onClick={handleSignInWithPopup}>
+      {/* <button onClick={handleSignInWithPopup}>
         Sign in with your Google account
-      </button>
+      </button> */}
       <button onClick={handleSignup}>Sign up as new user</button>
     </div>
   );

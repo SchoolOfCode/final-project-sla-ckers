@@ -65,6 +65,7 @@ function formReducer(orgData, action) {
       console.log('UID_CHANGE in reducer', { payload });
       return { ...orgData, uid: payload };
     case MATCHED_ORG_CHANGE:
+      console.log('MATCHED_ORG_CHANGE in reducer', { payload });
       return { payload };
     case OPP_CHANGE:
       console.log('OPP_CHANGE in reducer', { payload });
@@ -100,8 +101,8 @@ function InputComponent({ uid }) {
   //state to store orgs from initial fetch:
   const [allOrgs, setAllOrgs] = useState([]);
 
-  // //state that holdes specific org's data if there's a uid match:
-  // const [matchedOrgData, setMatchedOrgData] = useState({});
+  //state that holdes specific org's data if there's a uid match:
+  const [matchedOrgData, setMatchedOrgData] = useState({});
 
   //sets uid in orgData and then fetches existing org data so we can then compare uid:
   useEffect(() => {
@@ -112,8 +113,8 @@ function InputComponent({ uid }) {
       })
       .then((data) => {
         const orgs = data.map((org) => org);
+        console.log(orgs);
         setAllOrgs(orgs);
-        allOrgs.filter((org) => org.includes(uid));
       });
   }, [uid]);
 
@@ -121,7 +122,10 @@ function InputComponent({ uid }) {
   useEffect(() => {
     let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
     if (matchedOrg) {
-      formReducer({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
+      formDispatch({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
+      setMatchedOrgData(matchedOrg);
+    } else {
+      setMatchedOrgData({});
     }
   }, [allOrgs]);
 

@@ -97,7 +97,7 @@ function Form({
             </p>
           </label>
 
-          <label>
+          <label className={css.label}>
             <p>Weekly hourly commitment required:</p>
             <p>
               <input
@@ -135,7 +135,7 @@ function Form({
         <section className={css.section}>
           <h3>Contact Information</h3>
           <p>
-            <label>Contact Name:</label>
+            <label className={css.label}>Contact Name:</label>
           </p>
           <p>
             <input
@@ -149,7 +149,7 @@ function Form({
             />
           </p>
           <p>
-            <label>Email:</label>
+            <label className={css.label}>Email:</label>
           </p>
           <p>
             <input
