@@ -10,12 +10,12 @@
 - hook up uid into orgData (reducer, etc.) ✅ 
 - move form into sep component so can cond render different versions ✅ 
 - make a separate fetch in another useEffect that pulls in the org data as-is (like on the other pages) and puts it in a state ✅ 
-- functionality to take the uid from firebase and search it against the uids in the existing org data
+- functionality to take the uid from firebase and search it against the uids in the existing org data ✅ 
 - make a state to hold the org obj that matches the uid ✅  
-- if there's match, return that org's data obj (in its own state?), and if not, render a fresh empty form (so if that state stays {})
-- add case to reducer to populate orgData with the matchedOrgData object if there's a match 
-- make a different handleSubmit for a PUT rather than a POST 
-- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated
+- if there's a match, return that org's data obj (in its own state) ✅ 
+-TODO: add case to reducer to populate orgData with the matchedOrgData object if there's a match 
+-TODO: make a different handleSubmit for a PUT rather than a POST 
+- cond render a second form w/ the different handleSubmit based on if matchedOrgData is populated ✅ 
 -------------------------------
 */
 //--------------------------------------------------------
@@ -152,21 +152,46 @@ function InputComponent({ uid }) {
       .catch((error) => console.log('failed to fetch: ', error));
   }
 
+  function handleEditSubmit(event) {}
+
   return (
     <div className={css.form}>
       <h1>Post your volunteering opportunities</h1>
-      <h3>
-        Please complete the form below with details about your organisation and
-        opportunities. Volunteers-to-be will see this information and be
-        enchanted and eager to connect!
-      </h3>
-      <Form
-        orgData={orgData}
-        handleChangeOpp={handleChangeOpp}
-        handleChangeQualities={handleChangeQualities}
-        handleChangeOther={handleChangeOther}
-        handleSubmit={handleSubmit}
-      />
+
+      {/* If there IS existing org data with matching uid from login, render pre-populated data with instructions on editing: */}
+      {matchedOrgData && (
+        <>
+          <h3>
+            Make any changes to your details about your organisation and
+            opportunities below to update our database.
+          </h3>
+          <Form
+            orgData={orgData}
+            handleChangeOpp={handleChangeOpp}
+            handleChangeQualities={handleChangeQualities}
+            handleChangeOther={handleChangeOther}
+            handleSubmit={handleEditSubmit}
+          />
+        </>
+      )}
+
+      {/* If there's no org data with matching uid, render an empty form: */}
+      {!matchedOrgData && (
+        <>
+          <h3>
+            Please complete the form below with details about your organisation
+            and opportunities. Volunteers-to-be will see this information and be
+            enchanted and eager to connect!
+          </h3>
+          <Form
+            orgData={orgData}
+            handleChangeOpp={handleChangeOpp}
+            handleChangeQualities={handleChangeQualities}
+            handleChangeOther={handleChangeOther}
+            handleSubmit={handleSubmit}
+          />
+        </>
+      )}
     </div>
   );
 }
