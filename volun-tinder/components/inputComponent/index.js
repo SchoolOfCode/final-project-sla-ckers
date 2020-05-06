@@ -1,32 +1,27 @@
-import React, { useState, useReducer, useEffect } from 'react';
-import css from './inputComponent.module.css';
+import React, { useState, useReducer } from "react";
+import css from "./inputComponent.module.css";
 //Create a basic form for orgs to log their opportunity details.
 //Details provided by the volunteer will be used to populate individual cards about volunteer opportunities (to be used in the swipe functionality)
 //TODO: Create a form that captures the following data:  orgName, briefBio, opportunities {oppDescription, timeReq}, qualities, contactName and contactDetails.
 //TODO: Link to a profile picture
 //TODO: Button that onClick saves the data in a JSON file
 
-import {
-  USERID_CHANGE,
-  OPP_CHANGE,
-  OTHER_CHANGE,
-  QUALITIES_CHANGE,
-} from './actionTypes';
-import { apiUrl } from '../../libs/config';
+import { OPP_CHANGE, OTHER_CHANGE, QUALITIES_CHANGE } from "./actionTypes";
+import { apiUrl } from "../../libs/config";
 
 const intialOrgData = {
-  orgName: '',
-  category: '',
-  briefBio: '',
+  orgName: "",
+  category: "",
+  briefBio: "",
   opportunities: {
-    oppDescrip: '',
-    timeReq: '',
+    oppDescrip: "",
+    timeReq: "",
   },
-  qualities: ['', '', ''],
-  contactName: '',
-  contactDetails: '',
-  img: '',
-  userId: '',
+
+  qualities: ["", "", ""],
+  contactName: "",
+  contactDetails: "",
+  img: "",
 };
 
 //FIXME:From Chris re: qualities array:
@@ -37,14 +32,8 @@ function formReducer(orgData, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case USERID_CHANGE:
-      console.log('USERID_CHANGE in reducer');
-      return {
-        ...orgData,
-        userId: payload,
-      };
     case OPP_CHANGE:
-      console.log('OPP_CHANGE in reducer', { payload });
+      console.log("OPP_CHANGE in reducer", { payload });
       return {
         ...orgData,
         opportunities: {
@@ -53,14 +42,14 @@ function formReducer(orgData, action) {
         },
       };
     case QUALITIES_CHANGE:
-      console.log('QUALITIES_CHANGE in reducer');
+      console.log("QUALITIES_CHANGE in reducer");
       //payload has index and value
       //spreading the array makes a proper copy instead of just a reference
       const qualities = [...orgData.qualities];
       qualities[payload.index] = payload.input;
       return { ...orgData, qualities };
     case OTHER_CHANGE:
-      console.log('OTHER_CHANGE in reducer', { payload });
+      console.log("OTHER_CHANGE in reducer", { payload });
       return {
         ...orgData,
         [payload.name]: payload.input,
@@ -70,13 +59,8 @@ function formReducer(orgData, action) {
   }
 }
 
-//Takes in userId (uid from Firebase user object, set on login)
-function InputComponent({ userId }) {
+function InputComponent() {
   const [orgData, formDispatch] = useReducer(formReducer, intialOrgData);
-
-  useEffect(() => {
-    formDispatch({ type: USERID_CHANGE, payload: userId });
-  }, [userId]);
 
   function handleChangeOpp(event) {
     let input = event.target.value;
@@ -102,15 +86,15 @@ function InputComponent({ userId }) {
     console.log({ orgData });
 
     fetch(apiUrl, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(orgData),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log('posted: ', data))
-      .catch((error) => console.log('failed to fetch: ', error));
+      .then((data) => console.log("posted: ", data))
+      .catch((error) => console.log("failed to fetch: ", error));
   }
 
   return (
@@ -138,21 +122,9 @@ function InputComponent({ userId }) {
             />
           </p>
           <p>
-            <label>
-              Category:
-              <select
-                id="categories"
-                name="category"
-                onChange={handleChangeOther}
-              >
-                <option value="animals">Animals</option>
-                <option value="environment">Environment</option>
-                <option value="localGroups">Local Community Groups</option>
-                <option value="events">Festivals and Events</option>
-              </select>
-            </label>
+            <label>Category:</label>
           </p>
-          {/* <p>
+          <p>
             <input
               className={css.input}
               type="text"
@@ -162,7 +134,7 @@ function InputComponent({ userId }) {
               placeholder="Category"
               name="category"
             />
-          </p> */}
+          </p>
           <p>
             <label>Brief bio of the organisation:</label>
           </p>
@@ -229,7 +201,7 @@ function InputComponent({ userId }) {
         <section className={css.section}>
           <h3>
             Identify three essential qualities the volunteer needs to be a match
-            with your organisation.{' '}
+            with your organisation.{" "}
           </h3>
           {orgData.qualities.map((value, index) => (
             <label key={index} className={css.label}>
