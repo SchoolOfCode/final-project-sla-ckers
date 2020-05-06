@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Layout from "../components/Layout";
+import { routes } from "../libs/config";
 
 //Need to build a layout for this page?
 //Header
@@ -14,6 +15,9 @@ export default function Home() {
     <div>
       <Layout>
         <section>
+          <img src="../public/Volt_512.png" />
+        </section>
+        <section>
           <p>
             Welcome to VOLT, the app that aims to match individual volunteers to
             a charity that they can pursue a long-term relationship with. This
@@ -21,9 +25,7 @@ export default function Home() {
           </p>
         </section>
         <section>
-          <Link href="/quiz">
-            <a>Take me to the quiz!</a>
-          </Link>
+          <Link href={routes.quiz}>Take me to the quiz!</Link>
         </section>
       </Layout>
     </div>

@@ -17,10 +17,11 @@
   width: 70vh;
   padding: 20px;
   margin: 40px;
+  border: #81ffef 2px solid;
 }
 
 .input {
-  width: 500px;
+  width: 460px;
   height: 2vw;
   border-radius: 10px;
   padding: 6px;
@@ -40,8 +41,11 @@
   color: white;
   font-weight: bold;
   text-align: center;
+  border: #f067b4 2px solid;
+  position: absolute;
+  left: 62vh;
 }
 
 .submitBtnSection {
-  padding-top: 40px;
+  padding-top: 10px;
 }
