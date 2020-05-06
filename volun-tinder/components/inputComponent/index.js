@@ -120,15 +120,15 @@ function InputComponent({ uid }) {
   }, [uid]);
 
   // filters allOrgs for uid and returns org if found in matchedOrgData
-  useEffect(() => {
-    let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
-    if (matchedOrg) {
-      formDispatch({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
-      setMatchedOrgData(matchedOrg);
-    } else {
-      setMatchedOrgData({});
-    }
-  }, [allOrgs]);
+  // useEffect(() => {
+  //   let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
+  //   if (matchedOrg) {
+  //     formDispatch({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
+  //     setMatchedOrgData(matchedOrg);
+  //   } else {
+  //     setMatchedOrgData({});
+  //   }
+  // }, [allOrgs]);
 
   function handleChangeOpp(event) {
     let input = event.target.value;
@@ -167,28 +167,28 @@ function InputComponent({ uid }) {
   }
 
   //Submit for EDITED INFO form:
-  function handleEditSubmit(event) {
-    event.preventDefault();
-    console.log({ orgData });
+  // function handleEditSubmit(event) {
+  //   event.preventDefault();
+  //   console.log({ orgData });
 
-    fetch(`${apiUrl}/${matchedOrgData.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(orgData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log('edited: ', data))
-      .catch((error) => console.log('failed to fetch: ', error));
-  }
+  //   fetch(`${apiUrl}${matchedOrgData.id}`, {
+  //     method: 'PUT',
+  //     body: JSON.stringify(orgData),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log('edited: ', data))
+  //     .catch((error) => console.log('failed to fetch: ', error));
+  // }
 
   return (
     <div className={css.form}>
       <h1>Post your volunteering opportunities</h1>
 
       {/* If there IS existing org data with matching uid from login, render pre-populated data with instructions on editing: */}
-      {matchedOrgData && (
+      {/* {matchedOrgData && (
         <>
           <h3>
             Make any changes to your details about your organisation and
@@ -202,10 +202,10 @@ function InputComponent({ uid }) {
             handleSubmit={handleEditSubmit}
           />
         </>
-      )}
+      )} */}
 
       {/* If there's no org data with matching uid, render an empty form: */}
-      {!matchedOrgData && (
+      {matchedOrgData && (
         <>
           <h3>
             Please complete the form below with details about your organisation

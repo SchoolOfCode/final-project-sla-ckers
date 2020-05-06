@@ -14,6 +14,7 @@ PLAN FOR LOGIN:
 - Test accounts:
   test@testy.test, pass: testing
   slackers@soc.com, pass: finalproject
+  cors@test.com, pass: corserror
 
 - FLOW WITH EDIT CAPABILITY:
 1. User logs in or signs up => generates a uid from firebase user object
