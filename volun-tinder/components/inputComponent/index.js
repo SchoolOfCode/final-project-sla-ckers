@@ -77,7 +77,7 @@ function formReducer(orgData, action) {
   }
 }
 
-function InputComponent() {
+function InputComponent({ uid }) {
   //reducer that populates orgData with whatever is entered into the form:
   const [orgData, formDispatch] = useReducer(formReducer, intialOrgData);
 
