@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { apiUrl } from "../../../libs/config";
 import SearchInput from "../SearchInput";
 import OrgCard from "../OrgCard";
-import css from "../OrgCard/orgCard.module.css";
+import css from "./search.module.css";
 import FlipMove from "react-flip-move";
 
 //Search bar input
@@ -16,8 +16,8 @@ import FlipMove from "react-flip-move";
 
 // On enter key down or just autocomplete similar to WMCA project? - NAH.
 
-//When org is clicked render a card with the full details of that organisation - DONE
-//Make it a toggle!
+//When org is clicked render a card with the full details of that organisation
+//
 
 function Search() {
   const [list, setList] = useState([]);
@@ -40,7 +40,7 @@ function Search() {
       .then((data) => {
         const orgs = data.map((org) => org);
         setList(orgs);
-        // console.log(orgs);
+        console.log(orgs);
       });
   }, []);
 
@@ -51,7 +51,7 @@ function Search() {
         your head!
       </p>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <FlipMove typeName="ul">
+      <FlipMove className={css.ul} typeName="ul">
         {list
           .filter(function (org) {
             return (
@@ -61,10 +61,11 @@ function Search() {
           })
           .map((org, index) =>
             isClicked === index ? (
-              <OrgCard handleClose={handleClose} org={org} />
+              <OrgCard org={org} handleClose={handleClose} />
             ) : (
-              <li onClick={() => handleClick(index)}>
+              <li className={css.card} onClick={() => handleClick(index)}>
                 {org.orgName} {org.briefBio}
+                <br></br>
                 <img
                   src={org.img}
                   alt={org.briefBio}
