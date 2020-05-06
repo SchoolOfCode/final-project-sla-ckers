@@ -66,7 +66,8 @@ function formReducer(orgData, action) {
       return { ...orgData, uid: payload };
     case MATCHED_ORG_CHANGE:
       console.log('MATCHED_ORG_CHANGE in reducer', { payload });
-      return { payload };
+      return payload;
+    //took squigs off payload to see if it'll help
     case OPP_CHANGE:
       console.log('OPP_CHANGE in reducer', { payload });
       return {
@@ -118,7 +119,7 @@ function InputComponent({ uid }) {
       });
   }, [uid]);
 
-  //filters allOrgs for uid and returns org if found in matchedOrgData
+  // filters allOrgs for uid and returns org if found in matchedOrgData
   useEffect(() => {
     let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
     if (matchedOrg) {
