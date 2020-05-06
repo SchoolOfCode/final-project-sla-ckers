@@ -23,21 +23,21 @@
 
 //---THE GUTS:---
 
-//TODO: Create questions and answers ✅
+//Create questions and answers ✅
 
-//TODO: Use useReducer hook; create state to store choice categories (empty array) ✅
-//TODO: Reducer function for onClick event when answer choice is clicked: should access answer category and set that to the end of the results array (with the rest of the array spread out) ✅
-//TODO: Hand reducer's dispatch down through to answer choice via a function executed onClick ✅
+//Use useReducer hook; create state to store choice categories (empty array) ✅
+//Reducer function for onClick event when answer choice is clicked: should access answer category and set that to the end of the results array (with the rest of the array spread out) ✅
+//Hand reducer's dispatch down through to answer choice via a function executed onClick ✅
 
-//TODO: Create function to count choices after all questions are answered and return category with the highest total ✅
-//TODO: Deploy this function once the last question is answered ✅
+//Create function to count choices after all questions are answered and return category with the highest total ✅
+//Deploy this function once the last question is answered ✅
 
 //---MAPCEPTION:---
 
-//TODO: Use questions array to render each question ✅
-//TODO: Use answers array to display each answer (using the question number to pick the right answer set!) ✅
-//TODO: Map over answer choices to display each choice (with category number) ✅
-//TODO: Once the functions above are working, add a questionNumber state and conditional render to show one question at a time ✅
+//Use questions array to render each question ✅
+//Use answers array to display each answer (using the question number to pick the right answer set!) ✅
+//Map over answer choices to display each choice (with category number) ✅
+//Once the functions above are working, add a questionNumber state and conditional render to show one question at a time ✅
 
 // **********************************************************
 
@@ -119,6 +119,9 @@ function Quiz({ setHighestCat, setQuizOver }) {
         ];
       },
       //FIXME: refactor tally array below based on answerKey rather than hard-coded categories
+      //My start on it:
+      //array(n).fill({answerKey[n], count: 0})
+      //TODO: Finish once put/edit is sorted
       [
         { category: 'animals', count: 0 },
         { category: 'environment', count: 0 },
