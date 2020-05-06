@@ -40,6 +40,7 @@ const intialOrgData = {
   contactName: '',
   contactDetails: '',
   img: '',
+  uid: '',
 };
 
 //FIXME:From Chris re: qualities array:

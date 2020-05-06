@@ -30,6 +30,8 @@ export default function OrgDashboard() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   //form state that holds the info from the login and/or register form
   const [formState, setFormState] = useState({ email: '', password: '' });
+  //state to hold uid to pass down to InputComponent:
+  const [uid, setUid] = useState('');
 
   //Observer that watches out for change of auth state (i.e. a login):
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function OrgDashboard() {
       if (user) {
         // If there's a user object, user is signed in
         let email = user.email;
-        let uid = user.uid;
+        setUid(user.uid);
         console.log(`${email} is logged in`);
       } else {
         // If there's no user object, user is signed out
@@ -134,7 +136,7 @@ export default function OrgDashboard() {
           />
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
-        {loggedInUser && <InputComponent uid={user.uid} />}
+        {loggedInUser && <InputComponent uid={uid} />}
       </Layout>
     </div>
   );
