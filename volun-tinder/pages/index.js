@@ -1,6 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import Layout from "../components/Layout";
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../components/Layout';
+import { routes } from '../libs/config';
+//TODO: hook up quiz from routes instead of writing out component
 
 //Need to build a layout for this page?
 //Header
@@ -21,9 +23,7 @@ export default function Home() {
           </p>
         </section>
         <section>
-          <Link href="/quiz">
-            <a>Take me to the quiz!</a>
-          </Link>
+          <Link href={routes.quiz}>Take me to the quiz!</Link>
         </section>
       </Layout>
     </div>

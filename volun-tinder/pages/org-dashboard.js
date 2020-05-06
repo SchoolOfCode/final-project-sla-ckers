@@ -3,7 +3,7 @@ PLAN FOR LOGIN:
 
 - Need logic to listen for auth state change (via Firebase) and set the loggedInUser state accordingly - presumably on this level, so we can conditionally render the org form and the logout button once the user is logged in -> as set up but commented out for now below.
 
-- Initial flow:
+- INITIAL FLOW:
   1. User goes to org dashboard -> 
   2. User sees login form, where they either register or log in (form can do either) -> 
   3. Once they're logged in, loggedInUser contains user data for their session ->
@@ -14,6 +14,18 @@ PLAN FOR LOGIN:
 - Test accounts:
   test@testy.test, pass: testing
   slackers@soc.com, pass: finalproject
+
+- FLOW WITH EDIT CAPABILITY:
+1. User logs in or signs up => generates a uid from firebase user object
+2. uid is passed down to InputComponent when it's rendered 
+3. useEffects fire: 
+  a) formDispatch case UID_CHANGE adds the uid to the orgData state and then fetches all orgs and sets them to the allOrgs state 
+  b) triggered when allOrgs changes, the second useEffect filters allOrgs for an org containing the uid and sets this to the matchedOrgData state; if matchedOrg is true, formDispatch case MATCHED_ORG_CHANGE populates the orgData to matchedOrg
+4. One of two form versions renders:
+  a) if matchedOrgData has data:
+      Form renders with edit message and handleEditSubmit, which triggers a PUT request
+  a) if matchedOrgData does not have data:
+      Form renders with new org message and handleSubmit, which triggers a POST request
 
 -----------------------------------------------------------------------------*/
 
@@ -30,6 +42,8 @@ export default function OrgDashboard() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   //form state that holds the info from the login and/or register form
   const [formState, setFormState] = useState({ email: '', password: '' });
+  //state to hold uid to pass down to InputComponent:
+  const [uid, setUid] = useState('');
 
   //Observer that watches out for change of auth state (i.e. a login):
   useEffect(() => {
@@ -37,6 +51,7 @@ export default function OrgDashboard() {
       if (user) {
         // If there's a user object, user is signed in
         let email = user.email;
+        setUid(user.uid);
         console.log(`${email} is logged in`);
       } else {
         // If there's no user object, user is signed out
@@ -106,19 +121,19 @@ export default function OrgDashboard() {
       });
   }
 
-  //Calls on a new instance of Google's sign-in doohickey:
-  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  // //Calls on a new instance of Google's sign-in doohickey:
+  // const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-  //Sign in with google:
-  function handleSignInWithPopup() {
-    //Tells Firebase to open Google popup using the instance called on above, then the popup takes it from there:
-    firebase
-      .auth()
-      .signInWithPopup(googleProvider)
-      .catch(function (error) {
-        console.error(error);
-      });
-  }
+  // //Sign in with google:
+  // function handleSignInWithPopup() {
+  //   //Tells Firebase to open Google popup using the instance called on above, then the popup takes it from there:
+  //   firebase
+  //     .auth()
+  //     .signInWithPopup(googleProvider)
+  //     .catch(function (error) {
+  //       console.error(error);
+  //     });
+  // }
 
   return (
     <div>
@@ -128,12 +143,12 @@ export default function OrgDashboard() {
             formState={formState}
             setFormState={setFormState}
             handleSubmit={handleSubmit}
-            handleSignInWithPopup={handleSignInWithPopup}
+            // handleSignInWithPopup={handleSignInWithPopup}
             handleSignup={handleSignup}
           />
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
-        {loggedInUser && <InputComponent />}
+        {loggedInUser && <InputComponent uid={uid} />}
       </Layout>
     </div>
   );
