@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <Layout>
         <section>
-          <img src="../public/Volt_512.png" />
+          <img src="/Volt_512.png" />
         </section>
         <section>
           <p>
