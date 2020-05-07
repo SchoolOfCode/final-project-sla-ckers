@@ -3,7 +3,7 @@ import Header from "../Header";
 
 function Layout(props) {
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100vh", margin: 0 }}>
       <Header />
       {props.children}
       <style jsx global>{`
