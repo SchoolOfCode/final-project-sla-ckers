@@ -1,9 +1,10 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../Header";
+import css from "./layout.module.css";
 
 function Layout(props) {
   return (
-    <div id="layout">
+    <div style={{ height: "100vh" }}>
       <Header />
       {props.children}
       <style jsx global>{`
