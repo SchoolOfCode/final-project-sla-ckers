@@ -1,0 +1,50 @@
+.loginFormContainer {
+  background-color: #814987;
+  border-radius: 20px;
+  width: 70vh;
+  padding: 20px;
+  margin: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.button {
+  width: 160px;
+  height: 4em;
+  border-radius: 32px;
+  background-color: #e3bbe7;
+  color: #814987;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+
+.button:hover {
+  background-color: #814987;
+  color: white;
+  cursor: pointer;
+}
+
+.input {
+  width: 80%;
+  height: 2vw;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 20px;
+}

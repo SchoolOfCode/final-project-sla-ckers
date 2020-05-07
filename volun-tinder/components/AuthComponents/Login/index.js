@@ -12,6 +12,8 @@
 
 import React from 'react';
 
+import css from './login.module.css';
+
 function Login({
   setFormState,
   formState,
@@ -26,17 +28,18 @@ function Login({
   }
 
   return (
-    <div>
+    <div className={css.loginFormContainer}>
       <p>
         Are you an organisation looking to update your details? Log in here:
       </p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={css.loginForm}>
         <label>Email: </label>
         <input
           name="email"
           type="email"
           onChange={handleChange}
           value={formState.email}
+          className={css.input}
         />
         <label>Password: </label>
         <input
@@ -44,13 +47,19 @@ function Login({
           onChange={handleChange}
           name="password"
           value={formState.password}
+          className={css.input}
         />
-        <input type="submit" />
+        <p></p>
+        <input type="submit" className={css.button} value="Sign in" />
       </form>
-      {/* <button onClick={handleSignInWithPopup}>
-        Sign in with your Google account
-      </button> */}
-      <button onClick={handleSignup}>Sign up as new user</button>
+      <div className={css.buttonContainer}>
+        <button onClick={handleSignInWithPopup} class={css.button}>
+          Sign in with your Google account
+        </button>
+        <button onClick={handleSignup} class={css.button}>
+          Sign up as new user
+        </button>
+      </div>
     </div>
   );
 }

@@ -15,6 +15,7 @@ PLAN FOR LOGIN:
   test@testy.test, pass: testing
   slackers@soc.com, pass: finalproject
   cors@test.com, pass: corserror
+  fresh@test.com, pass: sofreshsoclean
 
 - FLOW WITH EDIT CAPABILITY:
 1. User logs in or signs up => generates a uid from firebase user object
@@ -123,18 +124,18 @@ export default function OrgDashboard() {
   }
 
   // //Calls on a new instance of Google's sign-in doohickey:
-  // const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
 
   // //Sign in with google:
-  // function handleSignInWithPopup() {
-  //   //Tells Firebase to open Google popup using the instance called on above, then the popup takes it from there:
-  //   firebase
-  //     .auth()
-  //     .signInWithPopup(googleProvider)
-  //     .catch(function (error) {
-  //       console.error(error);
-  //     });
-  // }
+  function handleSignInWithPopup() {
+    //Tells Firebase to open Google popup using the instance called on above, then the popup takes it from there:
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
 
   return (
     <div>
@@ -144,12 +145,19 @@ export default function OrgDashboard() {
             formState={formState}
             setFormState={setFormState}
             handleSubmit={handleSubmit}
-            // handleSignInWithPopup={handleSignInWithPopup}
+            handleSignInWithPopup={handleSignInWithPopup}
             handleSignup={handleSignup}
           />
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
         {loggedInUser && <InputComponent uid={uid} />}
+        <style jsx>{`
+          * {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        `}</style>
       </Layout>
     </div>
   );
