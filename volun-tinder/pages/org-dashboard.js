@@ -147,17 +147,11 @@ export default function OrgDashboard() {
             handleSubmit={handleSubmit}
             handleSignInWithPopup={handleSignInWithPopup}
             handleSignup={handleSignup}
+            className="loginComponent"
           />
         )}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
         {loggedInUser && <InputComponent uid={uid} />}
-        <style jsx>{`
-          * {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          }
-        `}</style>
       </Layout>
     </div>
   );

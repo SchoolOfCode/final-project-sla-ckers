@@ -29,34 +29,39 @@ function Login({
 
   return (
     <div className={css.loginFormContainer}>
-      <p>
+      <p className={css.loginP}>
         Are you an organisation looking to update your details? Log in here:
       </p>
       <form onSubmit={handleSubmit} className={css.loginForm}>
-        <label>Email: </label>
-        <input
-          name="email"
-          type="email"
-          onChange={handleChange}
-          value={formState.email}
-          className={css.input}
-        />
-        <label>Password: </label>
-        <input
-          type="password"
-          onChange={handleChange}
-          name="password"
-          value={formState.password}
-          className={css.input}
-        />
-        <p></p>
+        <label className={css.label}>
+          Email:
+          <input
+            name="email"
+            type="email"
+            onChange={handleChange}
+            value={formState.email}
+            className={css.input}
+          />
+        </label>
+
+        <label className={css.label}>
+          Password:
+          <input
+            type="password"
+            onChange={handleChange}
+            name="password"
+            value={formState.password}
+            className={css.input}
+          />
+        </label>
+
         <input type="submit" className={css.button} value="Sign in" />
       </form>
       <div className={css.buttonContainer}>
-        <button onClick={handleSignInWithPopup} class={css.button}>
+        <button onClick={handleSignInWithPopup} className={css.button}>
           Sign in with your Google account
         </button>
-        <button onClick={handleSignup} class={css.button}>
+        <button onClick={handleSignup} className={css.button}>
           Sign up as new user
         </button>
       </div>

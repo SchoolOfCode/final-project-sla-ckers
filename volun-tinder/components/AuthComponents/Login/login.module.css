@@ -1,19 +1,32 @@
 .loginFormContainer {
   background-color: #814987;
   border-radius: 20px;
-  width: 70vh;
+  width: 70vw;
   padding: 20px;
-  margin: 40px;
+  margin: 40px auto;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.loginP {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .loginForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
+  margin: 0 10%;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-content: center;
 }
 
@@ -29,15 +42,15 @@
   height: 4em;
   border-radius: 32px;
   background-color: #e3bbe7;
-  color: #814987;
+  color: #47294b;
   font-weight: bold;
   text-align: center;
   margin: 20px;
 }
 
 .button:hover {
-  background-color: #814987;
-  color: white;
+  background-color: #9f5aa7;
+  color: rgb(92, 85, 85);
   cursor: pointer;
 }
 
@@ -47,4 +60,5 @@
   border-radius: 10px;
   padding: 6px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
