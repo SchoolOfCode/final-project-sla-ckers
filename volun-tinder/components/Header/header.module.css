@@ -1,0 +1,36 @@
+.headerContainer {
+}
+
+.navLinksContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 0 auto;
+  width: 80vw;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  /* color: #e3bbe7; */
+  /* border-radius: 32px;
+  background-color: #e3bbe7;
+  color: #47294b;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+  padding: 5px 15px;
+  border: #9f5aa7 1px solid; */
+}
+
+.navLink:hover {
+  background-color: #9f5aa7;
+  color: #e3bbe7;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,11 +1,14 @@
 import React from 'react';
+
 import Link from 'next/link';
 import Head from 'next/head';
-import { routes } from '../libs/config';
+import css from './header.module.css';
+
+import { routes } from '../../libs/config';
 
 function Header() {
   return (
-    <div id="header">
+    <div id="header" className={css.headerContainer}>
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -18,6 +21,7 @@ function Header() {
         <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
+        {/* FIXME: Still linking to heart_hands.png below! */}
         <link
           href="../public/heart_hands.png"
           rel="icon"
@@ -35,24 +39,23 @@ function Header() {
       </Head>
 
       {/* <img alt="logo" /> */}
-
       <h1>VOLT</h1>
 
-      <div id="navLinks">
+      <div id="navLinks" className={css.navLinksContainer}>
         <Link href={routes.home}>
-          <a className="navLinks">Home</a>
+          <a className={css.navLink}>Home</a>
         </Link>
-        <Link href={routes.quiz}>
-          <a className="navLinks">Take the Quiz</a>
+        <Link href={routes.quiz} className={css.navLink}>
+          <a className={css.navLink}>Take the Quiz</a>
         </Link>
-        <Link href={routes.knowledgeBase}>
-          <a className="navLinks">Knowledge Base</a>
+        <Link href={routes.knowledgeBase} className={css.navLink}>
+          <a className={css.navLink}>Knowledge Base</a>
         </Link>
-        <Link href={routes.orgDashboard}>
-          <a className="navLinks">Organisation Dashboard</a>
+        <Link href={routes.orgDashboard} className={css.navLink}>
+          <a className={css.navLink}>Organisation Dashboard</a>
         </Link>
-        <Link href={routes.orgList}>
-          <a className="navLinks">Organisations List</a>
+        <Link href={routes.orgList} className={css.navLink}>
+          <a className={css.navLink}>Organisations List</a>
         </Link>
       </div>
     </div>
