@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { apiUrl } from "../../../libs/config";
-import SearchInput from "../SearchInput";
-import OrgCard from "../OrgCard";
-import css from "./search.module.css";
-import FlipMove from "react-flip-move";
+import React, { useState, useEffect } from 'react';
+import { apiUrl } from '../../../libs/config';
+import SearchInput from '../SearchInput';
+import OrgCard from '../OrgCard';
+import css from './search.module.css';
+import FlipMove from 'react-flip-move';
 
 //Search bar input
 //on change takes in input - DONE
@@ -21,15 +21,15 @@ import FlipMove from "react-flip-move";
 
 function Search() {
   const [list, setList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isClicked, setIsClicked] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isClicked, setIsClicked] = useState('');
 
   function handleClick(index) {
     setIsClicked(index);
   }
 
   function handleClose() {
-    setIsClicked("");
+    setIsClicked('');
   }
 
   useEffect(() => {
@@ -46,11 +46,13 @@ function Search() {
 
   return (
     <div>
-      <p>
-        Search our list of organisations and opportunities to see if any turn
-        your head!
-      </p>
-      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className={css.searchContainer}>
+        <p>
+          Search our list of organisations and opportunities to see if any turn
+          your head!
+        </p>
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
       <FlipMove className={css.ul} typeName="ul">
         {list
           .filter(function (org) {
@@ -61,7 +63,11 @@ function Search() {
           })
           .map((org, index) =>
             isClicked === index ? (
-              <OrgCard org={org} handleClose={handleClose} />
+              <OrgCard
+                org={org}
+                handleClose={handleClose}
+                className={css.orgCard}
+              />
             ) : (
               <li className={css.card} onClick={() => handleClick(index)}>
                 {org.orgName} {org.briefBio}
@@ -70,7 +76,7 @@ function Search() {
                   src={org.img}
                   alt={org.briefBio}
                   className={css.orgImg}
-                />{" "}
+                />{' '}
               </li>
             )
           )}
