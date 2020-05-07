@@ -39,7 +39,6 @@ function Header() {
       </Head>
 
       {/* <img alt="logo" /> */}
-
       <h1>VOLT</h1>
 
       <div id="navLinks" className={css.navLinksContainer}>
