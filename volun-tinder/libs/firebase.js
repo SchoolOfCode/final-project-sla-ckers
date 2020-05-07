@@ -1,3 +1,4 @@
+
 import firebase from 'firebase';
 
 const firebaseConfig = {
@@ -11,5 +12,6 @@ const firebaseConfig = {
 };
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+
 
 export default firebase;
