@@ -18,7 +18,9 @@ function OrgCard({ org, handleClose }) {
         Sounds like a keeper? contact {org.contactName} at the below address!
       </p>
       <p>{org.contactDetails}</p>
-      <button onClick={handleClose}>Close</button>
+      <button className={css.button} onClick={handleClose}>
+        Close
+      </button>
     </div>
   );
 }

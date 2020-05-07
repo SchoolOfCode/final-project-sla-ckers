@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../Header";
-import css from "./layout.module.css";
 
 function Layout(props) {
   return (
