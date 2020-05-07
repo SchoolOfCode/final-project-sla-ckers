@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../Header";
 
 function Layout(props) {
   return (
-    <div id="layout">
+    <div style={{ height: "100vh", margin: 0 }}>
       <Header />
       {props.children}
       <style jsx global>{`
