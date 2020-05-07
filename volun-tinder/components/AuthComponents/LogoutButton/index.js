@@ -8,10 +8,14 @@
 
 import React from 'react';
 
+import css from './logoutButton.module.css';
+
 function LogoutButton({ handleSignout }) {
   return (
     <div>
-      <button onClick={handleSignout}>Sign out</button>
+      <button onClick={handleSignout} className={css.logoutButton}>
+        Sign out
+      </button>
     </div>
   );
 }
