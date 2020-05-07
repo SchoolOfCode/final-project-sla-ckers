@@ -107,25 +107,36 @@ function InputComponent({ uid }) {
 
   //sets uid in orgData and then fetches existing org data so we can then compare uid:
   useEffect(() => {
-    formDispatch({ type: UID_CHANGE, payload: uid });
+    formDispatch({ type: UID_CHANGE, payload: uid }); //✅
     fetch(apiUrl)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         const orgs = data.map((org) => org);
-        console.log(orgs);
+        console.log('orgs list from first useEffect: ', { orgs }); //✅
         setAllOrgs(orgs);
       });
   }, [uid]);
 
   // filters allOrgs for uid and returns org if found in matchedOrgData
   useEffect(() => {
-    let matchedOrg = allOrgs.filter((org) => org.userId.includes(uid));
+    console.log('second useEffect fired'); //✅
+    //let matchedOrg = allOrgs.filter((org) => org.uid.includes(uid)); //FIXME: filter doesn't work! Still returns the org, even with a different uid.
+    //will try w/ a for loop for now just to see if that works; can refactor after
+    let matchedOrg = null;
+    for (let i = 0; i < allOrgs.length; i++) {
+      console.log(allOrgs[i].uid); //✅
+      console.log(orgData.uid); //✅
+      allOrgs[i].uid === orgData.uid && (matchedOrg = allOrgs[i]);
+    }
+    console.log({ matchedOrg }); //✅
     if (matchedOrg) {
+      console.log('matchedOrg TRUE in if statement'); //✅
       formDispatch({ type: MATCHED_ORG_CHANGE, payload: matchedOrg });
       setMatchedOrgData(matchedOrg);
     } else {
+      console.log('matchedOrg FALSE in if statement'); //✅
       setMatchedOrgData({});
     }
   }, [allOrgs]);
@@ -166,12 +177,12 @@ function InputComponent({ uid }) {
       .catch((error) => console.log('failed to fetch: ', error));
   }
 
-  //Submit for EDITED INFO form:
+  // Submit for EDITED INFO form:
   function handleEditSubmit(event) {
     event.preventDefault();
     console.log({ orgData });
 
-    fetch(`${apiUrl}/${matchedOrgData.id}`, {
+    fetch(`${apiUrl}${matchedOrgData.id}`, {
       method: 'PUT',
       body: JSON.stringify(orgData),
       headers: {
