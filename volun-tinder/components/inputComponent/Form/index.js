@@ -34,6 +34,7 @@ function Form({
           <label>
             Category:
             <p>
+              {/* FIXME: Doesn't show selected category on front end! */}
               <select
                 name="category"
                 onChange={handleChangeOther}
@@ -171,7 +172,12 @@ function Form({
         </section>
       </form>
       <section className={css.submitBtnSection}>
-        <input type="submit" className={css.button} onClick={handleSubmit} />
+        <input
+          type="submit"
+          className={css.button}
+          id={css.submitButton}
+          onClick={handleSubmit}
+        />
       </section>
     </div>
   );
