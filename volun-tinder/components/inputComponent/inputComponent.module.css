@@ -1,9 +1,6 @@
-#InputComponent {
-  text-align: left;
-  width: 80vw;
-  margin: 50px auto;
-  overflow: auto;
-  padding: 6px;
+.sectionHeader {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .form {
@@ -14,22 +11,30 @@
 .section {
   background-color: #814987;
   border-radius: 20px;
-  width: 70vh;
-  padding: 20px;
-  margin: 40px;
+  width: 70vw;
+  padding: 5px 20px;
+  margin: 5vh auto;
   border: #81ffef 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
-.input {
-  width: 460px;
+.dropdown {
+  width: 50%;
   height: 2vw;
   border-radius: 10px;
-  padding: 6px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.label {
-  padding-top: 60px;
+.input {
+  width: 80%;
+  height: 2vw;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .button {
