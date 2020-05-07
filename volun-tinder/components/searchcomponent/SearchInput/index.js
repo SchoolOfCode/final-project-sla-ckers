@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+
+import css from './searchInput.module.css';
 
 function SearchInput({ searchTerm, setSearchTerm }) {
   function onChange(event) {
@@ -9,8 +11,8 @@ function SearchInput({ searchTerm, setSearchTerm }) {
       <input
         value={searchTerm}
         type="text"
-        className="searchBox"
-        placeholder="Type in an organisation name"
+        className={css.searchBox}
+        placeholder="Start searching here"
         onChange={onChange}
       ></input>
     </div>
