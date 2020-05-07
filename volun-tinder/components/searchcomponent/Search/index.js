@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { apiUrl } from "../../libs/config";
-import SearchInput from "./SearchInput";
-import ContactCard from "./OrgCard";
-import css from "./OrgCard/orgCard.module.css";
+import { apiUrl } from "../../../libs/config";
+import SearchInput from "../SearchInput";
+import OrgCard from "../OrgCard";
+import css from "./search.module.css";
+import FlipMove from "react-flip-move";
 
 //Search bar input
 //on change takes in input - DONE
@@ -27,6 +28,10 @@ function Search() {
     setIsClicked(index);
   }
 
+  function handleClose() {
+    setIsClicked("");
+  }
+
   useEffect(() => {
     fetch(apiUrl)
       .then((response) => {
@@ -46,7 +51,7 @@ function Search() {
         your head!
       </p>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <ul>
+      <FlipMove className={css.ul} typeName="ul">
         {list
           .filter(function (org) {
             return (
@@ -56,10 +61,11 @@ function Search() {
           })
           .map((org, index) =>
             isClicked === index ? (
-              <ContactCard org={org} />
+              <OrgCard org={org} handleClose={handleClose} />
             ) : (
-              <li onClick={() => handleClick(index)}>
+              <li className={css.card} onClick={() => handleClick(index)}>
                 {org.orgName} {org.briefBio}
+                <br></br>
                 <img
                   src={org.img}
                   alt={org.briefBio}
@@ -68,7 +74,7 @@ function Search() {
               </li>
             )
           )}
-      </ul>
+      </FlipMove>
     </div>
   );
 }
