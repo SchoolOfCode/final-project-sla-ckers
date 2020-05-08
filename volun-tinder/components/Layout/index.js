@@ -9,6 +9,9 @@ function Layout(props) {
       <style jsx global>{`
         * {
           @import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
+
+          font-family: "Capriola", sans-serif;
+
         }
         body {
           margin: 0;
