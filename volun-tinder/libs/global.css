@@ -1,3 +1,15 @@
 * {
   border: 1px solid pink;
+
+  font-family: "Capriola", sans-serif;
+}
+
+#homeLogo {
+  text-align: center;
+  padding: 20px;
+  width: 256px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 30px;
 }
