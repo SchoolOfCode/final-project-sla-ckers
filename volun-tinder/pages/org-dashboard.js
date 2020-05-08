@@ -150,8 +150,8 @@ export default function OrgDashboard() {
             className="loginComponent"
           />
         )}
-        {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
         {loggedInUser && <InputComponent uid={uid} />}
+        {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
       </Layout>
     </div>
   );

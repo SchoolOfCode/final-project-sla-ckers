@@ -1,5 +1,6 @@
 import React from 'react';
 
+//NOTE: still importing CSS from the level above - seemed easier this way.
 import css from '../inputComponent.module.css';
 
 function Form({
@@ -13,77 +14,84 @@ function Form({
     <div>
       <form className="orgForm">
         <section className={css.section}>
-          <h3>About the Organisation</h3>
-          <p>
-            <label className={css.label}>Name of organisation:</label>
-          </p>
+          <h3 className={css.sectionHeader}>About Your Organisation</h3>
+
+          <label className={css.label}>
+            Organisation name:
+            <p>
+              <input
+                className={css.input}
+                type="text"
+                id="org-name"
+                onChange={handleChangeOther}
+                value={orgData.orgName}
+                placeholder="Name of organisation"
+                name="orgName"
+              />
+            </p>
+          </label>
+
+          <label>
+            Category:
+            <p>
+              {/* FIXME: Doesn't show selected category on front end! */}
+              <select
+                name="category"
+                onChange={handleChangeOther}
+                value={orgData.category}
+                id="category"
+                className={css.dropdown}
+              >
+                <option value="animals">Animals</option>
+                <option value="environment">Environment</option>
+                <option value="localGroups">
+                  Local Community Organisation
+                </option>
+                <option value="events">Festivals and Events</option>
+              </select>
+            </p>
+          </label>
+
+          <label>
+            About your organisation:
+            <p>
+              <input
+                className={css.input}
+                type="text"
+                id="briefBio"
+                onChange={handleChangeOther}
+                value={orgData.briefBio}
+                placeholder="Give a brief bio of the organisation"
+                name="briefBio"
+              />
+            </p>
+          </label>
 
           <p>
-            <input
-              className={css.input}
-              type="text"
-              id="org-name"
-              onChange={handleChangeOther}
-              value={orgData.orgName}
-              placeholder="Name of organisation"
-              name="orgName"
-            />
-          </p>
-          <p>
             <label>
-              Category:
+              URL to your organisation's image (ending in .jpg or .png):
               <p>
-                <select
-                  name="category"
+                <input
+                  className={css.input}
+                  type="text"
+                  id="img"
                   onChange={handleChangeOther}
-                  value={orgData.category}
-                  id="category"
-                >
-                  <option value="animals">Animals</option>
-                  <option value="environment">Environment</option>
-                  <option value="localGroups">
-                    Local Community Organisation
-                  </option>
-                  <option value="events">Festivals and Events</option>
-                </select>
+                  value={orgData.img}
+                  placeholder="Image link (ending in .jpg for example)"
+                  name="img"
+                />
               </p>
             </label>
-          </p>
-          <p>
-            <label>Brief bio of the organisation:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="briefBio"
-              onChange={handleChangeOther}
-              value={orgData.briefBio}
-              placeholder="Give a brief bio of the organisation"
-              name="briefBio"
-            />
-          </p>
-          <p>
-            <label>Image link:</label>
-          </p>
-          <p>
-            <input
-              className={css.input}
-              type="text"
-              id="img"
-              onChange={handleChangeOther}
-              value={orgData.img}
-              placeholder="Image link (ending in .jpg for example)"
-              name="img"
-            />
           </p>
         </section>
         <section className={css.section}>
           {/* FIXME: Refactor opportunities to be an object in an array in the next iteration, functioning like the qualities array! */}
-          <h3>Volunteering Opportunities Available</h3>
+          <h3 className={css.sectionHeader}>
+            Volunteering Opportunities Available
+          </h3>
 
           <label className={css.label}>
-            <p>Description of opportunity:</p>
+            Opportunity:
             <p>
               <input
                 className={css.input}
@@ -98,7 +106,7 @@ function Form({
           </label>
 
           <label className={css.label}>
-            <p>Weekly hourly commitment required:</p>
+            Hours per week of commitment required:
             <p>
               <input
                 className={css.input}
@@ -113,9 +121,8 @@ function Form({
           </label>
         </section>
         <section className={css.section}>
-          <h3>
-            Identify three essential qualities the volunteer needs to be a match
-            with your organisation.{' '}
+          <h3 className={css.sectionHeader}>
+            Three essential qualities in volunteers to be a match{' '}
           </h3>
           {orgData.qualities.map((value, index) => (
             <label key={index} className={css.label}>
@@ -133,7 +140,7 @@ function Form({
           ))}
         </section>
         <section className={css.section}>
-          <h3>Contact Information</h3>
+          <h3 className={css.sectionHeader}>Contact Information</h3>
           <p>
             <label className={css.label}>Contact Name:</label>
           </p>
@@ -165,7 +172,12 @@ function Form({
         </section>
       </form>
       <section className={css.submitBtnSection}>
-        <input type="submit" className={css.button} onClick={handleSubmit} />
+        <input
+          type="submit"
+          className={css.button}
+          id={css.submitButton}
+          onClick={handleSubmit}
+        />
       </section>
     </div>
   );

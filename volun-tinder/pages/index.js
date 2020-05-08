@@ -1,7 +1,6 @@
-
 import React from "react";
 import Link from "next/link";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/";
 import { routes } from "../libs/config";
 
 //Need to build a layout for this page?
@@ -16,7 +15,7 @@ export default function Home() {
     <div>
       <Layout>
         <section>
-          <img src="../public/Volt_512.png" />
+          <img src="/Volt_512.png" />
         </section>
         <section>
           <p>

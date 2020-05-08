@@ -103,7 +103,7 @@ function InputComponent({ uid }) {
   const [allOrgs, setAllOrgs] = useState([]);
 
   //state that holdes specific org's data if there's a uid match:
-  const [matchedOrgData, setMatchedOrgData] = useState({});
+  const [matchedOrgData, setMatchedOrgData] = useState();
 
   //sets uid in orgData and then fetches existing org data so we can then compare uid:
   useEffect(() => {
@@ -137,7 +137,7 @@ function InputComponent({ uid }) {
       setMatchedOrgData(matchedOrg);
     } else {
       console.log('matchedOrg FALSE in if statement'); //✅
-      setMatchedOrgData({});
+      setMatchedOrgData();
     }
   }, [allOrgs]);
 
