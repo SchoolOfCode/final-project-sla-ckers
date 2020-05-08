@@ -3,6 +3,10 @@
   margin-bottom: 30px;
 }
 
+.header {
+  color: black;
+}
+
 .form {
   padding: 20px;
   color: whitesmoke;

@@ -47,9 +47,14 @@ function Search() {
   return (
     <div>
       <div className={css.searchContainer}>
-        <p>
-          Search our list of organisations and opportunities to see if any turn
-          your head!
+        <p className={css.searchIntro}>
+          In the mood for a bit of a browse? See all of the organisations
+          looking for volunteers below. Click on each organisation for more
+          information about their opportunities available.
+        </p>
+        <p className={css.searchIntro}>
+          Use the search below to narrow down the list to see if any turn your
+          head:
         </p>
         <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
@@ -70,8 +75,8 @@ function Search() {
               />
             ) : (
               <li className={css.card} onClick={() => handleClick(index)}>
-                {org.orgName} {org.briefBio}
-                <br></br>
+                <h3>{org.orgName}</h3>
+                <p>{org.briefBio}</p>
                 <img
                   src={org.img}
                   alt={org.briefBio}
