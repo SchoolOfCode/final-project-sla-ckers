@@ -21,14 +21,18 @@ function Header() {
         <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
+
         <link
           href="../../public/Volt_512.png"
+
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
+
           href="../../public/VOLT_192.png"
+
           rel="icon"
           type="image/png"
           sizes="192x192"
@@ -38,9 +42,11 @@ function Header() {
       </Head>
 
       {/* <img alt="logo" /> */}
-      <h1>VOLT</h1>
+
 
       <div id="navLinks" className={css.navLinksContainer}>
+        <img id="logoNav" src="/VOLT_192.png" />
+
         <Link href={routes.home}>
           <a className={css.navLink}>Home</a>
         </Link>
