@@ -8,7 +8,7 @@
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 500px;
+  width: 60vw;
   margin: 20px auto;
   padding: 20px;
   color: whitesmoke;
@@ -29,4 +29,11 @@
   background-color: #9f5aa7;
   color: rgb(92, 85, 85);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 530px) {
+  .orgImg {
+    height: 75px;
+    width: auto;
+  }
 }
