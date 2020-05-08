@@ -98,7 +98,9 @@ function Quiz({ setHighestCat, setQuizOver }) {
       dispatch({ type: ADD_EVENTS_CHOICE });
     }
     console.log(state.quizResults);
-    questionToShow < questions.length
+    // FIXME: It's not liking questions.length below... Need to diagnose! Set it back to a hard-coded 4 just to get it working in the interim.
+    //questionToShow < questions.length
+    questionToShow < 4
       ? //now if adding another question, still works
         setQuestionToShow(questionToShow + 1)
       : calculateResults();
