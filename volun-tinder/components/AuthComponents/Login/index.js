@@ -30,7 +30,8 @@ function Login({
   return (
     <div className={css.loginFormContainer}>
       <p className={css.loginP}>
-        Are you an organisation looking to update your details? Log in here:
+        Are you an organisation looking to update your details? Log in or
+        register here:
       </p>
       <form onSubmit={handleSubmit} className={css.loginForm}>
         <label className={css.label}>

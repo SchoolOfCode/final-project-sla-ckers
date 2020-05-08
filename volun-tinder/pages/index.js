@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Layout from "../components/Layout/";
-import { routes } from "../libs/config";
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../components/Layout/';
+import { routes } from '../libs/config';
 
 //Need to build a layout for this page?
 //Header
@@ -19,15 +19,15 @@ export default function Home() {
         </section>
         <section>
           <p id="homeCopy">
-            Welcome to VOLT, the app that aims to match individual volunteers to
-            a charity that they can pursue a long-term relationship with. This
-            app combines volunteering with dating app functionality.
+            Welcome to VOLT, the app that aims to match volunteers and
+            organisations for a long-term volunteering relationship.
+            {/* TODO: See what you think of this? I was just thinking that the home page needs more of a snappy strapline than a description. This is just my suggestion; feel free to tweak.*/}
           </p>
         </section>
         <section>
-          <button id="quizButton">
-            <Link href={routes.quiz}>Take me to the quiz!</Link>
-          </button>
+          <Link id="quizLink" href={routes.quiz}>
+            <button id="quizButton">Take me to the quiz!</button>
+          </Link>
         </section>
       </Layout>
     </div>
