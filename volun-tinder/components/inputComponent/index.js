@@ -196,12 +196,12 @@ function InputComponent({ uid }) {
 
   return (
     <div className={css.form}>
-      <h1>Post your volunteering opportunities</h1>
+      <h1 className={css.header}>Post your volunteering opportunities</h1>
 
       {/* If there IS existing org data with matching uid from login, render pre-populated data with instructions on editing: */}
       {matchedOrgData && (
         <>
-          <h3>
+          <h3 className={css.header}>
             Make any changes to your details about your organisation and
             opportunities below to update our database.
           </h3>
@@ -218,7 +218,7 @@ function InputComponent({ uid }) {
       {/* If there's no org data with matching uid, render an empty form: */}
       {!matchedOrgData && (
         <>
-          <h3>
+          <h3 className={css.header}>
             Please complete the form below with details about your organisation
             and opportunities. Volunteers-to-be will see this information and be
             enchanted and eager to connect!

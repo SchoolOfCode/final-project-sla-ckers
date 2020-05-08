@@ -14,7 +14,7 @@
   width: 500px;
   margin: 20px auto;
   padding: 20px;
-  color: whitesmoke;
+  color: rgb(184, 157, 157);
   text-align: center;
 }
 
@@ -28,4 +28,12 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  text-align: center;
+}
+
+.searchIntro {
+  text-align: center;
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 20px;
 }
