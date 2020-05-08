@@ -79,7 +79,7 @@ function ReactSwipeCard({
             onSwipe={(dir) => swiped(dir, org)}
             // onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
-            // flickOnSwipe={true}
+            flickOnSwipe={true}
           >
             <div className={css.card}>
               <h3>Hi, we're {org.orgName}!</h3>
