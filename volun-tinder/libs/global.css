@@ -1,3 +1,37 @@
 * {
   border: 1px solid pink;
+
+  font-family: "Capriola", sans-serif;
+}
+
+#homeLogo {
+  text-align: center;
+  padding: 20px;
+  width: 256px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 30px;
+}
+
+#homeCopy {
+  text-align: center;
+  padding: 50px;
+}
+
+#quizButton {
+  border-radius: 32px;
+  text-decoration: none;
+  width: 200px;
+  height: 40px;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#logoNav {
+  width: 90px;
+  padding: 10px;
 }
