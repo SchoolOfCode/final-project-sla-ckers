@@ -1,15 +1,15 @@
-import React from 'react';
-import Header from '../Header';
+import React from "react";
+import Header from "../Header";
 
 function Layout(props) {
   return (
-    <div style={{ height: '100vh', margin: 0 }}>
+    <div style={{ height: "100vh", margin: 0 }}>
       <Header />
       {props.children}
       <style jsx global>{`
         * {
-          @import url('https://fonts.googleapis.com/css?family=Capriola&display=swap');
-          font-family: 'Capriola', sans-serif;
+          @import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
+          font-family: "Capriola", sans-serif;
         }
         body {
           margin: 0;

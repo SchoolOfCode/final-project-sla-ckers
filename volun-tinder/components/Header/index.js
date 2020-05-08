@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Link from 'next/link';
-import Head from 'next/head';
-import css from './header.module.css';
+import Link from "next/link";
+import Head from "next/head";
+import css from "./header.module.css";
 
-import { routes } from '../../libs/config';
+import { routes } from "../../libs/config";
 
 function Header() {
   return (
@@ -21,15 +21,14 @@ function Header() {
         <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
-        {/* FIXME: Still linking to heart_hands.png below! */}
         <link
-          href="../public/heart_hands.png"
+          href="../../public/Volt_512.png"
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
-          href="../public/heart_hands192.png"
+          href="../../public/VOLT_192.png"
           rel="icon"
           type="image/png"
           sizes="192x192"
