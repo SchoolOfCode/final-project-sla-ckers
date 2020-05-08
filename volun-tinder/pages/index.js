@@ -15,17 +15,19 @@ export default function Home() {
     <div>
       <Layout>
         <section>
-          <img src="/Volt_512.png" />
+          <img id="homeLogo" src="/Volt_512.png" alt="Volt Logo" />
         </section>
         <section>
-          <p>
+          <p id="homeCopy">
             Welcome to VOLT, the app that aims to match individual volunteers to
             a charity that they can pursue a long-term relationship with. This
             app combines volunteering with dating app functionality.
           </p>
         </section>
         <section>
-          <Link href={routes.quiz}>Take me to the quiz!</Link>
+          <button id="quizButton">
+            <Link href={routes.quiz}>Take me to the quiz!</Link>
+          </button>
         </section>
       </Layout>
     </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import Link from 'next/link';
@@ -5,6 +6,7 @@ import Head from 'next/head';
 import css from './header.module.css';
 
 import { routes } from '../../libs/config';
+
 
 function Header() {
   return (
@@ -39,9 +41,10 @@ function Header() {
       </Head>
 
       {/* <img alt="logo" /> */}
-      <h1>VOLT</h1>
 
       <div id="navLinks" className={css.navLinksContainer}>
+        <img id="logoNav" src="/VOLT_192.png" />
+
         <Link href={routes.home}>
           <a className={css.navLink}>Home</a>
         </Link>
