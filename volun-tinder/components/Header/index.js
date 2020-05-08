@@ -1,10 +1,12 @@
-import React from "react";
 
-import Link from "next/link";
-import Head from "next/head";
-import css from "./header.module.css";
+import React from 'react';
 
-import { routes } from "../../libs/config";
+import Link from 'next/link';
+import Head from 'next/head';
+import css from './header.module.css';
+
+import { routes } from '../../libs/config';
+
 
 function Header() {
   return (
