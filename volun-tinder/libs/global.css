@@ -21,16 +21,29 @@
   margin: 0 auto;
 }
 
-#quizButton {
+#homeButtons {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.homePageButton {
   border-radius: 32px;
   text-decoration: none;
-  width: 200px;
-  height: 40px;
+  width: 25vw;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   text-align: center;
   cursor: pointer;
+  background-color: #81ffef;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+.homePageButton:hover {
+  background-color: #9f5aa7;
 }
 
 #logoNav {

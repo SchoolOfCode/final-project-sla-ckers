@@ -24,9 +24,16 @@ export default function Home() {
             {/* TODO: See what you think of this? I was just thinking that the home page needs more of a snappy strapline than a description. This is just my suggestion; feel free to tweak.*/}
           </p>
         </section>
-        <section>
+        <section id="homeButtons">
           <Link id="quizLink" href={routes.quiz}>
-            <button id="quizButton">Take me to the quiz!</button>
+            <button className="homePageButton">
+              I want to volunteer. Take me to the quiz!
+            </button>
+          </Link>
+          <Link id="quizLink" href={routes.quiz}>
+            <button className="homePageButton">
+              I'm an organisation. Take me to the dashboard!
+            </button>
           </Link>
         </section>
       </Layout>
