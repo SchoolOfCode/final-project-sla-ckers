@@ -25,6 +25,10 @@
   margin: 20px;
 }
 
+#quizLink {
+  text-decoration: none;
+}
+
 .button:hover {
   background-color: #9f5aa7;
   color: rgb(92, 85, 85);

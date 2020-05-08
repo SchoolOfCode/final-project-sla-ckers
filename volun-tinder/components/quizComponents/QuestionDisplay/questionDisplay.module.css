@@ -11,3 +11,14 @@
 .questionText {
   color: whitesmoke;
 }
+
+.answerChoiceList {
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 530px) {
+  .questionText {
+    font-size: 100%;
+  }
+}

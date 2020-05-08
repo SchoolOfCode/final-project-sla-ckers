@@ -163,6 +163,7 @@ function InputComponent({ uid }) {
   //Submit for fresh, first-time form:
   function handleSubmit(event) {
     event.preventDefault();
+    alert('Details added successfully!');
     console.log({ orgData });
 
     fetch(apiUrl, {
@@ -180,6 +181,7 @@ function InputComponent({ uid }) {
   // Submit for EDITED INFO form:
   function handleEditSubmit(event) {
     event.preventDefault();
+    alert('Details updated successfully!');
     console.log({ orgData });
 
     fetch(`${apiUrl}${matchedOrgData.id}`, {
