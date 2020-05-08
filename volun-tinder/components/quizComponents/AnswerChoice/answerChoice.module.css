@@ -13,5 +13,11 @@
 li.answerChoice:hover {
   color: var(--palette1);
   font-weight: bold;
-  background-color: rgba(0, 139, 139, 0.2);
+  background-color: #81ffef;
+}
+
+@media only screen and (max-width: 530px) {
+  .answerChoice {
+    font-size: 90%;
+  }
 }
