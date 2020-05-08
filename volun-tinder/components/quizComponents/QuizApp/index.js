@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Quiz from '../Quiz';
 import MatchApp from '../../swipeComponents/MatchApp';
 import QuizResults from '../QuizResults';
+import css from './quizApp.module.css';
 
 function QuizApp() {
   //state that holds the highest-counted category at end of quiz:
@@ -18,7 +19,7 @@ function QuizApp() {
   }
 
   return (
-    <div className="App">
+    <div className={css.quizApp}>
       {!quizOver && (
         <Quiz setHighestCat={setHighestCat} setQuizOver={setQuizOver} />
       )}
