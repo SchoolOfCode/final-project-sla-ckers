@@ -5,6 +5,7 @@
 }
 .ul {
   list-style-type: none;
+  color: white;
 }
 .card {
   /* background-color: var(--palette2); */
@@ -14,7 +15,8 @@
   width: 500px;
   margin: 20px auto;
   padding: 20px;
-  color: rgb(184, 157, 157);
+  /* color: rgb(184, 157, 157); */
+  color: white;
   text-align: center;
 }
 
