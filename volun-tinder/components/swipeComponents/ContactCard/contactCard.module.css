@@ -1,9 +1,9 @@
 .contactCard {
-  /* background-color: var(--palette2); */
+  color: whitesmoke;
   background-color: #814987;
   border: #81ffef 2px solid;
   border-radius: 20px;
-  width: 500px;
+  width: 70vw;
   margin: 20px auto;
   padding: 20px;
   text-align: center;
@@ -12,4 +12,25 @@
 .orgImg {
   height: 150px;
   width: auto;
+  border-radius: 10px;
+}
+
+.contactLink {
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 530px) {
+  .contactCard {
+    margin: 20px auto;
+    padding: 10px 20px;
+  }
+
+  .contactHeader {
+    font-size: 20px;
+  }
+
+  .contactInfo,
+  .contactLink {
+    font-size: 12.8px;
+  }
 }
