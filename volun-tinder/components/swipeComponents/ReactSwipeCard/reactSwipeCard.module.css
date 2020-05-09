@@ -4,22 +4,23 @@
   margin: 0 auto;
 }
 
-.cardContainer {
+.subHeading {
+  font-weight: bold;
 }
 
 .card {
-  /* background-color: var(--palette2); */
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 500px;
+  width: 50vw;
   margin: 20px auto;
   padding: 20px;
   color: whitesmoke;
+  text-align: center;
 }
 
 .qualitiesList {
-  width: 200px;
+  width: 20vw;
   margin: 0 auto;
   list-style-position: inside;
   padding-top: 0;
@@ -30,6 +31,7 @@
 .orgImg {
   height: 150px;
   width: auto;
+  border-radius: 10px;
 }
 
 #resetLink {
@@ -42,4 +44,30 @@
   background-color: rgba(0, 139, 139, 0.2);
   border-radius: 20px;
   padding: 5px 0;
+}
+
+@media only screen and (max-width: 530px) {
+  /* .card {
+    width: 80vw;
+    margin: 15px auto;
+  } */
+
+  .orgImg {
+    width: 60vw;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .swipeInterface {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .swipeHeader {
+    font-size: 20px;
+  }
+
+  .swipeIntro {
+    font-size: 10px;
+  }
 }
