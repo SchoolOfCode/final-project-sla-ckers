@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Layout from "../components/Layout/";
-import { routes } from "../libs/config";
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../components/Layout/';
+import { routes } from '../libs/config';
 
 //Need to build a layout for this page?
 //Header
@@ -21,7 +21,6 @@ export default function Home() {
           <p id="homeCopy">
             Welcome to VOLT, the app that aims to match volunteers and
             organisations for a long-term volunteering relationship.
-            {/* TODO: See what you think of this? I was just thinking that the home page needs more of a snappy strapline than a description. This is just my suggestion; feel free to tweak.*/}
           </p>
         </section>
         <section id="homeButtons">
