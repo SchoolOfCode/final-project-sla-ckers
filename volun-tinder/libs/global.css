@@ -1,13 +1,12 @@
 * {
+  /* border: 1px solid pink; */
 
-  border: 1px solid pink;
-
-  font-family: "Capriola", sans-serif;
+  font-family: 'Capriola', sans-serif;
 }
 
 #homeLogo {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   width: 256px;
   margin-left: auto;
   margin-right: auto;
@@ -17,23 +16,48 @@
 
 #homeCopy {
   text-align: center;
-  padding: 50px;
+  padding: 25px;
+  width: 40vw;
+  margin: 0 auto;
 }
 
-#quizButton {
+#homeButtons {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.homePageButton {
   border-radius: 32px;
   text-decoration: none;
-  width: 200px;
-  height: 40px;
-  padding: 20px;
+  width: 25vw;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   text-align: center;
+  cursor: pointer;
+  background-color: #81ffef;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+.homePageButton:hover {
+  background-color: #9f5aa7;
 }
 
 #logoNav {
   width: 90px;
   padding: 10px;
+}
 
+@media only screen and (max-width: 530px) {
+  #homeLogo {
+    height: auto;
+    width: 60vw;
+  }
+  #homeCopy {
+    width: 90vw;
+    margin: 0 auto;
+  }
 }
