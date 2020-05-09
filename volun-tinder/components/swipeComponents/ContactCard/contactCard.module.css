@@ -3,7 +3,7 @@
   background-color: #814987;
   border: #81ffef 2px solid;
   border-radius: 20px;
-  width: 70vw;
+  width: 60vw;
   margin: 20px auto;
   padding: 20px;
   text-align: center;
@@ -23,6 +23,7 @@
   .contactCard {
     margin: 20px auto;
     padding: 10px 20px;
+    width: 70vw;
   }
 
   .contactHeader {

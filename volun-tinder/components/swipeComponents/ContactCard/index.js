@@ -18,7 +18,6 @@ function ContactCard({ org }) {
       <a href={org.link} className={css.contactLink}>
         {org.link}
       </a>
-      .
     </div>
   );
 }
