@@ -1,10 +1,12 @@
-import React from 'react';
 
-import Link from 'next/link';
-import Head from 'next/head';
-import css from './header.module.css';
+import React from "react";
 
-import { routes } from '../../libs/config';
+import Link from "next/link";
+import Head from "next/head";
+import css from "./header.module.css";
+
+import { routes } from "../../libs/config";
+
 
 function Header() {
   return (
@@ -21,27 +23,32 @@ function Header() {
         <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
-        {/* FIXME: Still linking to heart_hands.png below! */}
+
+
         <link
-          href="../public/heart_hands.png"
+          href="../../public/Volt_512.png"
+
+
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
-          href="../public/heart_hands192.png"
+          href="../../public/VOLT_192.png"
+
           rel="icon"
           type="image/png"
           sizes="192x192"
         />
         <link rel="icon" href="icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+
+        <meta name="theme-color" content="#81ffef" />
       </Head>
 
-      {/* <img alt="logo" /> */}
-      <h1>VOLT</h1>
-
+    
       <div id="navLinks" className={css.navLinksContainer}>
+        <img id="logoNav" src="/VOLT_192.png" />
+
         <Link href={routes.home}>
           <a className={css.navLink}>Home</a>
         </Link>

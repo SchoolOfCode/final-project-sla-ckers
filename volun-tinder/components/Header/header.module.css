@@ -4,15 +4,16 @@
   justify-content: space-around;
   padding: 5px;
   margin: 0 auto;
-  width: 80vw;
-  background-color: white;
-  border-radius: 10px;
+  width: 100%;
+  background-color: #81ffef;
 }
 
 .navLink {
   text-decoration: none;
   color: black;
   padding: 5px;
+  margin: auto;
+  text-align: center;
   /* color: #e3bbe7; */
   /* border-radius: 32px;
   background-color: #e3bbe7;

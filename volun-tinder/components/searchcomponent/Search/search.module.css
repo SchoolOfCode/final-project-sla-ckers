@@ -5,16 +5,18 @@
 }
 .ul {
   list-style-type: none;
+  color: white;
 }
 .card {
   /* background-color: var(--palette2); */
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 500px;
+  width: 60vw;
   margin: 20px auto;
   padding: 20px;
-  color: whitesmoke;
+  /* color: rgb(184, 157, 157); */
+  color: white;
   text-align: center;
 }
 
@@ -28,4 +30,19 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  text-align: center;
+}
+
+.searchIntro {
+  text-align: center;
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 530px) {
+  .orgImg {
+    height: 75px;
+    width: auto;
+  }
 }

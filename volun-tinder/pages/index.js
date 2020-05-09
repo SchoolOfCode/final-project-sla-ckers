@@ -15,17 +15,26 @@ export default function Home() {
     <div>
       <Layout>
         <section>
-          <img src="/Volt_512.png" />
+          <img id="homeLogo" src="/Volt_512.png" alt="Volt Logo" />
         </section>
         <section>
-          <p>
-            Welcome to VOLT, the app that aims to match individual volunteers to
-            a charity that they can pursue a long-term relationship with. This
-            app combines volunteering with dating app functionality.
+          <p id="homeCopy">
+            Welcome to VOLT, the app that aims to match volunteers and
+            organisations for a long-term volunteering relationship.
+            {/* TODO: See what you think of this? I was just thinking that the home page needs more of a snappy strapline than a description. This is just my suggestion; feel free to tweak.*/}
           </p>
         </section>
-        <section>
-          <Link href={routes.quiz}>Take me to the quiz!</Link>
+        <section id="homeButtons">
+          <Link id="quizLink" href={routes.quiz}>
+            <button className="homePageButton">
+              I want to volunteer. Take me to the quiz!
+            </button>
+          </Link>
+          <Link id="orgDashboard" href={routes.orgDashboard}>
+            <button className="homePageButton">
+              I'm an organisation. Take me to the dashboard!
+            </button>
+          </Link>
         </section>
       </Layout>
     </div>

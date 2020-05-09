@@ -1,7 +1,7 @@
 .questionDisplay {
   background-color: #814987;
-  width: 500px;
-  margin: 40vh auto;
+  width: 70vw;
+  margin: 10vh auto;
   padding: 20px;
   border-radius: 20px;
   border: #81ffef 4px solid;
@@ -10,4 +10,15 @@
 
 .questionText {
   color: whitesmoke;
+}
+
+.answerChoiceList {
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 530px) {
+  .questionText {
+    font-size: 100%;
+  }
 }
