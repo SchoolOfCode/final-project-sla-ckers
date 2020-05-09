@@ -15,7 +15,7 @@
 
 --------------------------------------------------------------------------*/
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 import Link from 'next/link';
@@ -24,9 +24,11 @@ function ReactSwipeCard({
   category,
   orgs,
   swipeRight,
+  swipeLeft,
   showMatchList,
   matchesList,
   swipeRights,
+  totalSwipes,
 }) {
   const [lastDirection, setLastDirection] = useState();
 
@@ -36,6 +38,7 @@ function ReactSwipeCard({
       console.log('right yeet is meet');
       swipeRight(org);
     } else {
+      swipeLeft();
       console.log('left yeet is YOTE');
     }
   }
@@ -125,9 +128,11 @@ function ReactSwipeCard({
           to go back to the home page where you can start again.
         </p>
       ) : (
-        <button onClick={showMatchList}>
-          Your matches can't wait to hear from you! See how to get in touch.
-        </button>
+        totalSwipes === orgs.length && (
+          <button onClick={showMatchList} id={css.matchButton}>
+            Your matches can't wait to hear from you! See how to get in touch.
+          </button>
+        )
       )}
     </div>
   );

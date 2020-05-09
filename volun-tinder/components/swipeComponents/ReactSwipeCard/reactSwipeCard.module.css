@@ -45,6 +45,19 @@
   padding: 5px 0;
 }
 
+#matchButton {
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #81ffef;
+  margin: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+#matchButton:hover {
+  background-color: #9f5aa7;
+}
+
 @media only screen and (max-width: 530px) {
   .subHeading {
     font-size: 90%;
