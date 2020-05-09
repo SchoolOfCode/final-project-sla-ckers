@@ -92,13 +92,13 @@ function ReactSwipeCard({
             <div className={css.card}>
               <h3 className={css.subHeading}>Hi, we're {org.orgName}!</h3>
               <img alt={org.briefBio} src={org.img} className={css.orgImg} />
-              <p>{org.briefBio}</p>
+              <p className={css.cardText}>{org.briefBio}</p>
               <p className={css.subHeading}>
                 Is it us you're looking for? Swipe right if this is something
                 you'd enjoy:
               </p>
               {/* FIXME: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
-              <p>
+              <p className={css.cardText}>
                 {org.opportunities.oppDescrip} - {org.opportunities.timeReq}{' '}
                 hours per week
               </p>

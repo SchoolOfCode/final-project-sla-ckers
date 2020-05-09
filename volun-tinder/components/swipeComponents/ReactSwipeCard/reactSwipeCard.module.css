@@ -1,6 +1,6 @@
 .swipeInterface {
   text-align: center;
-  width: 60vw;
+  width: 70vw;
   margin: 0 auto;
 }
 
@@ -12,7 +12,6 @@
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 50vw;
   margin: 20px auto;
   padding: 20px;
   color: whitesmoke;
@@ -20,7 +19,7 @@
 }
 
 .qualitiesList {
-  width: 20vw;
+  width: 40vw;
   margin: 0 auto;
   list-style-position: inside;
   padding-top: 0;
@@ -47,27 +46,33 @@
 }
 
 @media only screen and (max-width: 530px) {
-  /* .card {
-    width: 80vw;
-    margin: 15px auto;
-  } */
+  .subHeading {
+    font-size: 90%;
+  }
 
-  .orgImg {
+  .cardText,
+  .qualitiesList {
+    font-size: 80%;
+  }
+
+  .qualitiesList {
     width: 60vw;
-    height: auto;
-    margin: 0 auto;
   }
 
   .swipeInterface {
-    width: 80%;
-    margin: 20px auto;
+    width: 85vw;
+    margin: 25px auto;
   }
 
   .swipeHeader {
     font-size: 20px;
+    width: 70vw;
+    margin: 0 auto;
   }
 
   .swipeIntro {
     font-size: 10px;
+    width: 70vw;
+    margin: 0 auto;
   }
 }
