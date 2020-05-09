@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import Link from "next/link";
@@ -5,6 +6,7 @@ import Head from "next/head";
 import css from "./header.module.css";
 
 import { routes } from "../../libs/config";
+
 
 function Header() {
   return (
@@ -22,24 +24,28 @@ function Header() {
 
         <link rel="manifest" href="/manifest.json" />
 
+
         <link
           href="../../public/Volt_512.png"
+
+
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
           href="../../public/VOLT_192.png"
+
           rel="icon"
           type="image/png"
           sizes="192x192"
         />
         <link rel="icon" href="icon.png"></link>
+
         <meta name="theme-color" content="#81ffef" />
       </Head>
 
-      {/* <img alt="logo" /> */}
-
+    
       <div id="navLinks" className={css.navLinksContainer}>
         <img id="logoNav" src="/VOLT_192.png" />
 
