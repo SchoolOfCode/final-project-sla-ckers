@@ -17,8 +17,8 @@ export default function Home() {
         <section>
           <img id="homeLogo" src="/Volt_512.png" alt="Volt Logo" />
         </section>
-        <section>
-          <p id="homeCopy">
+        <section id="homeCopy">
+          <p>
             Welcome to VOLT, the app that aims to match volunteers and
             organisations for a long-term volunteering relationship.
           </p>
