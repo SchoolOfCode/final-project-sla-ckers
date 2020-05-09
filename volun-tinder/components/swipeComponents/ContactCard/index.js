@@ -15,7 +15,12 @@ function ContactCard({ org }) {
         {org.contactDetails}
       </a>
       <p className={css.contactInfo}>Or visit their website:</p>
-      <a href={org.link} className={css.contactLink}>
+      <a
+        href={org.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={css.contactLink}
+      >
         {org.link}
       </a>
     </div>
