@@ -1,12 +1,10 @@
+import React from 'react';
 
-import React from "react";
+import Link from 'next/link';
+import Head from 'next/head';
+import css from './header.module.css';
 
-import Link from "next/link";
-import Head from "next/head";
-import css from "./header.module.css";
-
-import { routes } from "../../libs/config";
-
+import { routes } from '../../libs/config';
 
 function Header() {
   return (
@@ -24,18 +22,14 @@ function Header() {
 
         <link rel="manifest" href="/manifest.json" />
 
-
         <link
           href="../../public/Volt_512.png"
-
-
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
           href="../../public/VOLT_192.png"
-
           rel="icon"
           type="image/png"
           sizes="192x192"
@@ -45,23 +39,22 @@ function Header() {
         <meta name="theme-color" content="#81ffef" />
       </Head>
 
-    
       <div id="navLinks" className={css.navLinksContainer}>
         <img id="logoNav" src="/VOLT_192.png" />
 
         <Link href={routes.home}>
           <a className={css.navLink}>Home</a>
         </Link>
-        <Link href={routes.quiz} className={css.navLink}>
+        <Link href={routes.quiz}>
           <a className={css.navLink}>Take the Quiz</a>
         </Link>
-        <Link href={routes.knowledgeBase} className={css.navLink}>
+        <Link href={routes.knowledgeBase}>
           <a className={css.navLink}>Knowledge Base</a>
         </Link>
-        <Link href={routes.orgDashboard} className={css.navLink}>
+        <Link href={routes.orgDashboard}>
           <a className={css.navLink}>Organisation Dashboard</a>
         </Link>
-        <Link href={routes.orgList} className={css.navLink}>
+        <Link href={routes.orgList}>
           <a className={css.navLink}>Organisations List</a>
         </Link>
       </div>
