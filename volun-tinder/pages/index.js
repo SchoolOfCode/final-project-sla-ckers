@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Layout from '../components/Layout/';
-import { routes } from '../libs/config';
+import React from "react";
+import Link from "next/link";
+import Layout from "../components/Layout/";
+import { routes } from "../libs/config";
 
 //Need to build a layout for this page?
 //Header
@@ -30,7 +30,7 @@ export default function Home() {
               I want to volunteer. Take me to the quiz!
             </button>
           </Link>
-          <Link id="quizLink" href={routes.quiz}>
+          <Link id="orgDashboard" href={routes.orgDashboard}>
             <button className="homePageButton">
               I'm an organisation. Take me to the dashboard!
             </button>
