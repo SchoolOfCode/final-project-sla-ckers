@@ -26,9 +26,10 @@ import FlipMove from "react-flip-move";
 function Search() {
   const [list, setList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchHours, setSearchHours] = useState(0);
   const [isClicked, setIsClicked] = useState("");
 
-  function handleClick(index) {
+  function handleChange(index) {
     setIsClicked(index);
   }
 
@@ -78,7 +79,7 @@ function Search() {
                 className={css.orgCard}
               />
             ) : (
-              <li className={css.card} onClick={() => handleClick(index)}>
+              <li className={css.card} onChange={() => handleChange(index)}>
                 <h3>{org.orgName}</h3>
                 <p>{org.briefBio}</p>
                 <img
