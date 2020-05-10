@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { apiUrl } from '../../../libs/config';
-import SearchInput from '../SearchInput';
-import OrgCard from '../OrgCard';
-import css from './search.module.css';
-import FlipMove from 'react-flip-move';
+import React, { useState, useEffect } from "react";
+import { apiUrl } from "../../../libs/config";
+import SearchInput from "../SearchInput";
+import OrgCard from "../OrgCard";
+import css from "./search.module.css";
+import FlipMove from "react-flip-move";
 
 //Search bar input
 //on change takes in input - DONE
@@ -16,20 +16,24 @@ import FlipMove from 'react-flip-move';
 
 // On enter key down or just autocomplete similar to WMCA project? - NAH.
 
-//When org is clicked render a card with the full details of that organisation
-//
+//When org is clicked render a card with the full details of that organisation - DONE
+
+//Add searchability by number of hours to spare
+//        - Drop down menu to select this
+//        - Update handle function to take in this number and set the searchTerm
+//        - Update filter in Search function to include number of hours
 
 function Search() {
   const [list, setList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [isClicked, setIsClicked] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isClicked, setIsClicked] = useState("");
 
   function handleClick(index) {
     setIsClicked(index);
   }
 
   function handleClose() {
-    setIsClicked('');
+    setIsClicked("");
   }
 
   useEffect(() => {
@@ -81,7 +85,7 @@ function Search() {
                   src={org.img}
                   alt={org.briefBio}
                   className={css.orgImg}
-                />{' '}
+                />{" "}
               </li>
             )
           )}
