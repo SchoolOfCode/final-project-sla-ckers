@@ -50,6 +50,7 @@ const intialOrgData = {
   contactName: '',
   contactDetails: '',
   img: '',
+  link: '',
   uid: '',
 };
 

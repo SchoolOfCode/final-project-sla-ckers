@@ -11,8 +11,11 @@ function MatchList({ category, orgs, matchesList }) {
 
   return (
     <div id={css.matchList}>
-      <h2>One last step toward your volunteering happy ever after!</h2>
-      <p>Get in touch with your matches with the information below:</p>
+      <section id={css.matchListIntro}>
+        <h2>One last step toward your volunteering happy ever after!</h2>
+        <p>Get in touch with your matches with the information below:</p>
+      </section>
+
       {matchesList.map((org) => (
         <ContactCard org={org} key={org.orgName} />
       ))}

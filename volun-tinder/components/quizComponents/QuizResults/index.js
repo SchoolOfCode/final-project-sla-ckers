@@ -16,19 +16,29 @@ function QuizResults({ highestCat, handleClick }) {
   //FIXME: potential to change this to a reducer to make it more robust later!
   const [displayCat, setDisplayCat] = useState('');
 
+  const [imgLink, setImgLink] = useState('');
+
   useEffect(() => {
     switch (highestCat) {
       case 'animals':
         setDisplayCat('animals');
+        setImgLink('https://i.ibb.co/8xbXmFg/animals-Img.jpg');
+        // setImgLink('/animalsImg.jpeg');
         break;
       case 'environment':
         setDisplayCat('the environment');
+        setImgLink('https://i.ibb.co/HP4r0yZ/environment-Img.jpg');
+        // setImgLink('/environmentImg.jpeg');
         break;
       case 'localGroups':
         setDisplayCat('local community groups and organisations');
+        setImgLink('https://i.ibb.co/3my9Wxc/local-Groups-Img.jpg');
+        // setImgLink('/localGroupsImg.jpeg');
         break;
       case 'events':
         setDisplayCat('festivals and events');
+        setImgLink('https://i.ibb.co/FbscvZw/events-Img.jpg');
+        // setImgLink('/eventsImg.jpeg');
         break;
       default:
         return highestCat;
@@ -42,7 +52,10 @@ function QuizResults({ highestCat, handleClick }) {
         organisation crazy about...
       </h3>
       <h2>{displayCat}!</h2>
-      <button classname={css.resultsBtn} onClick={handleClick}>
+      <p>
+        <img alt={highestCat} className={css.catImg} src={imgLink} />
+      </p>
+      <button id={css.resultsBtn} onClick={handleClick}>
         Could any of these be the one?
       </button>
     </div>

@@ -2,16 +2,32 @@
   text-align: center;
 }
 
+#matchListIntro {
+  margin: 20px auto;
+  width: 60vw;
+}
+
 #resetLink {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-weight: bold;
+  color: black;
 }
 
 .resetP {
-  /* background-color: var(--palette2); */
   background-color: rgba(0, 139, 139, 0.2);
   border-radius: 20px;
   padding: 10px;
   text-align: center;
-  width: 80vw;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 530px) {
+  .resetP {
+    font-size: 12.8px;
+    width: 80vw;
+  }
+  #matchListIntro {
+    width: 80vw;
+  }
 }

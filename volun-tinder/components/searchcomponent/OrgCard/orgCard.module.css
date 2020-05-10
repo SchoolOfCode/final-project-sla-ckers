@@ -67,6 +67,11 @@
   margin: 20px;
 }
 
+.contactLink {
+  color: whitesmoke;
+  padding-bottom: 10px;
+}
+
 #quizLink {
   text-decoration: none;
 }
