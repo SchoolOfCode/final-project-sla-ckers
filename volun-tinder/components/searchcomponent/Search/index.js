@@ -61,14 +61,20 @@ function Search() {
           Use the search below to narrow down the list to see if any turn your
           head:
         </p>
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <SearchInput
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          searchHours={searchHours}
+          setSearchHours={setSearchHours}
+        />
       </div>
       <FlipMove className={css.ul} typeName="ul">
         {list
           .filter(function (org) {
             return (
               org.orgName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
+              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              org.opportunities.timeReq.includes(searchHours())
             );
           })
           .map((org, index) =>
