@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Link from 'next/link';
-import Head from 'next/head';
-import css from './header.module.css';
+import Link from "next/link";
+import Head from "next/head";
+import css from "./header.module.css";
 
-import { routes } from '../../libs/config';
+import { routes } from "../../libs/config";
 
 function Header() {
   return (
@@ -21,6 +21,26 @@ function Header() {
         <title>VOLT</title>
 
         <link rel="manifest" href="/manifest.json" />
+
+        <link
+          href="/favicon-16x16.png"
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+        />
+
+        <link
+          href="favicon-32x32.png"
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
 
         <link
           href="../../public/Volt_512.png"
