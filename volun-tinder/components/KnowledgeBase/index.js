@@ -6,28 +6,30 @@ function KnowledgeBase() {
     <div>
       <div>
         <h1>Knowledge Base: Become a Volunteer</h1>
-        <img
-          className="KnowledgeBaseImage"
-          src="/Infographic.png"
-          alt="Benefits of being a volunteer infographic"
-        />
-        <p className="imageCredit">
-          Image Credit: Staffordshire County Council
-        </p>
 
         <p>
-          Here you'll find useful links to guidances and resources about
-          volunteering.
+          In this section you'll find useful links to guidance and resources
+          about volunteering.
         </p>
 
-        {/* <div className="Benefits"> */}
-        {/* <h3>Benefits of being a volunteer</h3> */}
-        {/* <p> */}
-        {/* There are numerous reasons to be a volunteer. See the infographic */}
-        {/* below to learn more. */}
-        {/* </p> */}
+        <section className="Benefits">
+          <h3>Benefits of being a volunteer</h3>
 
-        {/*</div> */}
+          <p>
+            There are numerous reasons to be a volunteer. See the infographic
+            below to learn more.
+          </p>
+
+          <img
+            ID="KnowledgeBaseImage"
+            src="/Infographic.png"
+            alt="Benefits of being a volunteer infographic"
+          />
+
+          <p className="imageCredit">
+            Image Credit: Staffordshire County Council
+          </p>
+        </section>
         <section className="VolunteerLinks">
           <h3>Useful links</h3>
           <ul>
