@@ -1,25 +1,25 @@
 .swipeInterface {
   text-align: center;
-  width: 60vw;
+  width: 70vw;
   margin: 0 auto;
 }
 
-.cardContainer {
+.subHeading {
+  font-weight: bold;
 }
 
 .card {
-  /* background-color: var(--palette2); */
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 500px;
   margin: 20px auto;
   padding: 20px;
   color: whitesmoke;
+  text-align: center;
 }
 
 .qualitiesList {
-  width: 200px;
+  width: 40vw;
   margin: 0 auto;
   list-style-position: inside;
   padding-top: 0;
@@ -30,6 +30,7 @@
 .orgImg {
   height: 150px;
   width: auto;
+  border-radius: 10px;
 }
 
 #resetLink {
@@ -42,4 +43,49 @@
   background-color: rgba(0, 139, 139, 0.2);
   border-radius: 20px;
   padding: 5px 0;
+}
+
+#matchButton {
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #81ffef;
+  margin: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+#matchButton:hover {
+  background-color: #9f5aa7;
+}
+
+@media only screen and (max-width: 530px) {
+  .subHeading {
+    font-size: 90%;
+  }
+
+  .cardText,
+  .qualitiesList {
+    font-size: 80%;
+  }
+
+  .qualitiesList {
+    width: 60vw;
+  }
+
+  .swipeInterface {
+    width: 85vw;
+    margin: 25px auto;
+  }
+
+  .swipeHeader {
+    font-size: 20px;
+    width: 70vw;
+    margin: 0 auto;
+  }
+
+  .swipeIntro {
+    font-size: 10px;
+    width: 70vw;
+    margin: 0 auto;
+  }
 }
