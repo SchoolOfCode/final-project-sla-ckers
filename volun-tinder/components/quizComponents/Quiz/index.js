@@ -42,7 +42,9 @@
 // **********************************************************
 
 import React, { useState, useReducer } from 'react';
+// import { Progress } from 'antd';
 
+import css from './quiz.module.css';
 import QuestionDisplay from '../QuestionDisplay';
 
 import {
@@ -154,54 +156,82 @@ function Quiz({ setHighestCat, setQuizOver }) {
   //FIXME: refactor so that the quesiton numbers aren't hard coded
   return (
     <div>
+      {/* <Progress
+        strokeColor={{
+          '0%': '#81ffef',
+          '100%': '#814987',
+        }}
+        percent={99.9}
+      /> */}
+
       {questionToShow === 0 && (
-        <QuestionDisplay
-          question={questions[0]}
-          answers={answers}
-          i={0}
-          key={0}
-          handleClick={handleClick}
-        />
+        <div className={css.questionAndProgBar}>
+          <QuestionDisplay
+            question={questions[0]}
+            answers={answers}
+            i={0}
+            key={0}
+            handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
+          />
+        </div>
       )}
 
       {questionToShow === 1 && (
-        <QuestionDisplay
-          question={questions[1]}
-          answers={answers}
-          i={1}
-          key={1}
-          handleClick={handleClick}
-        />
+        <div className={css.qAndProgBar}>
+          <QuestionDisplay
+            question={questions[1]}
+            answers={answers}
+            i={1}
+            key={1}
+            handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
+          />
+        </div>
       )}
 
       {questionToShow === 2 && (
-        <QuestionDisplay
-          question={questions[2]}
-          answers={answers}
-          i={2}
-          key={2}
-          handleClick={handleClick}
-        />
+        <div className={css.qAndProgBar}>
+          <QuestionDisplay
+            question={questions[2]}
+            answers={answers}
+            i={2}
+            key={2}
+            handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
+          />
+        </div>
       )}
 
       {questionToShow === 3 && (
-        <QuestionDisplay
-          question={questions[3]}
-          answers={answers}
-          i={3}
-          key={3}
-          handleClick={handleClick}
-        />
+        <div className={css.qAndProgBar}>
+          <QuestionDisplay
+            question={questions[3]}
+            answers={answers}
+            i={3}
+            key={3}
+            handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
+          />
+        </div>
       )}
 
       {questionToShow === 4 && (
-        <QuestionDisplay
-          question={questions[4]}
-          answers={answers}
-          i={4}
-          key={4}
-          handleClick={handleClick}
-        />
+        <div className={css.qAndProgBar}>
+          <QuestionDisplay
+            question={questions[4]}
+            answers={answers}
+            i={4}
+            key={4}
+            handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
+          />
+        </div>
       )}
     </div>
   );

@@ -21,7 +21,13 @@ function QuizApp() {
   return (
     <div className={css.quizApp}>
       {!quizOver && (
-        <Quiz setHighestCat={setHighestCat} setQuizOver={setQuizOver} />
+        <>
+          <h2 className={css.quizIntro}>
+            Tell us about yourself so we can find you a match made in
+            volunteering heaven.
+          </h2>
+          <Quiz setHighestCat={setHighestCat} setQuizOver={setQuizOver} />
+        </>
       )}
 
       {quizOver && !showCards && (
