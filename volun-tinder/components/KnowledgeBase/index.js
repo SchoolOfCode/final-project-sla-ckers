@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import css from "./knowledgeBase.module.css";
 
 function KnowledgeBase() {
   return (
@@ -6,10 +7,13 @@ function KnowledgeBase() {
       <div>
         <h1>Knowledge Base: Become a Volunteer</h1>
         <img
-          src="https://www.tmc.ac.uk/sites/default/files/volunteer.jpg"
+          className="KnowledgeBaseImage"
+          src="/Infographic.png"
           alt="Benefits of being a volunteer infographic"
         />
-        <p>Image Credit: Staffordshire County Council</p>
+        <p className="imageCredit">
+          Image Credit: Staffordshire County Council
+        </p>
 
         <p>
           Here you'll find useful links to guidances and resources about
