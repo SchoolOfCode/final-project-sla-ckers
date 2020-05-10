@@ -1,15 +1,16 @@
 import React from "react";
+
 import css from "./knowledgeBase.module.css";
 
 function KnowledgeBase() {
   return (
     <div>
       <div>
-        <h1>Knowledge Base: Become a Volunteer</h1>
+        <h1>Volunteer Guide</h1>
 
         <p>
-          In this section you'll find useful links to guidance and resources
-          about volunteering.
+          In this section you'll find useful links to guides and resources about
+          volunteering.
         </p>
 
         <section className="Benefits">
@@ -21,7 +22,7 @@ function KnowledgeBase() {
           </p>
 
           <img
-            ID="KnowledgeBaseImage"
+            id="knowledgeBaseImage"
             src="/Infographic.png"
             alt="Benefits of being a volunteer infographic"
           />
