@@ -67,6 +67,21 @@ function Form({
             </p>
           </label>
 
+          <label>
+            Website:
+            <p>
+              <input
+                className={css.input}
+                type="text"
+                id="link"
+                onChange={handleChangeOther}
+                value={orgData.link}
+                placeholder="website URL"
+                name="link"
+              />
+            </p>
+          </label>
+
           <p>
             <label>
               URL to your organisation's image (ending in .jpg or .png):
