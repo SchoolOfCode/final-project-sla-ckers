@@ -29,7 +29,7 @@ function Search() {
   const [searchHours, setSearchHours] = useState(0);
   const [isClicked, setIsClicked] = useState("");
 
-  function handleChange(index) {
+  function handleClick(index) {
     setIsClicked(index);
   }
 
@@ -79,7 +79,7 @@ function Search() {
                 className={css.orgCard}
               />
             ) : (
-              <li className={css.card} onChange={() => handleChange(index)}>
+              <li className={css.card} onClick={() => handleClick(index)}>
                 <h3>{org.orgName}</h3>
                 <p>{org.briefBio}</p>
                 <img
