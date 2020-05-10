@@ -1,7 +1,13 @@
-.questionDisplay {
-  background-color: #814987;
+.qAndProgBar {
   width: 70vw;
   margin: 25px auto;
+}
+
+.questionDisplay {
+  background-color: #814987;
+  /* width: 70vw;
+  margin: 25px auto; */
+  margin-top: 10px;
   padding: 20px;
   border-radius: 20px;
   border: #81ffef 4px solid;
@@ -21,7 +27,7 @@
   .questionText {
     font-size: 100%;
   }
-  .questionDisplay {
+  .qAndProgBar {
     margin: 15px auto;
     width: 80vw;
   }

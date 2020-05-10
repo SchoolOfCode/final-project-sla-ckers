@@ -42,6 +42,7 @@
 // **********************************************************
 
 import React, { useState, useReducer } from 'react';
+// import { Progress } from 'antd';
 
 import css from './quiz.module.css';
 import QuestionDisplay from '../QuestionDisplay';
@@ -155,6 +156,14 @@ function Quiz({ setHighestCat, setQuizOver }) {
   //FIXME: refactor so that the quesiton numbers aren't hard coded
   return (
     <div>
+      {/* <Progress
+        strokeColor={{
+          '0%': '#81ffef',
+          '100%': '#814987',
+        }}
+        percent={99.9}
+      /> */}
+
       {questionToShow === 0 && (
         <div className={css.questionAndProgBar}>
           <QuestionDisplay
@@ -163,6 +172,8 @@ function Quiz({ setHighestCat, setQuizOver }) {
             i={0}
             key={0}
             handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
           />
         </div>
       )}
@@ -175,6 +186,8 @@ function Quiz({ setHighestCat, setQuizOver }) {
             i={1}
             key={1}
             handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
           />
         </div>
       )}
@@ -187,6 +200,8 @@ function Quiz({ setHighestCat, setQuizOver }) {
             i={2}
             key={2}
             handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
           />
         </div>
       )}
@@ -199,6 +214,8 @@ function Quiz({ setHighestCat, setQuizOver }) {
             i={3}
             key={3}
             handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
           />
         </div>
       )}
@@ -211,6 +228,8 @@ function Quiz({ setHighestCat, setQuizOver }) {
             i={4}
             key={4}
             handleClick={handleClick}
+            totalQs={questions.length}
+            qsDone={questionToShow + 1}
           />
         </div>
       )}
