@@ -15,7 +15,7 @@
 
 --------------------------------------------------------------------------*/
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import css from './reactSwipeCard.module.css';
 import Link from 'next/link';
@@ -24,9 +24,11 @@ function ReactSwipeCard({
   category,
   orgs,
   swipeRight,
+  swipeLeft,
   showMatchList,
   matchesList,
   swipeRights,
+  totalSwipes,
 }) {
   const [lastDirection, setLastDirection] = useState();
 
@@ -36,6 +38,7 @@ function ReactSwipeCard({
       console.log('right yeet is meet');
       swipeRight(org);
     } else {
+      swipeLeft();
       console.log('left yeet is YOTE');
     }
   }
@@ -43,33 +46,42 @@ function ReactSwipeCard({
   return (
     <div className={css.swipeInterface}>
       {/* Title and intro: */}
-      <h1>
+      <h1 className={css.swipeHeader}>
         Organisations About{' '}
         {category.charAt(0).toUpperCase() + category.slice(1)} Who'd Love to
         Meet You
       </h1>
-      <h2>
-        Here are some organisations looking for a volunteer passionate about{' '}
-        {category.toLowerCase()} too. If you like how they sound, swipe right to
-        add them to your matches list. If they aren't for you, there are plenty
-        more fish in the sea. Swipe left to send them on their way.
-      </h2>
+      <section className={css.swipeIntro}>
+        <h2>
+          <p>
+            {' '}
+            Here are some organisations looking for a volunteer passionate about{' '}
+            {category.toLowerCase()} too.
+          </p>
+          <p>
+            If you like how they sound, swipe right to add them to your matches
+            list. If they aren't for you, there are plenty more fish in the sea.
+            Swipe left to send them on their way.
+          </p>
+        </h2>
 
-      {/* Message that renders based on swipe direction: */}
-      {/* FIXME: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
-      {lastDirection ? (
-        lastDirection === 'right' ? (
-          <h2 className={css.infoText}>
-            It's a match! We've added this organisation to your list.
-          </h2>
+        {/* Message that renders based on swipe direction: */}
+        {/* FIXME: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
+        {lastDirection ? (
+          lastDirection === 'right' ? (
+            <h2 className={css.infoText}>
+              It's a match! We've added this organisation to your list.
+            </h2>
+          ) : (
+            <h2 className={css.infoText}>
+              Not a match? That's alright. See if the next one strikes your
+              fancy!
+            </h2>
+          )
         ) : (
-          <h2 className={css.infoText}>
-            Not a match? That's alright. See if the next one strikes your fancy!
-          </h2>
-        )
-      ) : (
-        <h2 className={css.infoText}>Start swiping!</h2>
-      )}
+          <h2 className={css.infoText}>Start swiping!</h2>
+        )}
+      </section>
 
       {/* Renders the cards: */}
       <div className={css.cardContainer}>
@@ -77,24 +89,25 @@ function ReactSwipeCard({
           <TinderCard
             key={org.name}
             onSwipe={(dir) => swiped(dir, org)}
-            // onCardLeftScreen={() => outOfFrame(org)}
             preventSwipe={['up', 'down']}
             flickOnSwipe={true}
           >
             <div className={css.card}>
-              <h3>Hi, we're {org.orgName}!</h3>
+              <h3 className={css.subHeading}>Hi, we're {org.orgName}!</h3>
               <img alt={org.briefBio} src={org.img} className={css.orgImg} />
-              <p>{org.briefBio}</p>
-              <p>
-                Is it us you're looking for? Swipe right if this sounds like
-                something you'd enjoy:
+              <p className={css.cardText}>{org.briefBio}</p>
+              <p className={css.subHeading}>
+                Is it us you're looking for? Swipe right if this is something
+                you'd enjoy:
               </p>
               {/* FIXME: Chris's comment: What happens if opportunities is empty here, or doesn't exist? Need to think about error handling (remember the new ?. syntax - could help) */}
-              <p>
+              <p className={css.cardText}>
                 {org.opportunities.oppDescrip} - {org.opportunities.timeReq}{' '}
                 hours per week
               </p>
-              <p>What we're looking for in a match:</p>
+              <p className={css.subHeading}>
+                What we're looking for in a match:
+              </p>
               <ul className={css.qualitiesList}>
                 {org.qualities.map((quality) => (
                   <li>{quality}</li>
@@ -115,9 +128,11 @@ function ReactSwipeCard({
           to go back to the home page where you can start again.
         </p>
       ) : (
-        <button onClick={showMatchList}>
-          Your matches can't wait to hear from you! See how to get in touch.
-        </button>
+        totalSwipes === orgs.length && (
+          <button onClick={showMatchList} id={css.matchButton}>
+            Your matches can't wait to hear from you! See how to get in touch.
+          </button>
+        )
       )}
     </div>
   );
