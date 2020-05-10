@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import handleClose from "../Search";
-import css from './orgCard.module.css';
+import css from "./orgCard.module.css";
 
 function OrgCard({ org, handleClose }) {
   return (
@@ -31,6 +31,7 @@ function OrgCard({ org, handleClose }) {
       >
         {org.link}
       </a>
+      <br />
       <button className={css.button} onClick={handleClose}>
         Close
       </button>

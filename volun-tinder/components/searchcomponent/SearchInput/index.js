@@ -29,7 +29,8 @@ function SearchInput({
       <label>
         <p>
           {" "}
-          Search by number of hours<br></br>
+          Search by number of hours
+          <br />
           <select
             name="category"
             onChange={onHoursChange}
