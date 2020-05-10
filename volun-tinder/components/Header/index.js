@@ -43,13 +43,13 @@ function Header() {
         />
 
         <link
-          href="../../public/Volt_512.png"
+          href="/VOLT_512x512.png"
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
-          href="../../public/VOLT_192.png"
+          href="/VOLT_192x192.png"
           rel="icon"
           type="image/png"
           sizes="192x192"
@@ -69,7 +69,7 @@ function Header() {
           <a className={css.navLink}>Take the Quiz</a>
         </Link>
         <Link href={routes.knowledgeBase}>
-          <a className={css.navLink}>Knowledge Base</a>
+          <a className={css.navLink}>Volunteering Guide</a>
         </Link>
         <Link href={routes.orgDashboard}>
           <a className={css.navLink}>Organisation Dashboard</a>
