@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 // import handleClose from "../Search";
-import css from "./orgCard.module.css";
+import css from './orgCard.module.css';
 
 function OrgCard({ org, handleClose }) {
   return (
     <div className={css.card}>
-      <h3>{org.orgName}</h3>
+      <h3 className={css.orgHeader}>{org.orgName}</h3>
       <br />
       <img alt={org.briefBio} src={org.img} className={css.orgImg} />
       <p>About: {org.briefBio}</p>
@@ -33,7 +33,7 @@ function OrgCard({ org, handleClose }) {
       </a>
       <br />
       <button className={css.button} onClick={handleClose}>
-        Close
+        X
       </button>
     </div>
   );

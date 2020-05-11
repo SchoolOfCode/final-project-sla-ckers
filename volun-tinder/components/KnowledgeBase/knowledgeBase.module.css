@@ -14,4 +14,16 @@
 
 .volGuide {
   padding: 5vh;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.volGuideHeader {
+  font-weight: bold;
+}
+
+#usefulLinks {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
 }

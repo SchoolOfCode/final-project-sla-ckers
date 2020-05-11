@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import css from "./knowledgeBase.module.css";
+import css from './knowledgeBase.module.css';
 
 function KnowledgeBase() {
   return (
     <div>
       <div className={css.volGuide}>
-        <h1>Volunteer Guide</h1>
+        <h1 className={css.volGuideHeader}>Volunteer Guide</h1>
 
         <p>
           In this section you'll find useful links to guides and resources about
@@ -27,8 +27,8 @@ function KnowledgeBase() {
           </p>
         </section>
         <section className={css.VolunteerLinks}>
-          <h3>Useful links</h3>
-          <ul>
+          <h3 className={css.volGuideHeader}>Useful links:</h3>
+          <ul id={css.usefulLinks}>
             <li>
               <a href="https://www.ncvo.org.uk/ncvo-volunteering">
                 Why Volunteer?
