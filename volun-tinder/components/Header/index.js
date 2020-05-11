@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
@@ -35,6 +35,14 @@ const menu = (
 );
 
 function Header() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 750) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
     <div id="header" className={css.headerContainer}>
       <Head>
@@ -87,30 +95,38 @@ function Header() {
         <meta name="theme-color" content="#81ffef" />
       </Head>
 
-      <div id="navLinks" className={css.navLinksContainer}>
-        <img id={css.logoNav} src="/VOLT_192.png" alt="logo" />
+      <div id="navLinks" className={css.header}>
+        <a href={routes.home}>
+          <img id={css.logoNav} src="/VOLT_192.png" alt="logo" />
+        </a>
 
-        <Dropdown overlay={menu}>
-          <a id={css.menuLink} onClick={(e) => e.preventDefault()}>
-            Menu <DownOutlined />
-          </a>
-        </Dropdown>
+        {isMobile && (
+          <Dropdown overlay={menu}>
+            <a id={css.menuLink} onClick={(e) => e.preventDefault()}>
+              Menu <DownOutlined />
+            </a>
+          </Dropdown>
+        )}
 
-        {/* <Link href={routes.home}>
-          <a className={css.navLink}>Home</a>
-        </Link>
-        <Link href={routes.quiz}>
-          <a className={css.navLink}>Take the Quiz</a>
-        </Link>
-        <Link href={routes.knowledgeBase}>
-          <a className={css.navLink}>Volunteering Guide</a>
-        </Link>
-        <Link href={routes.orgDashboard}>
-          <a className={css.navLink}>Organisation Dashboard</a>
-        </Link>
-        <Link href={routes.orgList}>
-          <a className={css.navLink}>Organisations List</a>
-        </Link> */}
+        {!isMobile && (
+          <div className={css.fullNavMenu}>
+            <Link href={routes.home}>
+              <a className={css.navLink}>Home</a>
+            </Link>
+            <Link href={routes.quiz}>
+              <a className={css.navLink}>Take the Quiz</a>
+            </Link>
+            <Link href={routes.knowledgeBase}>
+              <a className={css.navLink}>Volunteering Guide</a>
+            </Link>
+            <Link href={routes.orgDashboard}>
+              <a className={css.navLink}>Organisation Dashboard</a>
+            </Link>
+            <Link href={routes.orgList}>
+              <a className={css.navLink}>Organisations List</a>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
