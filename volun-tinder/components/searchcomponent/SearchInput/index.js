@@ -5,17 +5,17 @@ import css from "./searchInput.module.css";
 function SearchInput({
   searchTerm,
   setSearchTerm,
-  searchHours,
-  setSearchHours,
+  // searchHours,
+  // setSearchHours,
 }) {
   function onChange(event) {
     setSearchTerm(event.target.value);
   }
 
-  function onHoursChange(event) {
-    setSearchHours(event.target.value);
-    console.log(event.target.value);
-  }
+  // function onHoursChange(event) {
+  //   setSearchHours(event.target.value);
+  //   console.log(event.target.value);
+  // }
   return (
     <div>
       <input
@@ -26,7 +26,7 @@ function SearchInput({
         onChange={onChange}
       ></input>
 
-      <label>
+      {/* <label>
         <p>
           {" "}
           Search by number of hours
@@ -44,7 +44,7 @@ function SearchInput({
             <option value={"4"}>4</option>
           </select>
         </p>
-      </label>
+      </label> */}
     </div>
   );
 }

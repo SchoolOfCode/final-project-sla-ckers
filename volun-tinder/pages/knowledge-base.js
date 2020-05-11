@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/Footer";
+
 //import Infographic from "../libs/Images/volunteer.jpg";
 
 //Plan - Static knowledgeBase page
@@ -19,7 +19,6 @@ export default function knowledgeBase() {
   return (
     <Layout>
       <KnowledgeBase />
-      <Footer />
     </Layout>
   );
 }

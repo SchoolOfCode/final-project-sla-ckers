@@ -34,7 +34,6 @@ PLAN FOR LOGIN:
 import React, { useState, useEffect } from "react";
 import InputComponent from "../components/InputComponent/index";
 import Layout from "../components/Layout";
-import Footer from "../components/Footer";
 import Login from "../components/AuthComponents/Login/index";
 import LogoutButton from "../components/AuthComponents/LogoutButton/index";
 
@@ -153,7 +152,6 @@ export default function OrgDashboard() {
         )}
         {loggedInUser && <InputComponent uid={uid} />}
         {loggedInUser && <LogoutButton handleSignout={handleSignout} />}
-        <Footer />
       </Layout>
     </div>
   );
