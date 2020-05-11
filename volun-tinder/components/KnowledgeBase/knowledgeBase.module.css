@@ -1,18 +1,16 @@
 #knowledgeBaseImage {
   margin-left: auto;
-  margin-right: auto;
-
+  margin-top: 3vh;
   border: purple 3px solid;
   border-radius: 20px;
   height: 50vh;
-  display: block;
 }
 
 .imageCredit {
   font-size: 8px;
+  padding-left: 12vh;
 }
 
 .volGuide {
-  margin-left: auto;
-  margin-right: auto;
+  padding: 5vh;
 }

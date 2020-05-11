@@ -16,11 +16,6 @@ function KnowledgeBase() {
         <section className={css.benefits}>
           <h3>Benefits of being a volunteer</h3>
 
-          <p>
-            There are numerous reasons to be a volunteer. See the infographic
-            below to learn more.
-          </p>
-
           <img
             id={css.knowledgeBaseImage}
             src="/Infographic.png"
@@ -31,7 +26,7 @@ function KnowledgeBase() {
             Image Credit: Staffordshire County Council
           </p>
         </section>
-        <section className="VolunteerLinks">
+        <section className={css.VolunteerLinks}>
           <h3>Useful links</h3>
           <ul>
             <li>
