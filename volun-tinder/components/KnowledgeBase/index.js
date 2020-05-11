@@ -1,29 +1,36 @@
-import React from 'react';
+import React from "react";
+
+import css from "./knowledgeBase.module.css";
 
 function KnowledgeBase() {
   return (
     <div>
       <div>
-        <h1>Knowledge Base: Become a Volunteer</h1>
-        <img
-          src="https://www.tmc.ac.uk/sites/default/files/volunteer.jpg"
-          alt="Benefits of being a volunteer infographic"
-        />
-        <p>Image Credit: Staffordshire County Council</p>
+        <h1>Volunteer Guide</h1>
 
         <p>
-          Here you'll find useful links to guidances and resources about
+          In this section you'll find useful links to guides and resources about
           volunteering.
         </p>
 
-        {/* <div className="Benefits"> */}
-        {/* <h3>Benefits of being a volunteer</h3> */}
-        {/* <p> */}
-        {/* There are numerous reasons to be a volunteer. See the infographic */}
-        {/* below to learn more. */}
-        {/* </p> */}
+        <section className="Benefits">
+          <h3>Benefits of being a volunteer</h3>
 
-        {/*</div> */}
+          <p>
+            There are numerous reasons to be a volunteer. See the infographic
+            below to learn more.
+          </p>
+
+          <img
+            id="knowledgeBaseImage"
+            src="/Infographic.png"
+            alt="Benefits of being a volunteer infographic"
+          />
+
+          <p className="imageCredit">
+            Image Credit: Staffordshire County Council
+          </p>
+        </section>
         <section className="VolunteerLinks">
           <h3>Useful links</h3>
           <ul>
