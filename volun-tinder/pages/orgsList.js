@@ -1,7 +1,7 @@
-import React from "react";
-import Layout from "../components/Layout";
+import React from 'react';
+import Layout from '../components/Layout';
 
-import Search from "../components/searchcomponent/search";
+import Search from '../components/Searchcomponent/Search';
 
 export default function orgslist() {
   return (
