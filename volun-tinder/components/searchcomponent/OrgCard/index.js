@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import handleClose from "../Search";
-import css from './orgCard.module.css';
+import css from "./orgCard.module.css";
 
 function OrgCard({ org, handleClose }) {
   return (
@@ -18,10 +18,20 @@ function OrgCard({ org, handleClose }) {
         ))}
       </p>
       <p>Time required: {org.opportunities.timeReq} hours per week</p>
-      <p>
-        Sounds like a keeper? contact {org.contactName} at the below address!
-      </p>
-      <p>{org.contactDetails}</p>
+      <p>Sound like a keeper? Contact {org.contactName}:</p>
+      <a className={css.contactLink} href={`mailto:${org.contactDetails}`}>
+        {org.contactDetails}
+      </a>
+      <p className={css.contactInfo}>Or visit their website:</p>
+      <a
+        href={org.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={css.contactLink}
+      >
+        {org.link}
+      </a>
+      <br />
       <button className={css.button} onClick={handleClose}>
         Close
       </button>

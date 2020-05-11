@@ -29,7 +29,7 @@ import { apiUrl } from '../../../libs/config';
 import { SWIPE_RIGHT, SWIPE_LEFT } from './actiontypes';
 
 //initial state for array that stores matches
-const initialMatchState = { matchResults: [], swipeRights: 0 };
+const initialMatchState = { matchResults: [], swipeRights: 0, totalSwipes: 0 };
 
 export function matchReducer(matchState, action) {
   const { type, payload } = action;
@@ -41,11 +41,15 @@ export function matchReducer(matchState, action) {
       return {
         matchResults: [...matchState.matchResults, payload],
         swipeRights: matchState.swipeRights + 1,
+        totalSwipes: matchState.totalSwipes + 1,
       };
     case SWIPE_LEFT:
       //for left swipe,
       console.log('swipe-left action fired');
-      return matchState;
+      return {
+        ...matchState,
+        totalSwipes: matchState.totalSwipes + 1,
+      };
     default:
       //for anything else, just returns existing list w/o adding a match
       console.log('weird swipe yo');
@@ -95,6 +99,9 @@ export default function MatchApp({ category }) {
   function swipeRight(org) {
     matchDispatch({ type: SWIPE_RIGHT, payload: org });
   }
+  function swipeLeft() {
+    matchDispatch({ type: SWIPE_LEFT });
+  }
 
   function showMatchList() {
     setSwipesDone(true);
@@ -108,9 +115,11 @@ export default function MatchApp({ category }) {
           category={category}
           orgs={categoryOrgs}
           swipeRight={swipeRight}
+          swipeLeft={swipeLeft}
           showMatchList={showMatchList}
           matchesList={matchState.matchResults}
           swipeRights={matchState.swipeRights}
+          totalSwipes={matchState.totalSwipes}
           key="0"
         />
       )}

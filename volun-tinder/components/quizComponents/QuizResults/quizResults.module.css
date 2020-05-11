@@ -1,5 +1,39 @@
 #resultsPage {
   text-align: center;
-  width: 80vw;
+  width: 60vw;
   margin: 50px auto;
+}
+
+.catImg {
+  height: 200px;
+  width: auto;
+  border-radius: 10px;
+}
+
+#resultsBtn {
+  border-radius: 32px;
+  text-decoration: none;
+  width: 250px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  background-color: #81ffef;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+#resultsBtn:hover {
+  background-color: #9f5aa7;
+}
+
+@media only screen and (max-width: 530px) {
+  .catImg {
+    height: 90px;
+    width: auto;
+  }
+  #resultsPage {
+    width: 80vw;
+    margin: 10vh auto;
+  }
 }
