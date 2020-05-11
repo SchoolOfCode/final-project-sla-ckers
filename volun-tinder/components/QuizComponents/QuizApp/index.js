@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Quiz from '../Quiz';
-import MatchApp from '../../swipeComponents/MatchApp';
+import MatchApp from '../../SwipeComponents/MatchApp';
 import QuizResults from '../QuizResults';
 import css from './quizApp.module.css';
 
