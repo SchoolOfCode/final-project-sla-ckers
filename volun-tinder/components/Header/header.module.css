@@ -1,28 +1,43 @@
 .navLinksContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-content: flex-end;
   padding: 5px;
   margin: 0 auto;
   width: 100%;
   background-color: #81ffef;
 }
 
-.navLink {
+#logoNav {
+  margin: 5px 5vw;
+  height: 10vw;
+  width: auto;
+}
+
+#menuLink {
+  color: black;
+  margin: 0 5vw;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.menuItem {
+  font-weight: bold;
+  font-size: 120%;
+  background-color: #81ffef;
+}
+
+.menuItem:hover {
+  background-color: #9f5aa7;
+}
+
+/* .navLink {
   text-decoration: none;
   color: black;
   padding: 5px;
   margin: auto;
   text-align: center;
-  /* color: #e3bbe7; */
-  /* border-radius: 32px;
-  background-color: #e3bbe7;
-  color: #47294b;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px;
-  padding: 5px 15px;
-  border: #9f5aa7 1px solid; */
 }
 
 .navLink:hover {
@@ -31,4 +46,4 @@
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
-}
+} */

@@ -1,10 +1,38 @@
-import React from "react";
+import React from 'react';
 
-import Link from "next/link";
-import Head from "next/head";
-import css from "./header.module.css";
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 
-import { routes } from "../../libs/config";
+import Link from 'next/link';
+import Head from 'next/head';
+import css from './header.module.css';
+
+import { routes } from '../../libs/config';
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a className={css.menuItem} href={routes.quiz}>
+        Take the Quiz
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a className={css.menuItem} href={routes.knowledgeBase}>
+        Volunteering Guide
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a className={css.menuItem} href={routes.orgDashboard}>
+        Organisation Dashboard
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a className={css.menuItem} href={routes.orgList}>
+        Organisations List
+      </a>
+    </Menu.Item>
+  </Menu>
+);
 
 function Header() {
   return (
@@ -60,9 +88,15 @@ function Header() {
       </Head>
 
       <div id="navLinks" className={css.navLinksContainer}>
-        <img id="logoNav" src="/VOLT_192.png" />
+        <img id={css.logoNav} src="/VOLT_192.png" alt="logo" />
 
-        <Link href={routes.home}>
+        <Dropdown overlay={menu}>
+          <a id={css.menuLink} onClick={(e) => e.preventDefault()}>
+            Menu <DownOutlined />
+          </a>
+        </Dropdown>
+
+        {/* <Link href={routes.home}>
           <a className={css.navLink}>Home</a>
         </Link>
         <Link href={routes.quiz}>
@@ -76,7 +110,7 @@ function Header() {
         </Link>
         <Link href={routes.orgList}>
           <a className={css.navLink}>Organisations List</a>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
