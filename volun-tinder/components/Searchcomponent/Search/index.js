@@ -21,12 +21,12 @@ import FlipMove from "react-flip-move";
 //Add searchability by number of hours to spare
 //        - Drop down menu to select this
 //        - Update handle function to take in this number and set the searchTerm
-//        - Update filter in Search function to include number of hours
+//        - TODO: Update filter in Search function to include number of hours
 
 function Search() {
   const [list, setList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchHours, setSearchHours] = useState(0);
+  // const [searchHours, setSearchHours] = useState(0); //
   const [isClicked, setIsClicked] = useState("");
 
   function handleClick(index) {
@@ -64,8 +64,8 @@ function Search() {
         <SearchInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          searchHours={searchHours}
-          setSearchHours={setSearchHours}
+          // searchHours={searchHours}
+          // setSearchHours={setSearchHours}
         />
       </div>
       <FlipMove className={css.ul} typeName="ul">
@@ -73,8 +73,7 @@ function Search() {
           .filter(function (org) {
             return (
               org.orgName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              org.opportunities.timeReq.includes(searchHours())
+              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
             );
           })
           .map((org, index) =>
