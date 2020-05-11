@@ -26,4 +26,10 @@
   margin: 0 auto;
   text-align: center;
   width: 300px;
+  list-style: inside;
+}
+
+.introP {
+  padding-bottom: 20px;
+  padding-top: 15px;
 }

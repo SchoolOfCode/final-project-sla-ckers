@@ -8,13 +8,13 @@ function KnowledgeBase() {
       <div className={css.volGuide}>
         <h1 className={css.volGuideHeader}>Volunteer Guide</h1>
 
-        <p>
+        <h3 className={css.introP}>
           In this section you'll find useful links to guides and resources about
           volunteering.
-        </p>
+        </h3>
 
         <section className={css.benefits}>
-          <h3>Benefits of being a volunteer</h3>
+          <h2>Benefits of being a volunteer:</h2>
 
           <img
             id={css.knowledgeBaseImage}

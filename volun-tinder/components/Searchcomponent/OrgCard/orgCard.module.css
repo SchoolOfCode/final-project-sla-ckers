@@ -2,6 +2,7 @@
   height: 150px;
   width: auto;
   border-radius: 10px;
+  padding-bottom: 25px;
 }
 
 .orgHeader {
@@ -13,12 +14,17 @@
   color: white;
 }
 
+.briefBio {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .card {
   /* background-color: var(--palette2); */
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 60vw;
+  width: 65vw;
   margin: 20px auto;
   padding: 20px;
   color: white;

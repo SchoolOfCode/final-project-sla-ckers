@@ -52,15 +52,16 @@ function Search() {
   return (
     <div>
       <div className={css.searchContainer}>
-        <p className={css.searchIntro}>
-          In the mood for a bit of a browse? See all of the organisations
-          looking for volunteers below. Click on each organisation for more
-          information about their opportunities available.
-        </p>
-        <p className={css.searchIntro}>
+        <h1 className={css.searchHeader}>In the mood for a bit of a browse?</h1>
+        <h2 className={css.searchIntro}>
+          See all of the organisations looking for volunteers below. Click on
+          each organisation for more information about their opportunities
+          available.
+        </h2>
+        <h2 className={css.searchIntro}>
           Use the search below to narrow down the list to see if any turn your
           head:
-        </p>
+        </h2>
         <SearchInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
@@ -92,6 +93,10 @@ function Search() {
                   alt={org.briefBio}
                   className={css.orgImg}
                 />{' '}
+                <br />
+                <span className={css.clickToExpand}>
+                  Click for more details!
+                </span>
               </li>
             )
           )}
