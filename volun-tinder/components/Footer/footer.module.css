@@ -1,76 +1,26 @@
-* {
-  /* border: 1px solid pink; */
-
-  font-family: "Capriola", sans-serif;
+.footer {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6vh;
+  background-color: #81ffef;
+  color: black;
+  text-align: left;
 }
 
-#homeLogo {
-  text-align: center;
-  padding: 5px;
-  width: 256px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 30px;
+#logoFooter {
+  height: 80%;
+  margin-top: 5px;
 
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
 }
 
-#homeCopy {
-  text-align: center;
-  padding: 25px;
-  width: 40vw;
-  margin: 0 auto;
-}
-
-#homeButtons {
-  display: flex;
-  flex-direction: row;
-  width: 50vw;
-  margin: 0 auto;
-}
-
-.homePageButton {
-  border-radius: 32px;
-  font-weight: bold;
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  background-color: #81ffef;
-  margin: 0 20px;
-  padding: 10px 20px;
-}
-
-.homePageButton:hover {
-  background-color: #9f5aa7;
-}
-
-#logoNav {
-  width: 90px;
-  padding: 10px;
-}
-
-@media only screen and (max-width: 530px) {
-  #homeLogo {
-    height: auto;
-    width: 55vw;
-    margin-top: 15px;
-  }
-  #homeCopy {
-    width: 90vw;
-    margin: 0 auto;
-    padding: 0 25px;
-  }
-
-  #homeButtons {
-    display: flex;
-    flex-direction: column;
-    width: 70vw;
-  }
-  .homePageButton {
-    margin: 10px 0;
-  }
+#text {
+  padding: 1em;
 }
 
 /* ----------------------------------------------
