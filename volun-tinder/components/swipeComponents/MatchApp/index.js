@@ -6,7 +6,7 @@
 //IMPORTING ORG DATA:
 //Import all four sample data arrays from the file in libs at this level ✅ 
 //Take in category as a prop from where the MatchApp component is called ✅ 
-//Have logic in the component that uses this category to pull the right data object in ✅ 
+//Have logic in the component that uses this category to pull the right data object in. ✅ 
 
 //GETTING SWIPE RESULTS:
 //Make a state high enough that it can see both the swipe component and match component as an empty array to store the swipe results ✅ 
