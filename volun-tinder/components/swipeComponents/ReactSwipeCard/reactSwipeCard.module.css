@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.subHeading {
+  color: whitesmoke;
+}
+
 .qualitiesList {
   width: 40vw;
   margin: 0 auto;
@@ -31,6 +35,7 @@
   height: 150px;
   width: auto;
   border-radius: 10px;
+  margin: 3vh;
 }
 
 #resetLink {
