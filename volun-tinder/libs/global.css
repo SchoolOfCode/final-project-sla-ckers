@@ -1,6 +1,4 @@
 * {
-  /* border: 1px solid pink; */
-
   font-family: "Capriola", sans-serif;
 }
 
@@ -13,8 +11,8 @@
   display: block;
   margin-top: 30px;
 
-  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-  animation: heartbeat 1.5s ease-in-out infinite both;
+  -webkit-animation: heartbeat 1.5s ease-in-out 3 both;
+  animation: heartbeat 1.5s ease-in-out 3 both;
 }
 
 #homeCopy {
