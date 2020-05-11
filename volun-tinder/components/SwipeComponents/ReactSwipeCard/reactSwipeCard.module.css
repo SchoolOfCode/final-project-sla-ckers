@@ -1,10 +1,32 @@
-.swipeInterface {
-  text-align: center;
-  width: 70vw;
+.swipeImg {
+  width: auto;
+  height: 100px;
   margin: 0 auto;
 }
 
+.cardAndSwipes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.swipeInterface {
+  text-align: center;
+  width: 80 vw;
+  margin: 5vh auto;
+}
+
 .subHeading {
+  font-weight: bold;
+}
+
+.matchFeedback {
   font-weight: bold;
 }
 
@@ -16,6 +38,7 @@
   padding: 20px;
   color: whitesmoke;
   text-align: center;
+  width: 50vw;
 }
 
 .qualitiesList {
@@ -77,10 +100,15 @@
     margin: 25px auto;
   }
 
+  .card {
+    width: 85vw;
+  }
+
   .swipeHeader {
     font-size: 20px;
     width: 70vw;
     margin: 0 auto;
+    padding-bottom: 20px;
   }
 
   .swipeIntro {
