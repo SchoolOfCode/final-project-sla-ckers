@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Link from 'next/link';
-import Head from 'next/head';
-import css from './header.module.css';
+import Link from "next/link";
+import Head from "next/head";
+import css from "./header.module.css";
 
-import { routes } from '../../libs/config';
+import { routes } from "../../libs/config";
 
 function Header() {
   return (
@@ -23,13 +23,33 @@ function Header() {
         <link rel="manifest" href="/manifest.json" />
 
         <link
-          href="../../public/Volt_512.png"
+          href="/favicon-16x16.png"
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+        />
+
+        <link
+          href="favicon-32x32.png"
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+
+        <link
+          href="/VOLT_512x512.png"
           rel="icon"
           type="image/png"
           sizes="512x512"
         />
         <link
-          href="../../public/VOLT_192.png"
+          href="/VOLT_192x192.png"
           rel="icon"
           type="image/png"
           sizes="192x192"
@@ -49,7 +69,7 @@ function Header() {
           <a className={css.navLink}>Take the Quiz</a>
         </Link>
         <Link href={routes.knowledgeBase}>
-          <a className={css.navLink}>Knowledge Base</a>
+          <a className={css.navLink}>Volunteering Guide</a>
         </Link>
         <Link href={routes.orgDashboard}>
           <a className={css.navLink}>Organisation Dashboard</a>
