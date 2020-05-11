@@ -26,6 +26,7 @@
 
 .subHeading {
   font-weight: bold;
+  color: white;
 }
 
 .matchFeedback {
@@ -56,6 +57,8 @@
   height: 150px;
   width: auto;
   border-radius: 10px;
+  margin: 10px auto;
+  padding-bottom: 15px;
 }
 
 #resetLink {
@@ -84,7 +87,12 @@
   background-color: #9f5aa7;
 }
 
-.swipeHeader,
+.swipeHeader {
+  width: 80vw;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
 .swipeIntro {
   width: 80vw;
   margin: 0 auto;
