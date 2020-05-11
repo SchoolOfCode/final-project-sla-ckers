@@ -2,12 +2,6 @@
   font-family: "Capriola", sans-serif;
 }
 
-#layoutContainer {
-  height: 100pc;
-  margin: 0;
-  /* padding-bottom: 6vh; */
-}
-
 #homeLogo {
   text-align: center;
   padding: 5px;

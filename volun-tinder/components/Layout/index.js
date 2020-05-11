@@ -4,7 +4,7 @@ import Footer from "../Footer";
 
 function Layout(props) {
   return (
-    <div id="layoutContainer">
+    <div>
       <Header />
       {props.children}
       <style jsx global>{`
