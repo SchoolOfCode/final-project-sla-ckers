@@ -1,7 +1,42 @@
-.navLinksContainer {
+.header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 5px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #81ffef;
+}
+
+#logoNav {
+  margin: 5px 5vw;
+  height: 10vw;
+  width: auto;
+}
+
+#menuLink {
+  color: black;
+  padding-bottom: 5px;
+  margin: 0 5vw;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.menuItem {
+  font-weight: bold;
+  font-size: 120%;
+  background-color: #81ffef;
+}
+
+.menuItem:hover {
+  background-color: #9f5aa7;
+}
+
+.fullNavMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   padding: 5px;
   margin: 0 auto;
   width: 100%;
@@ -11,24 +46,24 @@
 .navLink {
   text-decoration: none;
   color: black;
-  padding: 5px;
-  margin: auto;
+  padding: 10px;
+  margin: 25px 1vw;
   text-align: center;
-  /* color: #e3bbe7; */
-  /* border-radius: 32px;
-  background-color: #e3bbe7;
-  color: #47294b;
   font-weight: bold;
-  text-align: center;
-  margin: 20px;
-  padding: 5px 15px;
-  border: #9f5aa7 1px solid; */
 }
 
 .navLink:hover {
   background-color: #9f5aa7;
-  color: #e3bbe7;
-  padding: 5px;
+  color: whitesmoke;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 530px) {
+  #logoNav {
+    margin: 5px 5vw;
+    height: 100px;
+    width: auto;
+  }
 }
