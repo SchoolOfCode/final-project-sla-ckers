@@ -5,7 +5,7 @@ import css from "./knowledgeBase.module.css";
 function KnowledgeBase() {
   return (
     <div>
-      <div>
+      <div className={css.volGuide}>
         <h1>Volunteer Guide</h1>
 
         <p>
@@ -13,7 +13,7 @@ function KnowledgeBase() {
           volunteering.
         </p>
 
-        <section className="Benefits">
+        <section className={css.benefits}>
           <h3>Benefits of being a volunteer</h3>
 
           <p>
@@ -22,12 +22,12 @@ function KnowledgeBase() {
           </p>
 
           <img
-            id="knowledgeBaseImage"
+            id={css.knowledgeBaseImage}
             src="/Infographic.png"
             alt="Benefits of being a volunteer infographic"
           />
 
-          <p className="imageCredit">
+          <p className={css.imageCredit}>
             Image Credit: Staffordshire County Council
           </p>
         </section>
