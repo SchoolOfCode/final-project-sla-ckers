@@ -9,11 +9,11 @@ function ContactCard({ org }) {
       <img alt={org.briefBio} src={org.img} className={css.orgImg} />
       <p className={css.contactInfo}>
         {org.contactName} from {org.orgName} is waiting to hear from you! You
-        can get in touch via:
+        can get in touch via:{' '}
+        <a className={css.contactLink} href={`mailto:${org.contactDetails}`}>
+          {org.contactDetails}
+        </a>
       </p>
-      <a className={css.contactLink} href={`mailto:${org.contactDetails}`}>
-        {org.contactDetails}
-      </a>
       <p className={css.contactInfo}>Or visit their website:</p>
       <a
         href={org.link}
