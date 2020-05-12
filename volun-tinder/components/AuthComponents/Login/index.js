@@ -60,8 +60,13 @@ function Login({
         <input type="submit" className={css.signInButton} value="Sign in" />
       </form>
       <div className={css.buttonContainer}>
-        <button onClick={handleSignInWithPopup} className={css.button}>
-          Sign in with your Google account
+        <button onClick={handleSignInWithPopup} className={css.googleButton}>
+          <img
+            src="https://i.ibb.co/JCtcX6r/google-g-logo.png"
+            alt="google-g-logo"
+            id={css.googleLogo}
+          />
+          Sign in with Google
         </button>
         <p className={css.registerP}>
           First time? Enter your details above and click below:
