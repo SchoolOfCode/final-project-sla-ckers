@@ -29,10 +29,11 @@ function Login({
 
   return (
     <div className={css.loginFormContainer}>
-      <p className={css.loginP}>
-        Are you an organisation looking to update your details? Log in or
-        register here:
-      </p>
+      <h2 className={css.loginP}>
+        Are you an organisation looking to update your details?
+        <br />
+        Log in or register here:
+      </h2>
       <form onSubmit={handleSubmit} className={css.loginForm}>
         <label className={css.label}>
           Email:
@@ -56,12 +57,20 @@ function Login({
           />
         </label>
 
-        <input type="submit" className={css.button} value="Sign in" />
+        <input type="submit" className={css.signInButton} value="Sign in" />
       </form>
       <div className={css.buttonContainer}>
-        <button onClick={handleSignInWithPopup} className={css.button}>
-          Sign in with your Google account
+        <button onClick={handleSignInWithPopup} className={css.googleButton}>
+          <img
+            src="https://i.ibb.co/JCtcX6r/google-g-logo.png"
+            alt="google-g-logo"
+            id={css.googleLogo}
+          />
+          Sign in with Google
         </button>
+        <p className={css.registerP}>
+          First time? Enter your details above and click below:
+        </p>
         <button onClick={handleSignup} className={css.button}>
           Sign up as new user
         </button>
