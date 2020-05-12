@@ -12,6 +12,8 @@ const nextConfig = {
       '/': { page: '/' },
       '/quiz': { page: '/quiz' },
       '/knowledge-base': { page: '/knowledge-base' },
+      '/org-dashboard': { page: '/org-dashboard' },
+      '/orgsList': { page: '/orgsList' },
     };
   },
 
