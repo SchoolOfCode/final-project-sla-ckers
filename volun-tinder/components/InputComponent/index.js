@@ -165,7 +165,7 @@ function InputComponent({ uid }) {
   function handleSubmit(event) {
     event.preventDefault();
     alert('Details added successfully!');
-    console.log({ orgData });
+    console.log('new org - post route', { orgData });
 
     fetch(apiUrl, {
       method: 'POST',
@@ -183,7 +183,7 @@ function InputComponent({ uid }) {
   function handleEditSubmit(event) {
     event.preventDefault();
     alert('Details updated successfully!');
-    console.log({ orgData });
+    console.log('existing org - put route', { orgData });
 
     fetch(`${apiUrl}${matchedOrgData.id}`, {
       method: 'PUT',
