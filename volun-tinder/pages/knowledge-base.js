@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react';
 //import Infographic from "../libs/Images/volunteer.jpg";
 
 //Plan - Static knowledgeBase page
@@ -12,8 +11,8 @@ import React from "react";
 //Volunteers' Week - done
 //Content should be sourced from the internet - YoungMinds contact suggested NVCO.
 
-import KnowledgeBase from "../components/KnowledgeBase/index";
-import Layout from "../components/Layout";
+import KnowledgeBase from '../components/KnowledgeBase/index';
+import Layout from '../components/Layout';
 
 export default function knowledgeBase() {
   return (

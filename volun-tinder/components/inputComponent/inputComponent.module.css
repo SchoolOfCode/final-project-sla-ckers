@@ -1,29 +1,10 @@
 .sectionHeader {
-  margin: 15px 0;
-  color: white;
-  padding-bottom: 10px;
-}
-
-.formSection {
-  margin: 20px auto;
-  width: 80%;
-  padding-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .header {
   color: black;
-  margin: 0 auto;
-  width: 60%;
-  padding-top: 5vh;
-  text-align: center;
-}
-
-.formDescrip {
-  color: black;
-  margin: 0 auto;
-  width: 70%;
-  text-align: center;
-  padding-top: 20px;
 }
 
 .form {
@@ -46,34 +27,35 @@
 
 .dropdown {
   width: 50%;
+  height: 2vw;
   border-radius: 10px;
-  padding: 6px;
-  margin: 10px auto;
-  color: black;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .input {
-  width: 100%;
+  width: 80%;
+  height: 2vw;
   border-radius: 10px;
-  padding: 6px;
-  margin: 10px auto;
-  color: black;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .button {
+  width: 160px;
+  height: 4em;
   border-radius: 32px;
+  background-color: #e3bbe7;
+  color: #47294b;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
-  background-color: #81ffef;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: black;
-  width: 150px;
+  margin: 20px;
 }
 
 .button:hover {
   background-color: #9f5aa7;
+  color: rgb(92, 85, 85);
+  cursor: pointer;
 }
 
 #submitButton {
@@ -81,6 +63,7 @@
 }
 
 .submitBtnSection {
+  padding-top: 10px;
   width: 100vw;
   display: flex;
   flex-direction: column;

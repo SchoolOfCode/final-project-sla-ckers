@@ -1,8 +1,7 @@
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -15,8 +14,6 @@
 #logoFooter {
   height: 80%;
   margin-top: 5px;
-  padding-right: 10px;
-  margin-right: 5vw;
 
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
@@ -24,7 +21,6 @@
 
 #text {
   padding: 1em;
-  font-weight: bold;
 }
 
 /* ----------------------------------------------
