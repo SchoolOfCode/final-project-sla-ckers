@@ -1,22 +1,6 @@
 .orgImg {
   height: 150px;
   width: auto;
-  border-radius: 10px;
-  padding-bottom: 25px;
-}
-
-.orgHeader {
-  color: white;
-  font-weight: bold;
-}
-
-.contactLink {
-  color: white;
-}
-
-.briefBio {
-  width: 80%;
-  margin: 0 auto;
 }
 
 .card {
@@ -24,15 +8,16 @@
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 65vw;
+  width: 60vw;
   margin: 20px auto;
   padding: 20px;
-  color: white;
+  color: whitesmoke;
   text-align: center;
 
   -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
 }
 
 /* ----------------------------------------------
@@ -74,15 +59,14 @@
 }
 
 .button {
-  /* width: 160px; */
-  /* height: 4em; */
+  width: 160px;
+  height: 4em;
   border-radius: 32px;
   background-color: #e3bbe7;
   color: #47294b;
   font-weight: bold;
   text-align: center;
   margin: 20px;
-  padding: 5px 10px;
 }
 
 #quizLink {

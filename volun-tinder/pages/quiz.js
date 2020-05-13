@@ -1,6 +1,6 @@
-import React from 'react';
-import QuizApp from '../components/QuizComponents/QuizApp/index';
-import Layout from '../components/Layout';
+import React from "react";
+import QuizApp from "../components/quizComponents/QuizApp/index";
+import Layout from "../components/Layout";
 
 export default function QuizPage() {
   return (

@@ -1,5 +1,5 @@
 .contactCard {
-  color: white;
+  color: whitesmoke;
   background-color: #814987;
   border: #81ffef 2px solid;
   border-radius: 20px;
@@ -9,29 +9,15 @@
   text-align: center;
 }
 
-.contactHeader {
-  color: white;
-  font-weight: bold;
-}
-
-.contactInfo {
-  margin: auto;
-  padding-bottom: 10px;
-  width: 80%;
-}
-
 .orgImg {
   height: 150px;
   width: auto;
   border-radius: 10px;
-  margin: 10px auto;
-  padding-bottom: 15px;
 }
 
 .contactLink {
   color: whitesmoke;
-  padding-bottom: 20px;
-  font-weight: bold;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 530px) {
