@@ -13,25 +13,23 @@
 
 // If the loader is already loaded, just stop.
 if (!self.define) {
-  const singleRequire = name => {
+  const singleRequire = (name) => {
     if (name !== 'require') {
       name = name + '.js';
     }
     let promise = Promise.resolve();
     if (!registry[name]) {
-      
-        promise = new Promise(async resolve => {
-          if ("document" in self) {
-            const script = document.createElement("script");
-            script.src = name;
-            document.head.appendChild(script);
-            script.onload = resolve;
-          } else {
-            importScripts(name);
-            resolve();
-          }
-        });
-      
+      promise = new Promise(async (resolve) => {
+        if ('document' in self) {
+          const script = document.createElement('script');
+          script.src = name;
+          document.head.appendChild(script);
+          script.onload = resolve;
+        } else {
+          importScripts(name);
+          resolve();
+        }
+      });
     }
     return promise.then(() => {
       if (!registry[name]) {
@@ -42,12 +40,13 @@ if (!self.define) {
   };
 
   const require = (names, resolve) => {
-    Promise.all(names.map(singleRequire))
-      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
+    Promise.all(names.map(singleRequire)).then((modules) =>
+      resolve(modules.length === 1 ? modules[0] : modules)
+    );
   };
-  
+
   const registry = {
-    require: Promise.resolve(require)
+    require: Promise.resolve(require),
   };
 
   self.define = (moduleName, depsNames, factory) => {
@@ -58,22 +57,22 @@ if (!self.define) {
     registry[moduleName] = Promise.resolve().then(() => {
       let exports = {};
       const module = {
-        uri: location.origin + moduleName.slice(1)
+        uri: location.origin + moduleName.slice(1),
       };
       return Promise.all(
-        depsNames.map(depName => {
-          switch(depName) {
-            case "exports":
+        depsNames.map((depName) => {
+          switch (depName) {
+            case 'exports':
               return exports;
-            case "module":
+            case 'module':
               return module;
             default:
               return singleRequire(depName);
           }
         })
-      ).then(deps => {
+      ).then((deps) => {
         const facValue = factory(...deps);
-        if(!exports.default) {
+        if (!exports.default) {
           exports.default = facValue;
         }
         return exports;
@@ -81,19 +80,20 @@ if (!self.define) {
     });
   };
 }
-define("./sw.js",['./workbox-b90066a8'], function (workbox) { 'use strict';
+define('./sw.js', ['./workbox-b90066a8'], function (workbox) {
+  'use strict';
 
   /**
-  * Welcome to your Workbox-powered service worker!
-  *
-  * You'll need to register this file in your web app.
-  * See https://goo.gl/nhQhGp
-  *
-  * The rest of the code is auto-generated. Please don't update this file
-  * directly; instead, make changes to your Workbox build configuration
-  * and re-run your build process.
-  * See https://goo.gl/2aRDsh
-  */
+   * Welcome to your Workbox-powered service worker!
+   *
+   * You'll need to register this file in your web app.
+   * See https://goo.gl/nhQhGp
+   *
+   * The rest of the code is auto-generated. Please don't update this file
+   * directly; instead, make changes to your Workbox build configuration
+   * and re-run your build process.
+   * See https://goo.gl/2aRDsh
+   */
 
   importScripts();
   workbox.skipWaiting();
@@ -104,34 +104,46 @@ define("./sw.js",['./workbox-b90066a8'], function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
 
-  workbox.precacheAndRoute([{
-    "url": "/_next/static/runtime/amp.js",
-    "revision": "1c60d6b33b389162128030c309c1d80a"
-  }, {
-    "url": "/_next/static/runtime/amp.js.map",
-    "revision": "fd38c26e5868171cf58387cd48fd71f4"
-  }, {
-    "url": "/_next/static/runtime/main.js",
-    "revision": "651eda3e4b7dc9115b2feb476189e678"
-  }, {
-    "url": "/_next/static/runtime/main.js.map",
-    "revision": "ebba206acd3d61470467955f2205c8f4"
-  }, {
-    "url": "/_next/static/runtime/polyfills.js",
-    "revision": "cf6f4b12f4634f8f79378d41f3a855a4"
-  }, {
-    "url": "/_next/static/runtime/polyfills.js.map",
-    "revision": "82dca635a629d8ab38c3ad85b2ad65a2"
-  }, {
-    "url": "/_next/static/runtime/webpack.js",
-    "revision": "f91ae32584c9f35c9613dbe772944755"
-  }, {
-    "url": "/_next/static/runtime/webpack.js.map",
-    "revision": "19b884ab9560b399377fe03f7d2c5541"
-  }], {
-    "ignoreURLParametersMatching": [/ts/]
-  });
-  workbox.cleanupOutdatedCaches();
+  workbox.precacheAndRoute(
+    [
+      {
+        url: '/_next/static/runtime/amp.js',
+        revision: '1c60d6b33b389162128030c309c1d80a',
+      },
+      {
+        url: '/_next/static/runtime/amp.js.map',
+        revision: 'fd38c26e5868171cf58387cd48fd71f4',
+      },
+      {
+        url: '/_next/static/runtime/main.js',
+        revision: '651eda3e4b7dc9115b2feb476189e678',
+      },
+      {
+        url: '/_next/static/runtime/main.js.map',
+        revision: 'ebba206acd3d61470467955f2205c8f4',
+      },
+      {
+        url: '/_next/static/runtime/polyfills.js',
+        revision: 'cf6f4b12f4634f8f79378d41f3a855a4',
+      },
+      {
+        url: '/_next/static/runtime/polyfills.js.map',
+        revision: '82dca635a629d8ab38c3ad85b2ad65a2',
+      },
+      {
+        url: '/_next/static/runtime/webpack.js',
 
+        revision: '97d7f07db425111a3e645980c81c33b7',
+      },
+      {
+        url: '/_next/static/runtime/webpack.js.map',
+        revision: 'e0de1f83cb285457aa192bf2343d2a9f',
+      },
+    ],
+    {
+      ignoreURLParametersMatching: [/ts/],
+    }
+  );
+  workbox.cleanupOutdatedCaches();
 });
 //# sourceMappingURL=sw.js.map
