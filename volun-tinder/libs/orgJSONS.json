@@ -28,7 +28,7 @@
     ],
     "contactName": "Elizabeth Pickles",
     "contactDetails": "lizzie.pickles@gmail.com",
-    "link": "https://www..com/",
+    "link": "https://www.hungryhedgehogs.com/",
     "img": "https://i.pinimg.com/originals/f0/5e/2d/f05e2dbe7fc2820fa6649dc527ceffbc.jpg"
   },
   {
@@ -199,12 +199,10 @@
     "contactName": "The Sheriff of Night Vale",
     "briefBio": "Once it gets dark, forget everything you ever knew and be silent.",
     "category": "localGroups",
-    "createdAt": "2020-05-05T11:17:22.352Z",
     "contactDetails": "sheriff@secretpolice.org",
     "opportunities": {
       "oppDescrip": "As all Night Vale citizens are constantly being watched, the Sheriff's Secret Police advices any citizen who sees something to say, \"Something.\"[4] That is the codeword to call a Secret Police raid on a neighbor or stranger.",
       "timeReq": "2"
-    },
-    "id": "8caaadfa-01aa-4f3d-b64a-bce9eeb6a77b"
+    }
   }
 ]
