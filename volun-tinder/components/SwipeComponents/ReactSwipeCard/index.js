@@ -73,7 +73,7 @@ function ReactSwipeCard({
         {/* FIXME: Chris's comment: If you're happy with this nested ternary then that's fine - if not how could you refactor this to make more sense at a glance? */}
         {lastDirection ? (
           lastDirection === 'right' ? (
-            <h2 className={(css.infoText, css.matchFeedback)}>
+            <h2 className={css.infoText}>
               It's a match! We've added this organisation to your list.
             </h2>
           ) : (
