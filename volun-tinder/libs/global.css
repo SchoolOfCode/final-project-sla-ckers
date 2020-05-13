@@ -1,7 +1,5 @@
 * {
-  /* border: 1px solid pink; */
-
-  font-family: "Capriola", sans-serif;
+  font-family: 'Capriola', sans-serif;
 }
 
 #homeLogo {
@@ -11,10 +9,10 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: 30px;
+  margin-top: 10vh;
 
-  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-  animation: heartbeat 1.5s ease-in-out infinite both;
+  -webkit-animation: heartbeat 1.5s ease-in-out 3 both;
+  animation: heartbeat 1.5s ease-in-out 3 both;
 }
 
 #homeCopy {
@@ -22,6 +20,9 @@
   padding: 25px;
   width: 40vw;
   margin: 0 auto;
+  font-weight: bold;
+  font-size: 150%;
+  color: black;
 }
 
 #homeButtons {
@@ -29,6 +30,8 @@
   flex-direction: row;
   width: 50vw;
   margin: 0 auto;
+  margin-bottom: 10vh;
+  color: black;
 }
 
 .homePageButton {

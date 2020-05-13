@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { apiUrl } from "../../../libs/config";
-import SearchInput from "../SearchInput";
-import OrgCard from "../OrgCard";
-import css from "./search.module.css";
-import FlipMove from "react-flip-move";
+import React, { useState, useEffect } from 'react';
+import { apiUrl } from '../../../libs/config';
+import SearchInput from '../SearchInput';
+import OrgCard from '../OrgCard';
+import css from './search.module.css';
+import FlipMove from 'react-flip-move';
 
 //Search bar input
 //on change takes in input - DONE
@@ -21,20 +21,20 @@ import FlipMove from "react-flip-move";
 //Add searchability by number of hours to spare
 //        - Drop down menu to select this
 //        - Update handle function to take in this number and set the searchTerm
-//        - Update filter in Search function to include number of hours
+//        - TODO: Update filter in Search function to include number of hours
 
 function Search() {
   const [list, setList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchHours, setSearchHours] = useState(0);
-  const [isClicked, setIsClicked] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchHours, setSearchHours] = useState(0); //
+  const [isClicked, setIsClicked] = useState('');
 
   function handleClick(index) {
     setIsClicked(index);
   }
 
   function handleClose() {
-    setIsClicked("");
+    setIsClicked('');
   }
 
   useEffect(() => {
@@ -52,20 +52,21 @@ function Search() {
   return (
     <div>
       <div className={css.searchContainer}>
-        <p className={css.searchIntro}>
-          In the mood for a bit of a browse? See all of the organisations
-          looking for volunteers below. Click on each organisation for more
-          information about their opportunities available.
-        </p>
-        <p className={css.searchIntro}>
+        <h1 className={css.searchHeader}>In the mood for a bit of a browse?</h1>
+        <h3 className={css.searchIntro}>
+          See all of the organisations looking for volunteers below. Click on
+          each organisation for more information about their opportunities
+          available.
+        </h3>
+        <h3 className={css.searchIntro}>
           Use the search below to narrow down the list to see if any turn your
           head:
-        </p>
+        </h3>
         <SearchInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          searchHours={searchHours}
-          setSearchHours={setSearchHours}
+          // searchHours={searchHours}
+          // setSearchHours={setSearchHours}
         />
       </div>
       <FlipMove className={css.ul} typeName="ul">
@@ -73,8 +74,7 @@ function Search() {
           .filter(function (org) {
             return (
               org.orgName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              org.opportunities.timeReq.includes(searchHours())
+              org.briefBio.toLowerCase().includes(searchTerm.toLowerCase())
             );
           })
           .map((org, index) =>
@@ -86,13 +86,17 @@ function Search() {
               />
             ) : (
               <li className={css.card} onClick={() => handleClick(index)}>
-                <h3>{org.orgName}</h3>
+                <h3 className={css.orgHeader}>{org.orgName}</h3>
                 <p>{org.briefBio}</p>
                 <img
                   src={org.img}
                   alt={org.briefBio}
                   className={css.orgImg}
-                />{" "}
+                />{' '}
+                <br />
+                <span className={css.clickToExpand}>
+                  Click for more details
+                </span>
               </li>
             )
           )}

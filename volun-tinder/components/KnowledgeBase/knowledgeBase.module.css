@@ -1,4 +1,35 @@
 #knowledgeBaseImage {
-  margin: auto;
-  border: purple 5px solid;
+  margin-left: auto;
+  margin-top: 3vh;
+  border: purple 3px solid;
+  border-radius: 20px;
+  height: 50vh;
+}
+
+.imageCredit {
+  font-size: 8px;
+  padding-left: 12vh;
+  padding-bottom: 5vh;
+}
+
+.volGuide {
+  padding: 5vh;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.volGuideHeader {
+  font-weight: bold;
+}
+
+#usefulLinks {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+  list-style: inside;
+}
+
+.introP {
+  padding-bottom: 20px;
+  padding-top: 15px;
 }

@@ -1,18 +1,30 @@
+.searchHeader {
+  font-weight: bold;
+  padding-top: 5vh;
+}
+
 .orgImg {
   height: 150px;
   width: auto;
   text-align: center;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.orgHeader {
+  color: white;
+  font-weight: bold;
 }
 .ul {
   list-style-type: none;
   color: white;
+  padding: 0;
 }
 .card {
   /* background-color: var(--palette2); */
   background-color: #814987;
   border: #81ffef 4px solid;
   border-radius: 20px;
-  width: 60vw;
+  width: 50vw;
   margin: 20px auto;
   padding: 20px;
   /* color: rgb(184, 157, 157); */
@@ -37,12 +49,23 @@
   text-align: center;
   width: 80vw;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 10px;
+  color: black;
+}
+
+.clickToExpand {
+  color: white;
+  margin: 0;
+  font-size: 12px;
+  opacity: 70%;
 }
 
 @media only screen and (max-width: 530px) {
   .orgImg {
     height: 75px;
     width: auto;
+  }
+  .card {
+    width: 70vw;
   }
 }
