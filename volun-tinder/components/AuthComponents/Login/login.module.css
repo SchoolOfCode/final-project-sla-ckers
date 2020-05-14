@@ -8,18 +8,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: #81ffef 4px solid;
 }
 
 .loginP {
   text-align: center;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 30px;
-  width: 80%;
-  color: white;
-  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .loginForm {
@@ -35,81 +28,37 @@
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  font-size: 18px;
 }
 
 .buttonContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
-  padding-top: 20px;
-}
-
-.signInButton {
-  border-radius: 32px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  background-color: #81ffef;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: black;
-  width: 150px;
-}
-
-.signInButton:hover {
-  background-color: white;
 }
 
 .button {
-  width: 300px;
+  width: 160px;
+  height: 4em;
   border-radius: 32px;
+  background-color: #e3bbe7;
+  color: #47294b;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
-  background-color: #81ffef;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: black;
+  margin: 20px;
 }
 
 .button:hover {
-  background-color: white;
-}
-
-.googleButton {
-  width: 250px;
-  border-radius: 32px;
-  font-weight: bold;
-  text-align: center;
+  background-color: #9f5aa7;
+  color: rgb(92, 85, 85);
   cursor: pointer;
-  background-color: #81ffef;
-  margin: 0 auto;
-  padding-right: 20px;
-  color: black;
-}
-
-.googleButton:hover {
-  background-color: white;
 }
 
 .input {
   width: 80%;
+  height: 2vw;
   border-radius: 10px;
   padding: 6px;
   margin-bottom: 20px;
   margin-left: 10px;
-  color: black;
-}
-
-.registerP {
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-#googleLogo {
-  height: 40px;
-  width: auto;
 }

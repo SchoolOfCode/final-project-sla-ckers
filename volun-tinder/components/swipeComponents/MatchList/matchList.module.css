@@ -1,20 +1,10 @@
 #matchList {
   text-align: center;
-  margin: 5vh auto;
-}
-
-#matchListHeader {
-  width: 80vw;
-  font-weight: bold;
-  padding-bottom: 15px;
-  margin: 0 auto;
-  padding-top: 20px;
 }
 
 #matchListIntro {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 60vw;
-  padding-bottom: 20px;
 }
 
 #resetLink {

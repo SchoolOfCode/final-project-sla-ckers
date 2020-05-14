@@ -1,34 +1,39 @@
-import React from 'react';
+import React from "react";
 
-import css from './knowledgeBase.module.css';
+import css from "./knowledgeBase.module.css";
 
 function KnowledgeBase() {
   return (
     <div>
-      <div className={css.volGuide}>
-        <h1 className={css.volGuideHeader}>Volunteer Guide</h1>
+      <div>
+        <h1>Volunteer Guide</h1>
 
-        <h3 className={css.introP}>
+        <p>
           In this section you'll find useful links to guides and resources about
           volunteering.
-        </h3>
+        </p>
 
-        <section className={css.benefits}>
-          <h2>Benefits of being a volunteer:</h2>
+        <section className="Benefits">
+          <h3>Benefits of being a volunteer</h3>
+
+          <p>
+            There are numerous reasons to be a volunteer. See the infographic
+            below to learn more.
+          </p>
 
           <img
-            id={css.knowledgeBaseImage}
+            id="knowledgeBaseImage"
             src="/Infographic.png"
             alt="Benefits of being a volunteer infographic"
           />
 
-          <p className={css.imageCredit}>
+          <p className="imageCredit">
             Image Credit: Staffordshire County Council
           </p>
         </section>
-        <section className={css.VolunteerLinks}>
-          <h3 className={css.volGuideHeader}>Useful links:</h3>
-          <ul id={css.usefulLinks}>
+        <section className="VolunteerLinks">
+          <h3>Useful links</h3>
+          <ul>
             <li>
               <a href="https://www.ncvo.org.uk/ncvo-volunteering">
                 Why Volunteer?

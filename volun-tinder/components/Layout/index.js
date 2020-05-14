@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "../Header";
-import Footer from "../Footer";
 
 function Layout(props) {
   return (
-    <div>
+    <div style={{ height: "100vh", margin: 0 }}>
       <Header />
       {props.children}
       <style jsx global>{`
@@ -12,6 +11,7 @@ function Layout(props) {
           @import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
 
           font-family: "Capriola", sans-serif;
+
         }
         body {
           margin: 0;
@@ -19,7 +19,6 @@ function Layout(props) {
           overflow: auto;
         }
       `}</style>
-      <Footer />
     </div>
   );
 }
